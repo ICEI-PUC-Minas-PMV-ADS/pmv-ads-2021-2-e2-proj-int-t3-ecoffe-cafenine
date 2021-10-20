@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ceBtTnTdBmZAcJew5gDFHxV/tqI4Si0zCbyY9E/LvYmiweLmdqBUfTOX6kLhM2tiZyCicBWZUGQFkMJwXacXjg==",
+  "dgSpecHash": "qUUhNd+YUtlBXtcvYFfH0I1q2qx8EmsjnYyLbTI/Q2LljSp33CVIg9acFy7MjCfLBeVFFvBdm29UjmsGNLZHpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\joao.dainese\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
   "expectedPackageFiles": [
@@ -38,10 +38,10 @@
     "C:\\Users\\joao.dainese\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\joao.dainese\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\joao.dainese\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
-    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\joao.dainese\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\joao.dainese\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\joao.dainese\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\joao.dainese\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

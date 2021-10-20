@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Documentação Projeto Ecoffe",
+    "\\Documentação Projeto Ecoffe\\docs",
+    "\\Documentação Projeto Ecoffe\\docs\\ClientApp",
+    "\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp",
+    "\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp",
+    "\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\Models"
   ],
+  "SelectedNode": "\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp.sln",
   "PreviewInSolutionExplorer": false
 }

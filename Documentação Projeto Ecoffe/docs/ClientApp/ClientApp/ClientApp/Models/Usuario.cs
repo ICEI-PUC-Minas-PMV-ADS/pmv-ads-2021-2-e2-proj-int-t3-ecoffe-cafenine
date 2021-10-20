@@ -38,7 +38,7 @@ namespace ClientApp.Models
         public bool In_Ativo { get; set; }
 
         public bool In_Admin { get; set; }
-
+ 
     }
     #endregion
 }

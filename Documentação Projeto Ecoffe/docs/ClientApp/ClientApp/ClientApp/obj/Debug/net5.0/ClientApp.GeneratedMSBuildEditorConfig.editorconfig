@@ -6,3 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = ClientApp
+build_property.ProjectDir = C:\Users\joao.dainese\Source\Repos\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\Documentação Projeto Ecoffe\docs\ClientApp\ClientApp\ClientApp\

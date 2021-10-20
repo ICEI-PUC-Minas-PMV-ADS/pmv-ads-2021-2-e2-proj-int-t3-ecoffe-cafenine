@@ -6062,5 +6062,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\felip\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

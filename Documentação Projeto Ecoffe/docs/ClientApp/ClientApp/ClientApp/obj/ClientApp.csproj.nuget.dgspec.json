@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj": {}
+    "C:\\Users\\gab_1\\source\\repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj": {
+    "C:\\Users\\gab_1\\source\\repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
+        "projectUniqueName": "C:\\Users\\gab_1\\source\\repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
         "projectName": "ClientApp",
-        "projectPath": "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
-        "packagesPath": "C:\\Users\\vlinv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\obj\\",
+        "projectPath": "C:\\Users\\gab_1\\source\\repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
+        "packagesPath": "C:\\Users\\gab_1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gab_1\\source\\repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vlinv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\gab_1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

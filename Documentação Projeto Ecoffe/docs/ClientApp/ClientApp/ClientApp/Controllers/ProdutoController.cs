@@ -21,6 +21,7 @@ namespace ClientApp.Controllers
             _context = context;
         }
 
+        //GET: api/produto
         [HttpGet]
         public async Task<IEnumerable<Produto>> Get()
         {
@@ -28,6 +29,16 @@ namespace ClientApp.Controllers
 
             return listaProdutos;
 
+        }
+
+        //POST: api/produto/Produto
+        [HttpPost]
+        public async Task<IActionResult> Create(Produto produto)
+        {
+            _context.Add(produto);
+            await _context.SaveChangesAsync();
+
+            return Ok(produto);
         }
     }
 }

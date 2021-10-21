@@ -87,3 +87,4 @@ C:\Users\joao.dainese\Source\Repos\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine
 C:\Users\joao.dainese\Source\Repos\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\Documentação Projeto Ecoffe\docs\ClientApp\ClientApp\ClientApp\obj\Debug\net5.0\ClientApp.RazorTargetAssemblyInfo.cache
 C:\Users\joao.dainese\Source\Repos\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\Documentação Projeto Ecoffe\docs\ClientApp\ClientApp\ClientApp\obj\Debug\net5.0\ClientApp.csproj.CopyComplete
 C:\Users\joao.dainese\Source\Repos\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\Documentação Projeto Ecoffe\docs\ClientApp\ClientApp\ClientApp\obj\Debug\net5.0\ClientApp.genruntimeconfig.cache
+C:\Users\joao.dainese\Source\Repos\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\Documentação Projeto Ecoffe\docs\ClientApp\ClientApp\ClientApp\obj\Debug\net5.0\ClientApp.csproj.AssemblyReference.cache

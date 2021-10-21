@@ -12,13 +12,6 @@ namespace ClientApp.Controllers
     [Route("[controller]")]
     public class UsuarioController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public UsuarioController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
-
         [HttpGet]
         public Usuario Get()
         {

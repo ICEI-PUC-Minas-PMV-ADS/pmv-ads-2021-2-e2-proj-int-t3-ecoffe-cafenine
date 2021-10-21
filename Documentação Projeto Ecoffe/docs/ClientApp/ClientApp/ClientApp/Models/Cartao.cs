@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientApp.Models
 {
-    [Table("CARTAO")]
+    [Table("Cartao")]
     public class Cartao
     {
         #region propriedades
@@ -17,9 +17,6 @@ namespace ClientApp.Models
         public int Nr_Cartao { get; set; }
         [Required(ErrorMessage = "Este campo é obrigatorio")]
         public DateTime Dt_Validade { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public Usuario Usuario { get; set; }
-        public int Id_Usuario { get; set; }
         [Required(ErrorMessage = "Este campo é obrigatorio")]
         public string Nm_Cartao { get; set; }
         [Required(ErrorMessage = "Este campo é obrigatorio")]

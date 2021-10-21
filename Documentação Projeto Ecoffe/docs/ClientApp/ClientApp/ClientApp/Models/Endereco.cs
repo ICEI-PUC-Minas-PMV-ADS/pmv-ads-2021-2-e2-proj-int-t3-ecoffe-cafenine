@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientApp.Models
 {
-    [Table("PRODUTO")]
+    [Table("Endereco")]
     public class Endereco
     {
         #region propriedades

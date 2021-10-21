@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientApp.Models
 {
-    [Table("SEGURANCA")]
+    [Table("Seguranca")]
     public class Seguranca
     {
         #region propriedades

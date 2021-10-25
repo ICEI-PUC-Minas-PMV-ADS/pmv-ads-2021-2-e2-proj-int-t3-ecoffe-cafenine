@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientApp.Models
 {
-    [Table("NOTA_FISCAL")]
+    [Table("NotaFiscal")]
     public class NotaFiscal
     {
         #region propriedades       
@@ -18,10 +18,6 @@ namespace ClientApp.Models
         public string NR_NOTA_FISCAL { get; set; }
 
         public string XML { get; set; }
-
-        public Pedido Pedido { get; set; }
-
-        public int Id_Pedido { get; set; }
     }
     #endregion
 }

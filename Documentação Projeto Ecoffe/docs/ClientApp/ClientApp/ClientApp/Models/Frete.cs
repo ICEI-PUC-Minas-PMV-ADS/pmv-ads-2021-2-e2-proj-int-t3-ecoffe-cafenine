@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientApp.Models
 {
-    [Table("FRETE")]
+    [Table("Frete")]
     public class Frete
     {
         #region propriedades       
@@ -16,8 +16,6 @@ namespace ClientApp.Models
         public float Vl_Frete { get; set; }
         public string Nm_Status_Frete { get; set; }
         public int Id_Status_Frete { get; set; }
-        public int Id_Pedido { get; set; }
-        public Pedido Pedido { get; set; }
     }
     #endregion
 }

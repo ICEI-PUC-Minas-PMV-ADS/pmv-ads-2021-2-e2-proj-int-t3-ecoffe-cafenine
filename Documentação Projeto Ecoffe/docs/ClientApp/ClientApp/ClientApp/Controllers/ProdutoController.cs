@@ -31,11 +31,38 @@ namespace ClientApp.Controllers
 
         }
 
+        //GET: api/produto/id
+        [HttpGet]
+        public async Task<Produto> Get(int id)
+        {
+            var produto = await _context.Produto.FindAsync(id);
+
+            if (produto == null)
+                throw new Exception("Produto não encontrado.");
+
+            return produto;
+        }
+
         //POST: api/produto/Produto
         [HttpPost]
         public async Task<IActionResult> Create(Produto produto)
         {
             _context.Add(produto);
+            await _context.SaveChangesAsync();
+
+            return Ok(produto);
+        }
+
+        //PUT: api/produto/Produto
+        [HttpPut]
+        public async Task<IActionResult> Update(Produto produto)
+        {
+            var produtoDb = await _context.Produto.FindAsync(produto.Id_Produto);
+
+            if (produtoDb == null)
+                throw new Exception("Produto não encontrado.");
+
+            _context.Update(produto);
             await _context.SaveChangesAsync();
 
             return Ok(produto);

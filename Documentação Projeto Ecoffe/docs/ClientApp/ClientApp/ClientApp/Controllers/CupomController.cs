@@ -56,9 +56,9 @@ namespace ClientApp.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(Cupom cupom)
         {
-            var freteDb = await _context.Produto.FindAsync(cupom.Id_Cupom);
+            var cupomDb = await _context.Produto.FindAsync(cupom.Id_Cupom);
 
-            if (freteDb == null)
+            if (cupomDb == null)
                 throw new Exception("Cupom não encontrado.");
 
             _context.Update(cupom);

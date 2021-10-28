@@ -5995,51 +5995,25 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\joao.dainese\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
-=======
-    "C:\\Users\\felip\\.nuget\\packages\\": {},
+    "C:\\Users\\vlinv\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 17f35b014dca46c272e560306f651a9c3121fa3b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\joao.dainese\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
+      "projectUniqueName": "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
       "projectName": "ClientApp",
-      "projectPath": "C:\\Users\\joao.dainese\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
-      "packagesPath": "C:\\Users\\joao.dainese\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joao.dainese\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\joao.dainese\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-      "projectUniqueName": "C:\\Users\\felip\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
-      "projectName": "ClientApp",
-      "projectPath": "C:\\Users\\felip\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
-      "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felip\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\obj\\",
+      "projectPath": "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\ClientApp.csproj",
+      "packagesPath": "C:\\Users\\vlinv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vlinv\\Source\\Repos\\pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine\\Documentação Projeto Ecoffe\\docs\\ClientApp\\ClientApp\\ClientApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vlinv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 17f35b014dca46c272e560306f651a9c3121fa3b
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6105,11 +6079,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
->>>>>>> 17f35b014dca46c272e560306f651a9c3121fa3b
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

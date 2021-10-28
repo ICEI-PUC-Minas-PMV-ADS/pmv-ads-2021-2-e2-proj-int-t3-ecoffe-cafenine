@@ -22,7 +22,7 @@ namespace ClientApp.Controllers
         }
 
         //GET: api/produto
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IEnumerable<Produto>> Get()
         {
             var listaProdutos = await _context.Produto.ToListAsync();

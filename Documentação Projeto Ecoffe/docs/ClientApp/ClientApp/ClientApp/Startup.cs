@@ -37,6 +37,7 @@ namespace ClientApp
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClientApp", Version = "v1" });
+                c.ResolveConflictingActions(x => x.First());
             });
         }
 

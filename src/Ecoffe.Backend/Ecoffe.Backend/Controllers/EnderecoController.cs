@@ -28,9 +28,9 @@ namespace Ecoffe.Backend.Controllers
             return listaEndereco;
         }
 
-        //GET: api/endereco/id
-        [HttpGet]
-        public async Task<Endereco> Get(int id)
+        //GET: api/endereco/{id}
+        [HttpGet("{id}")]
+        public async Task<Endereco> GetById([FromRoute] int id)
         {
             var endereco = await _context.Endereco.FindAsync(id);
 
@@ -40,9 +40,9 @@ namespace Ecoffe.Backend.Controllers
             return endereco;
         }
 
-        //POST: api/endereco/Endereco
+        //POST: api/endereco/
         [HttpPost]
-        public async Task<IActionResult> Create(Endereco endereco)
+        public async Task<IActionResult> Create([FromBody] Endereco endereco)
         {
             _context.Add(endereco);
             await _context.SaveChangesAsync();
@@ -50,9 +50,9 @@ namespace Ecoffe.Backend.Controllers
             return Ok(endereco);
         }
 
-        //PUT: api/endereco/Endereco
+        //PUT: api/endereco/
         [HttpPut]
-        public async Task<IActionResult> Update(Endereco endereco)
+        public async Task<IActionResult> Update([FromBody] Endereco endereco)
         {
             var enderecoDb = await _context.Endereco.FindAsync(endereco.Id_Endereco);
 

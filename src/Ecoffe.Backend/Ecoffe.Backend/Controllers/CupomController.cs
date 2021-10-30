@@ -28,9 +28,9 @@ namespace Ecoffe.Backend.Controllers
             return listaCupom;
         }
 
-        //GET: api/cupom/id
-        [HttpGet]
-        public async Task<Cupom> Get(int id)
+        //GET: api/cupom/{id}
+        [HttpGet("{id}")]
+        public async Task<Cupom> GetById([FromRoute] int id)
         {
             var cupom = await _context.Cupom.FindAsync(id);
 
@@ -40,9 +40,9 @@ namespace Ecoffe.Backend.Controllers
             return cupom;
         }
 
-        //POST: api/cupom/Cupom
+        //POST: api/cupom/
         [HttpPost]
-        public async Task<IActionResult> Create(Cupom cupom)
+        public async Task<IActionResult> Create([FromBody] Cupom cupom)
         {
             _context.Add(cupom);
             await _context.SaveChangesAsync();
@@ -50,9 +50,9 @@ namespace Ecoffe.Backend.Controllers
             return Ok(cupom);
         }
 
-        //PUT: api/cupom/Cupom
+        //PUT: api/cupom/
         [HttpPut]
-        public async Task<IActionResult> Update(Cupom cupom)
+        public async Task<IActionResult> Update([FromBody] Cupom cupom)
         {
             var cupomDb = await _context.Produto.FindAsync(cupom.Id_Cupom);
 

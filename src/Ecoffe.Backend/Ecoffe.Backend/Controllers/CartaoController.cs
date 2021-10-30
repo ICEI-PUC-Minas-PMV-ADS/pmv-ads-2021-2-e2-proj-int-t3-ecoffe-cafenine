@@ -26,12 +26,11 @@ namespace Ecoffe.Backend.Controllers
             var listaCartoes = await _context.Cartao.ToListAsync();
 
             return listaCartoes;
-
         }
 
-        //GET: api/cartao/id
-        [HttpGet]
-        public async Task<Cartao> Get(int id)
+        //GET: api/cartao/{id}
+        [HttpGet("{id}")]
+        public async Task<Cartao> GetById([FromRoute] int id)
         {
             var cartao = await _context.Cartao.FindAsync(id);
 
@@ -41,9 +40,9 @@ namespace Ecoffe.Backend.Controllers
             return cartao;
         }
 
-        //POST: api/cartao/Cartao
+        //POST: api/cartao/
         [HttpPost]
-        public async Task<IActionResult> Create(Cartao cartao)
+        public async Task<IActionResult> Create([FromBody] Cartao cartao)
         {
             _context.Add(cartao);
             await _context.SaveChangesAsync();
@@ -51,9 +50,9 @@ namespace Ecoffe.Backend.Controllers
             return Ok(cartao);
         }
 
-        //PUT: api/cartao/Cartao
+        //PUT: api/cartao/
         [HttpPut]
-        public async Task<IActionResult> Update(Cartao cartao)
+        public async Task<IActionResult> Update([FromBody] Cartao cartao)
         {
             var cartaoDb = await _context.Produto.FindAsync(cartao.Id_Catao);
 

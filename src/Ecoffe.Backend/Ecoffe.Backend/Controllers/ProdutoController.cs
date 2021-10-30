@@ -20,18 +20,17 @@ namespace Ecoffe.Backend.Controllers
         }
 
         //GET: api/produto
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<IEnumerable<Produto>> Get()
         {
             var listaProdutos = await _context.Produto.ToListAsync();
 
             return listaProdutos;
-
         }
 
-        //GET: api/produto/id
-        [HttpGet]
-        public async Task<Produto> Get(int id)
+        //GET: api/produto/{id}
+        [HttpGet("{id}")]
+        public async Task<Produto> GetById([FromRoute] int id)
         {
             var produto = await _context.Produto.FindAsync(id);
 
@@ -41,9 +40,9 @@ namespace Ecoffe.Backend.Controllers
             return produto;
         }
 
-        //POST: api/produto/Produto
+        //POST: api/produto/
         [HttpPost]
-        public async Task<IActionResult> Create(Produto produto)
+        public async Task<IActionResult> Create([FromBody] Produto produto)
         {
             _context.Add(produto);
             await _context.SaveChangesAsync();
@@ -51,9 +50,9 @@ namespace Ecoffe.Backend.Controllers
             return Ok(produto);
         }
 
-        //PUT: api/produto/Produto
+        //PUT: api/produto/
         [HttpPut]
-        public async Task<IActionResult> Update(Produto produto)
+        public async Task<IActionResult> Update([FromBody] Produto produto)
         {
             var produtoDb = await _context.Produto.FindAsync(produto.Id_Produto);
 

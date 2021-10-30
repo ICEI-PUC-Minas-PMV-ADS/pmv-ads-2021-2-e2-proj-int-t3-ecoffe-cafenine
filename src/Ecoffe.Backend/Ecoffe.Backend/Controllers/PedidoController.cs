@@ -28,9 +28,9 @@ namespace Ecoffe.Backend.Controllers
             return listaPedidos;
         }
 
-        //GET: api/pedido/id
-        [HttpGet]
-        public async Task<Pedido> Get(int id)
+        //GET: api/pedido/{id}
+        [HttpGet("{id}")]
+        public async Task<Pedido> GetById([FromRoute] int id)
         {
             var pedido = await _context.Pedido.FindAsync(id);
 
@@ -40,9 +40,9 @@ namespace Ecoffe.Backend.Controllers
             return pedido;
         }
 
-        //POST: api/pedido/Pedido
+        //POST: api/pedido/
         [HttpPost]
-        public async Task<IActionResult> Create(Pedido pedido)
+        public async Task<IActionResult> Create([FromBody] Pedido pedido)
         {
             _context.Add(pedido);
             await _context.SaveChangesAsync();
@@ -50,9 +50,9 @@ namespace Ecoffe.Backend.Controllers
             return Ok(pedido);
         }
 
-        //PUT: api/pedido/Pedido
+        //PUT: api/pedido/
         [HttpPut]
-        public async Task<IActionResult> Update(Pedido pedido)
+        public async Task<IActionResult> Update([FromBody] Pedido pedido)
         {
             var pedidoDb = await _context.Produto.FindAsync(pedido.Id_Pedido);
 

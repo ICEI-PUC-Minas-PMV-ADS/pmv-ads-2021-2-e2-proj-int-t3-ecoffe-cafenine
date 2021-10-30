@@ -11,7 +11,7 @@ namespace Ecoffe.Backend.Controllers
 {
     [ApiController]
 
-    //N estava achando a rota, foi necessário adcionar api/ para que encontrasse
+    //Não estava achando a rota, foi necessário adcionar api/ para que encontrasse
     [Route("api/[controller]")]
 
     public class EtapaVendaController : ControllerBase

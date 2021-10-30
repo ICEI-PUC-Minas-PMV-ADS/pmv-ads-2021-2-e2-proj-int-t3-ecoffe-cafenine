@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Ecoffe.Backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CartaoController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

@@ -11,7 +11,7 @@
 
 
 ## sqlite
-*.sqlite
+.vs/*.sqlite
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)

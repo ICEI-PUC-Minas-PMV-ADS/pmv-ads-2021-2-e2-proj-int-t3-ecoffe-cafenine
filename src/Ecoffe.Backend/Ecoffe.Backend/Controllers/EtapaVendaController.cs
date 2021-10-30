@@ -39,7 +39,7 @@ namespace Ecoffe.Backend.Controllers
             var venda = await _context.EtapaVenda.FindAsync(id);
 
             if (venda == null)
-                throw new Exception("Cartão não encontrado.");
+                throw new Exception("Etapa de Venda não encontrada");
 
             return venda;
         }
@@ -61,7 +61,7 @@ namespace Ecoffe.Backend.Controllers
             var vendaDb = await _context.Produto.FindAsync(etapaVenda.Id_Etapa_Venda);
 
             if (vendaDb == null)
-                throw new Exception("Cartão não encontrado.");
+                throw new Exception("Id da etapa venda não foi encontrado");
 
             _context.Update(etapaVenda);
             await _context.SaveChangesAsync();

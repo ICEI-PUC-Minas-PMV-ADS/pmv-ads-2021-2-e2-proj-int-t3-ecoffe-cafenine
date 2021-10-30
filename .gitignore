@@ -10,8 +10,8 @@
 *.sln.docstates
 
 
-## Sqlite
-*.sqlite
+## sqlite
+.sqlite
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)

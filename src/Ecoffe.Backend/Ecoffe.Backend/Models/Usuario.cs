@@ -17,10 +17,10 @@ namespace Ecoffe.Backend.Models
         [Required(ErrorMessage = "Este campo é obrigatorio")]
         public string tx_Email { get; set; }
         public int Id_Endereco { get; set; }
-        public int Tx_Cnpj { get; set; }    
+        public Endereco endereco { get; set; }
         public int Id_Cartao { get; set; }
         public Cartao Cartao { get; set; }
-        public int Nr_telefone { get; set; }
+        public string Nr_telefone { get; set; }
         public bool In_Ativo { get; set; }
         public bool In_Admin { get; set; }
     }

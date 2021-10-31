@@ -8,8 +8,7 @@ body {
 }
 
 .red{
-    color: rgb(227,94,107
-    )
+    color: rgb(227,94,107);
 }
 
 .v-middle{
@@ -18,8 +17,4 @@ body {
 
 .black{
     color: black;
-}
-
-.header{
-    color: red;
 }

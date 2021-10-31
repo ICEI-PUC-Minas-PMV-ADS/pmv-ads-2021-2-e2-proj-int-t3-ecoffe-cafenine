@@ -1,7 +1,7 @@
 .header{
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: #f7f6f7;
     position: relative;
     height: 110px;
 }
@@ -10,37 +10,22 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    left: 39.2%;
+    top: 30px;
+    margin-right: 35px;
 }
 
-.header .login {
-    max-height: 50px;
-}
-.header .Titulo {
+
+.header .titulo {
     padding-left: 20px;
     margin-right: 15px;
 }
-.header .Titulo i {
-    padding-right: 15px;
-    
-}
-.mat-list-item{
-    margin-right: 35px;
-}
-.nav-list{ 
-    left: 39.2%;
-    top: 30px
-    
-}
 
-.Titulo{
+
+.titulo{
     position: absolute;
     width: 115px;
     height: 28px;
     left: 47%;
     top: 15px;
-}
-
-.login{
-    position: relative;
-    left: 40%;
 }

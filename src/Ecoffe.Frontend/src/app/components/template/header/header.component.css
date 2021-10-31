@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #f7f6f7;
+    height: 110px;
+}
+
+.header a {
+    text-decoration: none;
+    margin-top: 100px;
+    margin-right: 35px;
+}
+
+.titulo{
+    position: absolute;
+    margin-bottom: 60px;
+}

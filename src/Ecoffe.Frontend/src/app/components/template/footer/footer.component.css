@@ -1,0 +1,16 @@
+.footer{
+    background-color: #f7f6f7;
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer span .nomes{
+    font-weight: 300;
+}
+
+.Desenvolvido{
+    color: black;
+}

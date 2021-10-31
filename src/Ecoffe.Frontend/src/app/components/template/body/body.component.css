@@ -1,0 +1,128 @@
+.text-muted{
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #b92b27, #1565c0);
+  
+}
+
+.card {
+  margin-bottom: 20px;
+  border: none
+}
+
+.box {
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 30%;
+  left: 39.2%;
+  bottom: 15%;
+  background: #c7b3b3;
+  ;
+  text-align: center;
+  transition: 0.25s;
+  margin-top: 100px
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ffffff;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 300px;
+  border-color: #606261
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #606261;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+  background: #696963
+}
+
+.forgot {
+  text-decoration: underline
+}
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px
+}
+
+
+a.socialIcon:hover,
+.socialHoverClass {
+  color: #696963
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 50px;
+  text-align: center
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+  transform: rotate(360deg);
+  transition: all 0.2s
+}
+
+.social-circle i {
+  color: #fff;
+  transition: all 0.8s;
+  transition: all 0.8s
+}

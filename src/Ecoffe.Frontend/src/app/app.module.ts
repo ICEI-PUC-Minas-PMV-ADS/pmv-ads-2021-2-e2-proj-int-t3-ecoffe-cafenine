@@ -11,6 +11,7 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { BodyComponent } from './components/template/body/body.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { BodyComponent } from './components/template/body/body.component';
     HeaderComponent,
     FooterComponent,
     BodyComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

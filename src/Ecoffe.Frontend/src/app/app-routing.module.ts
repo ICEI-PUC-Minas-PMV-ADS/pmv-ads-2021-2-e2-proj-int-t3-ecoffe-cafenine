@@ -1,12 +1,11 @@
-import { FooterComponent } from './components/template/footer/footer.component';
+import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  {path: "", component: FooterComponent},
-  {path: "products", component: HeaderComponent}
+  {path: "", component: HomeComponent},
+  {path: "products", component: HomeComponent}
 ];
 
 @NgModule({

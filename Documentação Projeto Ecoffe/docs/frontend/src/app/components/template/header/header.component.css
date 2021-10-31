@@ -1,6 +1,9 @@
 .header{
     display: flex;
     align-items: center;
+    background-color: white;
+    position: relative;
+    height: 110px;
 }
 
 .header a {
@@ -9,12 +12,35 @@
     text-decoration: none;
 }
 
-.header .logo {
-    max-height: 55px;
+.header .login {
+    max-height: 50px;
 }
 .header .Titulo {
     padding-left: 20px;
+    margin-right: 15px;
 }
 .header .Titulo i {
     padding-right: 15px;
+    
+}
+.mat-list-item{
+    margin-right: 35px;
+}
+.nav-list{ 
+    left: 39.2%;
+    top: 30px
+    
+}
+
+.Titulo{
+    position: absolute;
+    width: 115px;
+    height: 28px;
+    left: 47%;
+    top: 15px;
+}
+
+.login{
+    position: relative;
+    left: 40%;
 }

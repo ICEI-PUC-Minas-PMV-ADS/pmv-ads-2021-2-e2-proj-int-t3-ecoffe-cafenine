@@ -1,4 +1,5 @@
 .footer{
+    background-color: white;
     position: fixed;
     bottom: 0;
 
@@ -8,4 +9,8 @@
 
 .footer span .nomes{
     font-weight: 300;
+}
+
+.Desenvolvido{
+    color: black;
 }

@@ -13,6 +13,7 @@ import { BodyComponent } from './components/template/body/body.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { AppComponent } from './app.component';
+import { LoginRegisterComponent } from './views/login-register/login-register.component';
 
 
 
@@ -23,6 +24,7 @@ import { AppComponent } from './app.component';
     FooterComponent,
     BodyComponent,
     HomeComponent,
+    LoginRegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,13 @@ export interface Usuario {
     senha: string;
     email: string;
     endereco: Endereco;
-    cartao: Cartao;
     telefone: string;
     ativo: boolean;
     admin: boolean;
+}
+
+export interface LoginUsuario {
+    emailCpf: string;
+    senha: string;
 }
 

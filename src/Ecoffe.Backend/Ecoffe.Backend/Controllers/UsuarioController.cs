@@ -55,8 +55,8 @@ namespace ClientApp.Controllers
         public async Task<IActionResult> Login([FromBody] LoginUsuario loginUsuario)
         {
             var usuario = await _context.Usuario.FirstOrDefaultAsync(p =>
-                                                (p.tx_Email == loginUsuario.EmailCpf || p.Tx_Cpf == loginUsuario.EmailCpf) &&
-                                                 p.Tx_Senha == loginUsuario.Senha);
+                                                (p.Email == loginUsuario.EmailCpf || p.CPF == loginUsuario.EmailCpf) &&
+                                                 p.Senha == loginUsuario.Senha);
 
             if (usuario == null)
                 return StatusCode(404, "Usuário não encontrado.");

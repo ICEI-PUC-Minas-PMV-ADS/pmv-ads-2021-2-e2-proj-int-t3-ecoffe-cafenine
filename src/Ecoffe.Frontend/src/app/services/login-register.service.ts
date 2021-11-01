@@ -12,6 +12,10 @@ export class LoginRegisterService {
 
   baseUrl = "https://localhost:44362/api/Usuario";
 
+  getUserById(id: string): Observable<Usuario>{
+    return this.http.get<Usuario>(this.baseUrl + "/" + id);
+  }
+
   createUser(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.baseUrl, usuario);
   }
@@ -23,6 +27,5 @@ export class LoginRegisterService {
   register(newUser: Usuario) : Observable<Usuario>{
     return this.http.post<Usuario>(this.baseUrl, newUser);
   }
-
 
 }

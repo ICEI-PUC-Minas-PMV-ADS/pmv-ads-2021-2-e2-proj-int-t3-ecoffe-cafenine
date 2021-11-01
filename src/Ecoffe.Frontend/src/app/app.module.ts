@@ -9,13 +9,6 @@ import { FormsModule } from '@angular/forms';
 //Pre-maded Components
 import { AppComponent } from './app.component';
 
-//Created Components
-import { FooterComponent } from './components/template/footer/footer.component';
-import { BodyComponent } from './components/template/body/body.component';
-import { HomeComponent } from './views/home/home.component';
-import { HeaderComponent } from './components/template/header/header.component';
-import { LoginRegisterComponent } from './views/login-register/login-register.component';
-
 //Material
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'
@@ -23,7 +16,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card'
-import { MatButtonModule } from '@angular/material/button' 
+import { MatButtonModule } from '@angular/material/button';
+
+//Created Components
+import { FooterComponent } from './components/template/footer/footer.component';
+import { BodyComponent } from './components/template/body/body.component';
+import { HomeComponent } from './views/home/home.component';
+import { HeaderComponent } from './components/template/header/header.component';
+import { LoginRegisterComponent } from './views/login-register/login-register.component';
+import { AccountComponent } from './views/account/account.component' 
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { MatButtonModule } from '@angular/material/button'
     FooterComponent,
     BodyComponent,
     HomeComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

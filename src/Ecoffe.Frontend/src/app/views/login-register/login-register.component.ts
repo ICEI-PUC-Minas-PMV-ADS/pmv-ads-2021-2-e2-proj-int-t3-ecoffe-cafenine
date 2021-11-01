@@ -33,7 +33,7 @@ export class LoginRegisterComponent implements OnInit {
 
   login() : void {
     this.loginRegisterService.login(this.loginUser).subscribe(usuario => {
-        console.log(usuario);
+        localStorage.setItem("usuarioId",usuario.id.toString());
         localStorage.setItem("usuarioCpf",usuario.cpf);
         localStorage.setItem("usuarioNome",usuario.nome);
         localStorage.setItem("usuarioAdmin",usuario.admin ? "true" : "false");

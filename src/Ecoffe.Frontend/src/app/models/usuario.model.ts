@@ -7,10 +7,14 @@ export interface Usuario {
     cpf: string;
     senha: string;
     email: string;
-    endereco: Endereco;
-    cartao: Cartao;
+    enderecoId?: number;
     telefone: string;
     ativo: boolean;
     admin: boolean;
+}
+
+export interface LoginUsuario {
+    emailCpf: string;
+    senha: string;
 }
 

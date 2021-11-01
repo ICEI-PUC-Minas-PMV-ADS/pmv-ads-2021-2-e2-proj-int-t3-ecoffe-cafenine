@@ -1,13 +1,16 @@
-﻿using Ecoffe.Backend.Infrastructure;
+﻿using Ecoffe.Backend.Helpers;
+using Ecoffe.Backend.Infrastructure;
 using Ecoffe.Backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ClientApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UsuarioController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -33,8 +36,30 @@ namespace ClientApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Usuario usuario)
         {
-            _context.Add(usuario);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            
+
+            return Ok(usuario);
+        }
+
+        //POST: api/usuario/login
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginUsuario loginUsuario)
+        {
+            var usuario = await _context.Usuario.FirstOrDefaultAsync(p =>
+                                                (p.Email == loginUsuario.EmailCpf || p.CPF == loginUsuario.EmailCpf) &&
+                                                 p.Senha == loginUsuario.Senha);
+
+            if (usuario == null)
+                return StatusCode(404, "Usuário não encontrado.");
 
             return Ok(usuario);
         }

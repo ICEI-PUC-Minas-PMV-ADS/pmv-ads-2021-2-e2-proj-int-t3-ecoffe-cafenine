@@ -1,12 +1,12 @@
+import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { HomeComponent } from './views/home/home.component';
-import { HeaderComponent } from './components/template/header/header.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
-  {path: "products", component: HomeComponent}
-];
+  {path: "login", component: LoginRegisterComponent}
+ ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

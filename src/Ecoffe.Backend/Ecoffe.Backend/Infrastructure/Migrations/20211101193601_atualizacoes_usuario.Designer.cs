@@ -4,14 +4,16 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211101193601_atualizacoes_usuario")]
+    partial class atualizacoes_usuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +182,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<decimal>("PesoTotal")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("UsuarioId")
+                    b.Property<int?>("UsuarioId_Usuario")
                         .HasColumnType("int");
 
                     b.HasKey("Id_Pedido");
@@ -191,7 +193,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
                     b.HasIndex("NotaFiscalId_NotaFiscal");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("UsuarioId_Usuario");
 
                     b.ToTable("Pedido");
                 });
@@ -249,38 +251,41 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Usuario", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Id_Usuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Admin")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("CPF")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("EnderecoId")
+                    b.Property<int?>("Id_Endereco")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nome")
+                    b.Property<bool>("In_Admin")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("In_Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nm_Usuario")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Nr_telefone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telefone")
+                    b.Property<string>("Tx_Cpf")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Tx_Senha")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("EnderecoId");
+                    b.Property<int?>("enderecoId_Endereco")
+                        .HasColumnType("int");
+
+                    b.Property<string>("tx_Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id_Usuario");
+
+                    b.HasIndex("enderecoId_Endereco");
 
                     b.ToTable("Usuario");
                 });
@@ -301,7 +306,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
                     b.HasOne("Ecoffe.Backend.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId_Usuario");
 
                     b.Navigation("Cupom");
 
@@ -321,11 +326,11 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Usuario", b =>
                 {
-                    b.HasOne("Ecoffe.Backend.Models.Endereco", "Endereco")
+                    b.HasOne("Ecoffe.Backend.Models.Endereco", "endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId");
+                        .HasForeignKey("enderecoId_Endereco");
 
-                    b.Navigation("Endereco");
+                    b.Navigation("endereco");
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Pedido", b =>

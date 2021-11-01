@@ -21,6 +21,8 @@ namespace Ecoffe.Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -29,13 +31,13 @@ namespace Ecoffe.Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ecoffe.Backend", Version = "v1" });
             });
-
-            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -54,8 +56,7 @@ namespace Ecoffe.Backend
                 endpoints.MapControllers();
             });
 
-            app.UseCors(options =>
-            options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
         }
     }
 }

@@ -11,13 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class LoginRegisterComponent implements OnInit {
 
   newUser: Usuario = {
+    id: 0,
     admin: false,
     ativo: true,
     cpf: "",
     email: "",
-    endereco: {
-
-    },
     nome: "",
     senha: "",
     telefone: "",
@@ -34,21 +32,15 @@ export class LoginRegisterComponent implements OnInit {
   }
 
   login() : void {
-
-    console.log("logando");
-
     this.loginRegisterService.login(this.loginUser).subscribe(() => {
       
     })
   }
 
-  
-  teste(){
-    console.log("Inicio do Método");
-    this.http.get<any>('https://localhost:44382/produto/').subscribe(data => {
-      console.log(data);
+  register() : void {
+    this.loginRegisterService.register(this.newUser).subscribe(() => {
+
     })
-    
   }
 
 }

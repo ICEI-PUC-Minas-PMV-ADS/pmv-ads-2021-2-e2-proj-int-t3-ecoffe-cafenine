@@ -7,7 +7,7 @@ export interface Usuario {
     cpf: string;
     senha: string;
     email: string;
-    endereco: Endereco;
+    enderecoId?: number;
     telefone: string;
     ativo: boolean;
     admin: boolean;

@@ -17,9 +17,7 @@ export class LoginRegisterService {
   }
 
   login(loginUser: LoginUsuario) : Observable<Usuario> {
-    let request = this.http.post<Usuario>(this.baseUrl + "/Login", loginUser);
-
-    return request;
+    return this.http.post<Usuario>(this.baseUrl + "/Login", loginUser);
   }
 
   register(newUser: Usuario) : Observable<Usuario>{

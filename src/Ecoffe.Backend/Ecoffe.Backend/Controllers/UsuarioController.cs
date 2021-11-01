@@ -36,8 +36,16 @@ namespace ClientApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Usuario usuario)
         {
-            _context.Add(usuario);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            
 
             return Ok(usuario);
         }

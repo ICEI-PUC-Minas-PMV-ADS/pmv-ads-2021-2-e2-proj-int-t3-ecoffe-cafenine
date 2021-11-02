@@ -1,0 +1,31 @@
+<app-header></app-header>
+<app-footer></app-footer>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>Web Hardware</title>
+</head>
+<body>
+    <div class="linha"></div>
+    <div class="contentSobre">
+        <div class="white, texto-intro">
+            <h1 class="white">Olá, caro Usuário.</h1>
+            <p class="texto-intro">Este projeto foi desenvolvido como uma atividade avaliativa para a conclusão do 2º Semestre do curso de Análise e Desenvolvimento de Sistemas, pela PUC-Minas. Dentre as várias especificações que podem ser encontradas na <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine" target="_blank">documentação do site</a>, A arqueitetura desta aplicação foi desenvolvida no frontend utilizando Angular e backend com Asp.NET, comunicando com o banco de dados na nuvem do Microsoft Azure usando Entity Framework.</p>
+        </div>
+        <div class="areaContato">
+            <form>
+                <h1 class="white, texto-final">Entre em contato</h1>
+                <input id="nomeEmail" type="text" placeholder="Nome" required>
+                <input id="telefoneEmail" placeholder="Telefone" required maxlength="11">
+                <input id="emailEmail" type="email" placeholder="Email" required>
+                <textarea id="corpoEmail" placeholder="Deixe sua opinião"></textarea>
+                <input type="submit" onclick="EnviarEmail();" value="Enviar">  
+              </form>
+        </div>
+
+    </div>
+</body>
+</html>

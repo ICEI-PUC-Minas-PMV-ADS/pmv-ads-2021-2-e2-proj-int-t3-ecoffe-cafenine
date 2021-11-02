@@ -3,11 +3,13 @@ import { LoginRegisterComponent } from './views/login-register/login-register.co
 import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './views/about/about.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: "login", component: LoginRegisterComponent},
-  {path: "account", component: AccountComponent}
+  {path: "account", component: AccountComponent},
+  {path: "about", component: AboutComponent},
  ];
 
 @NgModule({

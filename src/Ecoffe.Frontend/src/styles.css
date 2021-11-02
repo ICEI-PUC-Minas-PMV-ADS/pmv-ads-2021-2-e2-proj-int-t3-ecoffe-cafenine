@@ -7,8 +7,11 @@ body {
     background-color: #f7f6f7;
 }
 
+.white{
+    color: rgb(255, 255, 255);
+}
 .red{
-    color: rgb(227,94,107);
+    color: red;
 }
 
 .v-middle{

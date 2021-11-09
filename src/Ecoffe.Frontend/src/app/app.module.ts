@@ -24,7 +24,8 @@ import { BodyComponent } from './components/template/body/body.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
-import { AccountComponent } from './views/account/account.component' 
+import { AccountComponent } from './views/account/account.component';
+import { ProductsComponent } from './views/products/products.component' 
 
 
 
@@ -36,7 +37,8 @@ import { AccountComponent } from './views/account/account.component'
     BodyComponent,
     HomeComponent,
     LoginRegisterComponent,
-    AccountComponent
+    AccountComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

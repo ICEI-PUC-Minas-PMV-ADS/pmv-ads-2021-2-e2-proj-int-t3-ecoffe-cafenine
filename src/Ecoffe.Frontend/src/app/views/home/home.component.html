@@ -1,31 +1,44 @@
 <app-header></app-header>
 <!-- Card 1 -->
 <mat-card class="card1">
-    <div class="cont">
-        <mat-card-title class="title">Produto Destaque</mat-card-title>
-        <mat-card-subtitle class="title">Descrição do produto em destaque</mat-card-subtitle>
-        <mat-card-content class="title">R$Preço</mat-card-content>
-        <img src="#" alt="Img do produto" mat-card-image> <br>
-        <button mat-fab class="title" id="button">
-            Comprar
-        </button>
-    </div>
+    <section class="Container1">
+        <div style="margin-left: 280px;">
+            <h4 class="verm">Titulo Produto</h4>
+            <p id="quebraLinha">Descrição do Produto blabalbalbalblablabllab Lorem ipsum dolor sit amet</p>
+            <p class="verm">R$49,90</p>
+            <button mat-flat-button class="Button">Buy Now</button>
+        </div>
+        <div>
+            <img src="../../../assets/cafe1.jpg" alt="Img do Produto mais vendido" class="img">
+        </div>
+        <div>
+            <img src="../../../assets/cafe1.jpg" alt="img do Segundo Produto mais vendido" class="img2">
+            <img src="../../../assets/cafe1.jpg" alt="img do Terceiro Produto mais vendido" class="img2">
+        </div>
+    </section>
+        
 </mat-card>
     <br>
 <!-- Card 2 -->
-<mat-card class="card2">
-    <div id="p1">
-        <img src="#" alt="img Produto mais avaliado" mat-card-image>
-        <mat-card-subtitle style="color: white;">Produto mais avaliado 1</mat-card-subtitle>
-    </div>
-    <div id="p2">
-        <img src="#" alt="img Produto mais avaliado" mat-card-image>
-        <mat-card-subtitle style="color: white;">Produto mais avaliado 2</mat-card-subtitle>
-    </div>
-    <div id="p3">
-        <img src="#" alt="img Produto mais avaliado" mat-card-image>
-        <mat-card-subtitle style="color: white;">Produto mais avaliado 3</mat-card-subtitle>
-    </div>
+<mat-card>
+    <section class="Container">
+        <div>
+            <img src="../../../assets/cafe1.jpg" alt="img produto mas votado" class="imagem">
+            <p>Titulo produto</p>
+        </div>
+        <div>
+            <img src="../../../assets/cafe1.jpg" alt="img produto mas votado" class="imagem">
+            <p>Titulo produto</p>
+        </div>
+        <div>
+            <img src="../../../assets/cafe1.jpg" alt="img produto mas votado" class="imagem">
+            <p>Titulo produto</p>
+        </div>
+        <div>
+            <img src="../../../assets/cafe1.jpg" alt="img produto mas votado" class="imagem">
+            <p>Titulo produto</p>
+        </div>
+    </section>
 </mat-card>
-
+<br><br>
 <app-footer></app-footer>

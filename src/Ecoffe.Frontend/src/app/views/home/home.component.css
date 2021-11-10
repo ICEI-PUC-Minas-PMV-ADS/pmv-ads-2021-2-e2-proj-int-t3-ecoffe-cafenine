@@ -1,32 +1,43 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0;
+/* Primeiro Card */
+.card1{
+    height: 60%;
+    text-align: center;
+    background-color: #ebe8eb;
 }
-
-#menu-esq{
-    width: 20%;
-}
-li{
-    list-style-type:none;
-}
-h4{
-    color:rgb(117, 96, 66);
-}
-h3{
-    color:rgb(117, 96, 66);
-
-}
-#produtos{
+.cont{
     position: relative;
-    bottom: 100%;
-    width: 50%;
-    left: 40%;
+    top: 30%;
 }
-#pproduto1{
+.title{
+    position: relative;
+    right: 20%;
+}
+#button{
+    background-color: rgb(50, 47, 51);
+}
+
+
+/* Segundo Card */
+.card2{
+    height: 30%;
+    width: 56%;
+    margin: 2px;
+    background-color: rgb(50, 47, 51);
+    position: relative;
+    left: 22%;
+}
+#p1{
+    position:absolute;
+    bottom: 60%;
+    left: 10%;
+}
+#p2{
     position: absolute;
-    bottom: 100%;
+    left: 36%;
+    bottom: 60%;
 }
-img{
-    width: 150px;
-    padding: 10px;
+#p3{
+    position: absolute;
+    left: 64%;
+    bottom: 60%;
 }

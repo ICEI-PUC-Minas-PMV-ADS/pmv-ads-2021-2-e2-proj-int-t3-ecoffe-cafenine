@@ -39,7 +39,7 @@ import { AboutComponent } from './views/about/about.component'
     HomeComponent,
     LoginRegisterComponent,
     AccountComponent,
-    ProductsComponent
+    ProductsComponent,
     AboutComponent
   ],
   imports: [

@@ -1,6 +1,50 @@
 <app-header></app-header>
 
-
+<mat-card>
+    <mat-card-title>Informações Pessoais</mat-card-title>
+    <form>
+        <h2>Usuário</h2>
+            <mat-form-field disabled>
+                <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="usuario_Nome">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="CPF" [(ngModel)]="usuario.cpf" name="usuario_CPF">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Email" [(ngModel)]="usuario.email" name="usuario_Email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Telefone" [(ngModel)]="usuario.telefone" name="usuario_Telefone">
+            </mat-form-field>
+        <h2>Endereço</h2>
+            <mat-form-field>
+                <input matInput placeholder="CEP" [(ngModel)]="endereco.cep" name="endereco_Cep">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Rua" [(ngModel)]="endereco.rua" name="endereco_Rua">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Número" [(ngModel)]="endereco.numero" name="endereco_Numero">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Complemento" [(ngModel)]="endereco.complemento" name="endereco_Complemento">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Bairro" [(ngModel)]="endereco.Bairro" name="endereco_Bairro">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Cidade" [(ngModel)]="endereco.cidade" name="endereco_Cidade">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="UF" [(ngModel)]="endereco.uf" name="endereco_Uf">
+            </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="update()" color="primary">
+        Atualizar
+    </button>
+</mat-card>
 
 
 <app-footer></app-footer>

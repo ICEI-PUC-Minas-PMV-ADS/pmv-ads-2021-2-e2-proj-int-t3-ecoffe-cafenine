@@ -6,3 +6,11 @@
     margin-right: 1.5rem;
 }
 
+.miniNav{
+    text-align: center;
+}
+
+.miniNav button{
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}

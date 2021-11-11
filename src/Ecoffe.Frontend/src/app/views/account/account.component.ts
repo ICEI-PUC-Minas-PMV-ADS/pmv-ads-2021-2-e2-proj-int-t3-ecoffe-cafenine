@@ -14,6 +14,7 @@ export class AccountComponent implements OnInit {
 
   usuario: any = {};
   endereco: any = {};
+  areaType: number = 1;
 
   constructor(private loginRegisterService: LoginRegisterService, private accountService: AccountService, private router: Router) { }
 
@@ -46,6 +47,12 @@ export class AccountComponent implements OnInit {
     this.accountService.update(this.usuario).subscribe(() => {
 
     })
+  }
+
+  changeArea(type: number){
+    console.log(type);
+
+    this.areaType = type;
   }
 
 }

@@ -1,10 +1,16 @@
 <app-header></app-header>
 
-<mat-card>
+<mat-card class="miniNav">
+    <button mat-flat-button (click)="changeArea(1)" color="basic">Informações Pessoais</button>
+    <button mat-flat-button (click)="changeArea(2)" color="basic">Histórico de Compras</button>
+    <button mat-flat-button (click)="changeArea(3)" color="basic">Formas de Pagamento</button>
+</mat-card>
+
+<mat-card *ngIf="areaType == 3">
     <mat-card-title>Informações Pessoais</mat-card-title>
     <form>
         <h2>Usuário</h2>
-            <mat-form-field disabled>
+            <mat-form-field>
                 <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="usuario_Nome">
             </mat-form-field>
             <mat-form-field>
@@ -46,5 +52,28 @@
     </button>
 </mat-card>
 
+<mat-card *ngIf="areaType == 1">
+    <mat-card-title>Cartões</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Número do cartão" [(ngModel)]="usuario.nome" name="usuario_Nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Nome completo" [(ngModel)]="usuario.nome" name="usuario_Nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Data de Vencimento" [(ngModel)]="usuario.nome" name="usuario_Nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Código de segurança" [(ngModel)]="usuario.nome" name="usuario_Nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="CPF do titular" [(ngModel)]="usuario.nome" name="usuario_Nome">
+        </mat-form-field>
+    </form>
+</mat-card>
 
 <app-footer></app-footer>

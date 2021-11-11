@@ -22,14 +22,27 @@ namespace ClientApp.Controllers
 
         //GET: api/usuario/{id}
         [HttpGet("{id}")]
-        public async Task<Usuario> GetById([FromRoute] int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var usuario = await _context.Usuario.FindAsync(id);
+            Usuario usuario;
+
+            try
+            {
+                usuario = await _context.Usuario
+                                    .Where(p => p.Id == id)                    
+                                    .Include(p => p.Endereco)
+                                    .FirstOrDefaultAsync();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
 
             if (usuario == null)
-                throw new Exception("Usuário não encontrado.");
+                return StatusCode(404, "Usuário não encontrado");
 
-            return usuario;
+            return Ok(usuario);
+
         }
 
         //POST: api/usuario/
@@ -46,6 +59,24 @@ namespace ClientApp.Controllers
                 return StatusCode(500, ex.Message);
             }
             
+
+            return Ok(usuario);
+        }
+
+        //PUT: api/usuario/
+        [HttpPut()]
+        public async Task<IActionResult> Update([FromBody] Usuario usuario)
+        {
+            try
+            {
+                _context.Update(usuario);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+
 
             return Ok(usuario);
         }

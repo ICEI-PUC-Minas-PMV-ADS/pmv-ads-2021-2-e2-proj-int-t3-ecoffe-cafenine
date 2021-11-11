@@ -1,32 +1,71 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0;
+/* Primeiro Card */
+
+.Container1{
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: rgb(241, 232, 232);
+    border-radius: 10px;
 }
 
-#menu-esq{
+.Container1 div{
+    margin: 50px;
+}
+
+.Button{
+    background-color: rgb(46, 46, 46);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.Button:hover{
+    background-color: rgb(85, 83, 83);
+    transition: 0.4s;
+}
+
+.img{
+    width: 80%;
+    border-radius: 80px;
+}
+
+
+.img2{
+    width: 15%;
+    border-radius: 80px;
+    display: block;
+    padding: 5px;
+}
+
+.verm{
+    color: rgba(190, 54, 54, 0.836);
+}
+
+#quebraLinha{
+    width: 40px;
+}
+/* Segundo Card */
+
+.Container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: rgb(46, 46, 46);
+    border-radius: 10px;
+}
+
+.Container div{
+    flex: 1 1 300px;
+    color: #fff;
+}
+
+.imagem{
     width: 20%;
-}
-li{
-    list-style-type:none;
-}
-h4{
-    color:rgb(117, 96, 66);
-}
-h3{
-    color:rgb(117, 96, 66);
 
-}
-#produtos{
-    position: relative;
-    bottom: 100%;
-    width: 50%;
-    left: 40%;
-}
-#pproduto1{
-    position: absolute;
-    bottom: 100%;
-}
-img{
-    width: 150px;
-    padding: 10px;
+    border-radius: 10px;
 }

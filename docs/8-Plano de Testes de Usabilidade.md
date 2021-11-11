@@ -13,26 +13,20 @@ Planejamento de realização de testes com usuários definindo as operações qu
 |**Passos**|1 - Entrar na plataforma.<br/>2 - Clicar em Log-In.<br/>3 - Registrar-se.|
 |**Critérios de Êxito**|Registrar usuario e armazenar suas informações.|
 
-|Caso de Teste | CT-03 - Realizar Compras.|
-|:--|:--|
-|**Objetivo do teste**|O site disponibilizará um catálogo de produtos disponiveis .|
-|**Passos**|1 - Clicar no botão "Comprar" ao lado do produto selecionado.<br/> 2 - Definir modo de pagamento.|
-|**Critérios de Êxito**| Nota Fiscal emitida e produto enviado. | 
-
-|Caso de Teste | CT-04 - Links direcionaveis|
+|Caso de Teste | CT-03 - Links direcionaveis|
 |:--|:--|
 |**Objetivo do teste**|Verificar o redirencionamento dos links disponiveis no site.|
 |**Passos**|1 - Acessar o site.<br/>2 - Clicar sobre o contéudo disponivel.</br> 3 - Ser redirecionado para uma página.
 |**Critérios de Êxito**|Ser redirecionado automaticamente ao clicar em um contéudo incluso.|
 
-|Caso de Teste | CT-05 - Fazer o download da Nota Fiscal|
+|Caso de Teste | CT-04 - Fazer o download da Nota Fiscal|
 |:--|:--|
 |**Objetivo do teste**|O usuário deverá fazer o download da Nota Fiscal.|
-|**Passos**|1 - Realizar uma compra.<br/>2 Fazer o download do PDF-.<br/>3 - Abrir o contéudo e verificar.|
-|**Critérios de Êxito**|Exibir informações adequas a compra.|
+|**Passos**|1 - Realizar uma compra.<br/>2 - Fazer o download do PDF-.<br/>3 - Abrir o contéudo e verificar.|
+|**Critérios de Êxito**|Exibir informações adequadas da compra.|
 
-|Caso de Teste | CT-06 - Contatar os desensenvolvedores|
+|Caso de Teste | CT-05 - Contatar os desensenvolvedores|
 |:--|:--|
-|**Objetivo do teste**|O usuário deverá clicar nas redes sociais dos desenvolvedores para contacta-los.|
-|**Passos**|1 - Acessar o site.<br/>2 - Sobre.<br/>3 - No sobre, clicar em "LINKEDIN". 
-|**Critérios de Êxito**|Direciona-lo para a rede social do desenvolvedor.|
+|**Objetivo do teste**|O usuário deverá poder se comunicar com os desenvolvedores através de formulário de email ou de suas redes sociais profissionais.|
+|**Passos**|1 - Acessar o site.<br/>2 - Sobre.<br/>3 - Preencher e enviar formulário, ou entrar nos links de cada desenvolvedor. 
+|**Critérios de Êxito**|Direciona-lo para a rede social do desenvolvedor e enviar email corretamente.|

@@ -16,14 +16,14 @@ Está seção detalha o planejamentos do processo de realização dos Testes de 
 |**Passos**|1 - Acessar o navegador.<br/>2 - Informar o endereço do site.<br/>3 - Deverá aparecer a página inicial da aplicação.<br/>4 - Escolher e acessar um dos produtos acessados. <br/>5 - Clicar na opção para adcionar o carrinho. |
 |**Critérios de Êxito**| O usuário Cliente deverá acessar a página inicial Tendo que aparecer os Produtos já cadastrados de acordo com as regras de negocios, poderá entrar nos produtos desejados obtendo acesso as suas informações e adcionar os produtos no carrinho. |
 
-|Caso de Teste | CT-03 - Verificação da parte Carrinho |
+|Caso de Teste | CT-03 - Verificação da parte carrinho |
 |:--|:--|
-|**Requisitos Associados**|RF-007 - Deverá acessar o menu Carrinho <br/> RF008 - Poderá verificar os produtos adcionado no cadastro<br/> RF009 - Poderá alterar a quantidade ou remover os produtos do carrinho.<br/> RF010 - Irá para a opção de Compra.
-|**Objetivo do teste**|Verificar o funcionamento do Carrinho com os produtos escolhido e realizar as interações possíveis. |
+|**Requisitos Associados**|RF-007 - Deverá acessar o menu Carrinho <br/> RF-008 - Poderá verificar os produtos adcionado no cadastro<br/> RF-009 - Poderá alterar a quantidade ou remover os produtos do carrinho.<br/> RF-010 - Irá para a opção de Compra.
+|**Objetivo do teste**|Verificar o funcionamento do carrinho com os produtos escolhidos e realizar as interações possíveis. |
 |**Passos**| 1 - Acessar a aplicação<br/> 2 - Acessar o Menu Carrinho<br/> 3 - Verificar os produtos escolhidos<br/> 4 - Clicar na opção de adcionar, diminiur a quantidade ou remover os produtos de forma individual em cada produto ou na opção para todos os produtos do Carrinho. |
 |**Critérios de Êxito**| Seção de fácil funcionalidade, verificando os produtos esolhidos e alterando as suas quantidades antes da confirmação da compra. |
 
-|Caso de Teste | CT-04 - Realizar a confirmação de Compra |
+|Caso de Teste | CT-04 - Realizar a confirmação de compra |
 |:--|:--|
 |**Requisitos Associados**|RF-011 - A aplicação deverá realizar a Compra dos itens selecionados e confirmados na opção anterior do Carrinho.<br/> RF-012 Deverá confirmar a opção de Pagamento.<br/> RF-012 Deverá verificar o CEP e calcular o Frete.<br/> RF-013 Irá somar os valores e informar a confirmação com valores e forma de pagamento.<br/> RF-014 Irá realizar o pagamento e a compra.
 |**Objetivo do teste**|Verificar a forma de pagamento escolhida por cliente e calcular o Frete através do CEP, somando os valores dos produtos com o Frete e confirmar o pagamento, realizando-o após a confirmação do cliente.|

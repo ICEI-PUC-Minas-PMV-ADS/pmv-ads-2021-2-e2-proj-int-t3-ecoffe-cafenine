@@ -54,7 +54,7 @@ namespace Ecoffe.Backend.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Endereco endereco)
         {
-            var enderecoDb = await _context.Endereco.FindAsync(endereco.Id_Endereco);
+            var enderecoDb = await _context.Endereco.FindAsync(endereco.Id);
 
             if (enderecoDb == null)
                 throw new Exception("Endereço não encontrado.");

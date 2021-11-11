@@ -54,7 +54,7 @@ namespace Ecoffe.Backend.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Cartao cartao)
         {
-            var cartaoDb = await _context.Produto.FindAsync(cartao.Id_Catao);
+            var cartaoDb = await _context.Produto.FindAsync(cartao.Id);
 
             if (cartaoDb == null)
                 throw new Exception("Cartão não encontrado.");

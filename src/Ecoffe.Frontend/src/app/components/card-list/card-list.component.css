@@ -6,3 +6,15 @@
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
 }
+
+.principalCard{
+    background-color: #f9f5f1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #594d423f;
+    font-weight: 550;
+}
+
+.principalCard > .mat-expansion-panel-header{
+    font-weight: 550
+}

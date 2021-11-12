@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-title>Cartões</mat-card-title>
     <mat-accordion *ngFor="let card of cards">
-        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel hideToggle [ngClass]="{'principalCard': card.principal == true}">
           <mat-expansion-panel-header>
             <mat-panel-title>
             {{ card.bandeira }}

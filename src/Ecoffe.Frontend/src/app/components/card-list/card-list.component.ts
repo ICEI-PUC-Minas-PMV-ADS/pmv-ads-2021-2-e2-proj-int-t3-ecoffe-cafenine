@@ -23,9 +23,14 @@ export class CardListComponent implements OnInit {
       return;
     }
 
-    this.cardsService.getCardsByUserId(userId).subscribe(cards => {
-      this.cards = cards;
-      console.log(this.cards);
+    this.cardsService.getCardsByUserId(userId).subscribe(cards => {  
+      let sortedCards = cards.sort(function (a,b) {
+        if(a.principal && !b.principal) return -1;
+        if(!a.principal && b.principal) return 1;
+        return 0;
+      });
+
+      this.cards = sortedCards;
     });
 
   }

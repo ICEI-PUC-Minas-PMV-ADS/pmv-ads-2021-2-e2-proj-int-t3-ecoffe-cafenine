@@ -52,6 +52,33 @@ namespace Ecoffe.Backend.Controllers
             return cartoes;
         }
 
+        //GET: api/cartao/principal/{cartaoId}
+        [HttpGet("principal/{cartaoId}")]
+        public async Task<IActionResult> TurnCardPrincipal([FromRoute] int cartaoId)
+        {
+            var cartaoSelecionado = await _context.Cartao
+                .Where(p => p.Id == cartaoId)
+                .FirstOrDefaultAsync();
+
+            if (cartaoSelecionado == null)
+                return StatusCode(404, "Cartão não encontrado");
+
+            var todosCartoesSecundarios = await _context.Cartao
+                .Where(p => 
+                       p.UsuarioId == cartaoSelecionado.UsuarioId && 
+                       p.Id != cartaoSelecionado.Id)
+                .ToListAsync();
+
+            foreach (var cartaoSecundario in todosCartoesSecundarios)
+                cartaoSecundario.Principal = false;
+
+            cartaoSelecionado.Principal = true;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(cartaoSelecionado);
+        }
+
 
         //POST: api/cartao/
         [HttpPost]

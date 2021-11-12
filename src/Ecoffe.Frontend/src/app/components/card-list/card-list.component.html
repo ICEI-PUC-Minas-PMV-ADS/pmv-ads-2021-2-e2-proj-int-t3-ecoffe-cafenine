@@ -13,6 +13,9 @@
           </mat-expansion-panel-header>
           <p>Titular: {{ card.nomeTitular }}</p>
           <p>Validade: {{ card.vencimento | date:"MM/yy" }}</p>
+          <button mat-raised-button (click)="turnPrincipal(card.id)" color="primary" *ngIf="!card.principal">
+            Tornar principal
+        </button>
         </mat-expansion-panel>
       </mat-accordion>
       <p *ngIf="cards.length == 0">Não há nenhum cartão cadastrado.</p>

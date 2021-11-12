@@ -16,4 +16,8 @@ export class CardsService {
     return this.http.get<Cartao[]>(this.baseUrl + "/usuario/" + id);
   }
 
+  turnPrincipal(cardId: number): Observable<Cartao>{
+    return this.http.get<Cartao>(this.baseUrl + "/principal/" + cardId);
+  }
+
 }

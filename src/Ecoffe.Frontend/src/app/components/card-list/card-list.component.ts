@@ -15,6 +15,10 @@ export class CardListComponent implements OnInit {
   constructor(private cardsService: CardsService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadCards();
+  }
+
+  loadCards(){
     let userId: any;
     userId = localStorage.getItem("usuarioId");
 
@@ -32,6 +36,12 @@ export class CardListComponent implements OnInit {
 
       this.cards = sortedCards;
     });
-
   }
+
+  turnPrincipal(cardId: number){
+    this.cardsService.turnPrincipal(cardId).subscribe(card =>{
+      this.loadCards();
+    });
+  }
+
 }

@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Ecoffe.Backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CartaoController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -39,6 +40,18 @@ namespace Ecoffe.Backend.Controllers
 
             return cartao;
         }
+
+        //GET: api/cartao/usuario/{usuarioId}
+        [HttpGet("usuario/{usuarioId}")]
+        public async Task<IEnumerable<Cartao>> GetListByUserId([FromRoute] int usuarioId)
+        {
+            var cartoes = await _context.Cartao
+                                    .Where(p => p.UsuarioId == usuarioId)
+                                    .ToListAsync();
+
+            return cartoes;
+        }
+
 
         //POST: api/cartao/
         [HttpPost]

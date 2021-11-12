@@ -10,6 +10,7 @@ namespace Ecoffe.Backend.Models
     {
         [Key]
         public int Id { get; set; }
+        public int UsuarioId { get; set; }
         public string Numero { get; set; }
         public DateTime Vencimento { get; set; }
         public DateTime DataAdicao { get; set; }

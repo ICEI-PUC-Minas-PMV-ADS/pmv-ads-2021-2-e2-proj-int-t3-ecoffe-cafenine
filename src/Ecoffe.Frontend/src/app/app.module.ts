@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-//Pre-maded Components
+//Pre-made Components
 import { AppComponent } from './app.component';
 
 //Material
@@ -30,8 +30,8 @@ import { ProductsComponent } from './views/products/products.component'
 import { AboutComponent } from './views/about/about.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 
-
-
+//Utils
+import { HideCardNumberPipe } from './utils/mask';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { CardListComponent } from './components/card-list/card-list.component';
     AccountComponent,
     ProductsComponent,
     AboutComponent,
-    CardListComponent
+    CardListComponent,
+    HideCardNumberPipe
   ],
   imports: [
     BrowserModule,

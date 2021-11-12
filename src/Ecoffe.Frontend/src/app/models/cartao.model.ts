@@ -1,7 +1,7 @@
 export interface Cartao {
     id: number;
     numero: string;
-    dataVencimento: Date;
+    vencimento: Date;
     dataAdicao: Date;
     nomeTitular: string;
     cpfTitular: string;

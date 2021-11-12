@@ -8,11 +8,11 @@
             {{ card.tipoCartao }}
             </mat-panel-title>
             <mat-panel-description>
-                {{ card.numero }}
+                {{ card.numero | hideCardNumber}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>{{ card.nomeTitular }}</p>
-          <p>{{ card.dataVencimento }}</p>
+          <p>Titular: {{ card.nomeTitular }}</p>
+          <p>Validade: {{ card.vencimento | date:"MM/yy" }}</p>
         </mat-expansion-panel>
       </mat-accordion>
       <p *ngIf="cards.length == 0">Não há nenhum cartão cadastrado.</p>

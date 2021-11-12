@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { CardsService } from './../../services/cards.service';
 
 @Component({
   selector: 'app-card-list',
@@ -9,36 +11,21 @@ export class CardListComponent implements OnInit {
 
   cards: any = {};
 
-  constructor() { }
+  constructor(private cardsService: CardsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.cards = [
-        {
-          bandeira: 'VISA',
-          numero: '0000.0000.0000.0000',
-          nomeTitular: 'João Alberto Silva',
-          tipoCartao: 'DÉBITO',
-          dataVencimento: '09/2024'
-        },
-        {
-          bandeira: 'MASTERCARD',
-          numero: '1111.1111.1111.1111',
-          nomeTitular: 'Castro Damaceno Tadeu',
-          tipoCartao: 'CRÉDITO',
-          dataVencimento: '10/2025'
-        },
-        {
-          bandeira: 'MASTERCARD',
-          numero: '1111.1111.1111.1111',
-          nomeTitular: 'Castro Damaceno Tadeu',
-          tipoCartao: 'CRÉDITO',
-          dataVencimento: '10/2025'
-        }
-    ]
+    let userId: any;
+    userId = localStorage.getItem("usuarioId");
 
+    if(!userId || userId == ""){
+      this.router.navigate(["/login"]);  
+      return;
+    }
 
-
-
+    this.cardsService.getCardsByUserId(userId).subscribe(cards => {
+      this.cards = cards;
+      console.log(this.cards);
+    });
 
   }
 

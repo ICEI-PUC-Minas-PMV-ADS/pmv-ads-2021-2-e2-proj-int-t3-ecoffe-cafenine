@@ -22,8 +22,6 @@ export class AccountComponent implements OnInit {
     let userId: any;
     userId = localStorage.getItem("usuarioId");
 
-    console.log("userid: " + userId);
-
     if(!userId || userId == ""){
       this.router.navigate(["/login"]);  
       return;

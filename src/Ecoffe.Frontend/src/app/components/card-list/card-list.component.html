@@ -15,4 +15,5 @@
           <p>{{ card.dataVencimento }}</p>
         </mat-expansion-panel>
       </mat-accordion>
+      <p *ngIf="cards.length == 0">Não há nenhum cartão cadastrado.</p>
 </mat-card>

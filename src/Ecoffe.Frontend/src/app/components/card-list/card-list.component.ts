@@ -1,3 +1,4 @@
+import { Cartao } from './../../models/cartao.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from './../../services/cards.service';
@@ -9,7 +10,7 @@ import { CardsService } from './../../services/cards.service';
 })
 export class CardListComponent implements OnInit {
 
-  cards: any = {};
+  cards: Cartao[] = [];
 
   constructor(private cardsService: CardsService, private router: Router) { }
 

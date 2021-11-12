@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-title>Cartões</mat-card-title>
+    <mat-accordion *ngFor="let card of cards">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            {{ card.bandeira }}
+            {{ card.tipoCartao }}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ card.numero }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{ card.nomeTitular }}</p>
+          <p>{{ card.dataVencimento }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+</mat-card>

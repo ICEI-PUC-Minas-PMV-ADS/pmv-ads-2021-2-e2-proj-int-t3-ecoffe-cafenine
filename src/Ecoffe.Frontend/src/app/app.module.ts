@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 //Created Components
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -26,7 +27,9 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { LoginRegisterComponent } from './views/login-register/login-register.component';
 import { AccountComponent } from './views/account/account.component';
 import { ProductsComponent } from './views/products/products.component' 
-import { AboutComponent } from './views/about/about.component' 
+import { AboutComponent } from './views/about/about.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+
 
 
 
@@ -40,7 +43,8 @@ import { AboutComponent } from './views/about/about.component'
     LoginRegisterComponent,
     AccountComponent,
     ProductsComponent,
-    AboutComponent
+    AboutComponent,
+    CardListComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ import { AboutComponent } from './views/about/about.component'
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
 
   ],
   providers: [],

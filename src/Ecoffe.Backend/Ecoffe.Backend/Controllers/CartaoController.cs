@@ -45,11 +45,14 @@ namespace Ecoffe.Backend.Controllers
         [HttpGet("usuario/{usuarioId}")]
         public async Task<IEnumerable<Cartao>> GetListByUserId([FromRoute] int usuarioId)
         {
-            var cartoes = await _context.Cartao
-                                    .Where(p => p.UsuarioId == usuarioId)
-                                    .ToListAsync();
-
-            return cartoes;
+            try
+            {
+                return await _context.Cartao.Where(p => p.UsuarioId == usuarioId).ToListAsync();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         //GET: api/cartao/principal/{cartaoId}

@@ -18,3 +18,16 @@
 .principalCard > .mat-expansion-panel-header{
     font-weight: 550
 }
+
+.descriptionExpanded{
+    float: left;
+}
+
+.buttonsExpanded{
+    display: flex;
+    float: right;
+}
+
+.buttonsExpanded > button:first-of-type{
+    margin-right: 10px;
+}

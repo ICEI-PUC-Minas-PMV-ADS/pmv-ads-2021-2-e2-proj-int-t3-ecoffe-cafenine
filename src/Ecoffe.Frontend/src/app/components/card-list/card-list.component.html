@@ -11,14 +11,18 @@
                 {{ card.numero | hideCardNumber}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>Titular: {{ card.nomeTitular }}</p>
-          <p>Validade: {{ card.vencimento | date:"MM/yy" }}</p>
-          <button mat-raised-button (click)="turnPrincipal(card.id)" color="primary" *ngIf="!card.principal">
-            Tornar principal
-          </button>
-          <button mat-raised-button (click)="deleteConfirm(card.id)" color="primary">
-            <i class="material-icons">delete</i>
-          </button>
+          <div class="descriptionExpanded">
+            <p>Titular: {{ card.nomeTitular }}</p>
+            <p>Validade: {{ card.vencimento | date:"MM/yy" }}</p>
+          </div>
+          <div class="buttonsExpanded">
+            <button mat-stroked-button (click)="turnPrincipal(card.id)" color="primary" *ngIf="!card.principal">
+              Tornar principal
+            </button>
+            <button mat-flat-button (click)="deleteConfirm(card.id)" color="warn">
+              <i class="material-icons">delete</i>
+            </button>
+        </div>
         </mat-expansion-panel>
       </mat-accordion>
       <p *ngIf="cards.length == 0">Não há nenhum cartão cadastrado.</p>

@@ -39,6 +39,26 @@ export class CardListComponent implements OnInit {
     });
   }
 
+  getCardBrandLogo(brand: string){
+    let base = 'assets/card-brands/'
+    switch(brand){
+      case 'visa':
+        return base + 'visa.png';
+      case 'mastercard':
+        return base + 'mastercard.png';
+      case 'dinersclub':
+        return base + 'dinersclub.png';
+      case 'jcb':
+        return base + 'jcb.png';
+      case 'americanexpress':
+        return base + 'americanexpress.png';
+      case 'discover':
+        return base + 'discover.png';
+      default:
+        return;
+    }
+  }
+
   turnPrincipalConfirm(cardId: number){
     this.confirmDialogService.openConfirmDialog("Tem certeza que deseja tornar este cartão principal?").afterClosed().subscribe(confirm => {
       if(confirm)

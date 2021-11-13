@@ -4,7 +4,10 @@
         <mat-expansion-panel hideToggle [ngClass]="{'principalCard': card.principal == true}">
           <mat-expansion-panel-header>
             <mat-panel-title>
-            {{ card.bandeira }}
+            <div class="cardBrandLogoContainer">
+              <img class="cardBrand" [src]="getCardBrandLogo(card.bandeira)">
+            </div>
+            {{ card.bandeira | uppercase }} - 
             {{ card.tipoCartao | cardType }}
             </mat-panel-title>
             <mat-panel-description>

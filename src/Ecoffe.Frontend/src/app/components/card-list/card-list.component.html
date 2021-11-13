@@ -16,7 +16,7 @@
             <p>Validade: {{ card.vencimento | date:"MM/yy" }}</p>
           </div>
           <div class="buttonsExpanded">
-            <button mat-stroked-button (click)="turnPrincipal(card.id)" color="primary" *ngIf="!card.principal">
+            <button mat-stroked-button (click)="turnPrincipalConfirm(card.id)" color="primary" *ngIf="!card.principal">
               Tornar principal
             </button>
             <button mat-flat-button (click)="deleteConfirm(card.id)" color="warn">

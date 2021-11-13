@@ -39,6 +39,13 @@ export class CardListComponent implements OnInit {
     });
   }
 
+  turnPrincipalConfirm(cardId: number){
+    this.confirmDialogService.openConfirmDialog("Tem certeza que deseja tornar este cartão principal?").afterClosed().subscribe(confirm => {
+      if(confirm)
+        this.turnPrincipal(cardId);  
+    })
+  }
+
   turnPrincipal(cardId: number){
     this.cardsService.turnPrincipal(cardId).subscribe(card =>{
       this.loadCards();

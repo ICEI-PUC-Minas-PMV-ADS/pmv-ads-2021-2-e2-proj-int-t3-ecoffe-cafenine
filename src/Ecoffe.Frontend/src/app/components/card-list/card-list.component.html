@@ -5,7 +5,7 @@
           <mat-expansion-panel-header>
             <mat-panel-title>
             {{ card.bandeira }}
-            {{ card.tipoCartao }}
+            {{ card.tipoCartao | cardType }}
             </mat-panel-title>
             <mat-panel-description>
                 {{ card.numero | hideCardNumber}}

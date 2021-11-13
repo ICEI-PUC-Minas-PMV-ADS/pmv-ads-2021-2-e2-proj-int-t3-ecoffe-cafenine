@@ -1,3 +1,4 @@
+import { CardTypePipe } from './utils/mask';
 //Extern Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,6 +49,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     AboutComponent,
     CardListComponent,
     HideCardNumberPipe,
+    CardTypePipe,
     ConfirmDialogComponent
   ],
   imports: [

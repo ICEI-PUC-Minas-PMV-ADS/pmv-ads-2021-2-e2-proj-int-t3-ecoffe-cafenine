@@ -74,7 +74,15 @@ namespace Ecoffe.Backend.Controllers
 
             cartaoSelecionado.Principal = true;
 
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            } 
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            
 
             return Ok(cartaoSelecionado);
         }
@@ -102,6 +110,30 @@ namespace Ecoffe.Backend.Controllers
             _context.Update(cartao);
             await _context.SaveChangesAsync();
 
+            return Ok(cartao);
+        }
+
+        //DELETE: api/cartao/{cartaoId}
+        [HttpDelete("{cartaoId}")]
+        public async Task<ActionResult> Delete([FromRoute] int cartaoId)
+        {
+            var cartao = await _context.Cartao
+                .Where(p => p.Id == cartaoId)
+                .FirstOrDefaultAsync();
+
+            if (cartao == null)
+                return StatusCode(404, "Cartão não encontrado");
+
+            try
+            {
+                _context.Remove(cartao);
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            
             return Ok(cartao);
         }
     }

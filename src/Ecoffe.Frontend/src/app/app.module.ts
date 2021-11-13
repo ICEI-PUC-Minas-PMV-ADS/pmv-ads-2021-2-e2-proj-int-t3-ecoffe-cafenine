@@ -17,7 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Created Components
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -32,6 +33,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 
 //Utils
 import { HideCardNumberPipe } from './utils/mask';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { HideCardNumberPipe } from './utils/mask';
     ProductsComponent,
     AboutComponent,
     CardListComponent,
-    HideCardNumberPipe
+    HideCardNumberPipe,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { HideCardNumberPipe } from './utils/mask';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
 
   ],
   providers: [],

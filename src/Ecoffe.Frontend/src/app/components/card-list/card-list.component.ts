@@ -1,3 +1,4 @@
+import { ConfirmDialogService } from './../../services/confirm-dialog.service';
 import { Cartao } from './../../models/cartao.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class CardListComponent implements OnInit {
 
   cards: Cartao[] = [];
 
-  constructor(private cardsService: CardsService, private router: Router) { }
+  constructor(private cardsService: CardsService, private router: Router, private confirmDialogService: ConfirmDialogService) { }
 
   ngOnInit(): void {
     this.loadCards();
@@ -42,6 +43,13 @@ export class CardListComponent implements OnInit {
     this.cardsService.turnPrincipal(cardId).subscribe(card =>{
       this.loadCards();
     });
+  }
+
+  deleteConfirm(cardId: number){
+    this.confirmDialogService.openConfirmDialog("Tem certeza que deseja deletar este cartão?").afterClosed().subscribe(confirm => {
+      if(confirm)
+        this.delete(cardId);  
+    })
   }
 
   delete(cardId: number){

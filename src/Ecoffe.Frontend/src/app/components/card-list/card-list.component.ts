@@ -44,4 +44,9 @@ export class CardListComponent implements OnInit {
     });
   }
 
+  delete(cardId: number){
+    this.cardsService.delete(cardId).subscribe(card =>{
+      this.loadCards();
+    });
+  }
 }

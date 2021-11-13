@@ -20,4 +20,8 @@ export class CardsService {
     return this.http.get<Cartao>(this.baseUrl + "/principal/" + cardId);
   }
 
+  delete(cardId: number): Observable<Cartao>{
+    return this.http.delete<Cartao>(this.baseUrl + "/" + cardId);
+  }
+
 }

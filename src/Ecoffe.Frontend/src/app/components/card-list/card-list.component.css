@@ -42,3 +42,7 @@
     width: 90px;
     text-align: center;
 }
+
+.newCardButton{
+    margin: 1rem 0 0 2rem;
+}

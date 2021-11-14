@@ -13,6 +13,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class CardNewComponent implements OnInit {
 
   cardHelper: any = {};
+  validateErrors: string[] = [];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private cardsService: CardsService, private snackbarService: SnackbarService, private router: Router) { }
 
@@ -28,6 +29,11 @@ export class CardNewComponent implements OnInit {
       return;
     }
 
+    this.validate();
+
+    if(this.validateErrors)
+      return;
+      
     let card: Cartao = {
       id: 0,
       usuarioId: userId,
@@ -40,14 +46,43 @@ export class CardNewComponent implements OnInit {
       principal: this.cardHelper.principal
     }
 
-    console.log(card);
-
     return;
 
 
     this.cardsService.save(card).subscribe(card => {
       this.snackbarService.showMessage("Cartão cadastrado com sucesso!");
     })
+  }
+
+  validate(){
+    this.validateErrors = [];
+
+    if(!this.cardHelper.numero || this.cardHelper.numero.length > 16 || this.cardHelper.numero.length < 15)
+      this.validateErrors.push('Número do cartão inválido');
+
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+
+    this.cardHelper.ano = Number(this.cardHelper.ano);
+    this.cardHelper.mes = Number(this.cardHelper.mes);
+
+    if(!this.cardHelper.ano || typeof(this.cardHelper.ano) != typeof(0) || this.cardHelper.ano < currentYear)
+      this.validateErrors.push('Ano de expiração do cartão inválido');
+
+    if(!this.cardHelper.mes || typeof(this.cardHelper.mes) != typeof(0) || (this.cardHelper.ano == currentYear && this.cardHelper.mes < currentMonth))
+      this.validateErrors.push('Mês de expiração do cartão inválido');
+
+    if(!this.cardHelper.nomeTitular)
+      this.validateErrors.push('Nome do titular inválido');
+
+    if(!this.cardHelper.csv || this.cardHelper.csv.length > 4)
+      this.validateErrors.push('Código de segurança inválido');
+
+    if(!this.cardHelper.tipoCartao)
+      this.validateErrors.push('Tipo de cartão deve ser selecionado');
+
+    if(this.getCardBrandByNumber(this.cardHelper.numero) == '')
+      this.validateErrors.push('Bandeira não reconhecida');
   }
 
   getCardBrandByNumber(cardNumber: string): string{

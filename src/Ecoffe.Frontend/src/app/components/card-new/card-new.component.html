@@ -1,24 +1,28 @@
+<mat-card *ngIf="validateErrors.length > 0" style="background-color: rgb(255, 175, 175);">
+    <p *ngFor="let error of validateErrors">{{ error }}</p>
+</mat-card>
+<br>
 <mat-card>
     <mat-card-title>Novo Cartão</mat-card-title>
     <form>
             <mat-form-field>
-                <input matInput placeholder="Número do cartão" [(ngModel)]="cardHelper.numero" name="cardHelper_Numero">
+                <input matInput placeholder="Número do cartão" [(ngModel)]="cardHelper.numero" name="cardHelper_Numero" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Nome no cartão" [(ngModel)]="cardHelper.nomeTitular" name="cardHelper_NomeTitular">
+                <input matInput placeholder="Nome no cartão" [(ngModel)]="cardHelper.nomeTitular" name="cardHelper_NomeTitular" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Mês" [(ngModel)]="cardHelper.mes" name="cardHelper_Mes">
+                <input matInput placeholder="Mês" [(ngModel)]="cardHelper.mes" name="cardHelper_Mes" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Ano" [(ngModel)]="cardHelper.ano" name="cardHelper_Ano">
+                <input matInput placeholder="Ano" [(ngModel)]="cardHelper.ano" name="cardHelper_Ano" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Código de Segurança" [(ngModel)]="cardHelper.csv" name="cardHelper_Vencimento">
+                <input matInput placeholder="Código de Segurança" [(ngModel)]="cardHelper.csv" name="cardHelper_Vencimento" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Tipo</mat-label>
-                <mat-select [(value)]="cardHelper.tipoCartao">
+                <mat-select [(value)]="cardHelper.tipoCartao" required>
                     <mat-option value="0">
                       Débito
                     </mat-option>

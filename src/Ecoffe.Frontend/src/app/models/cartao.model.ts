@@ -3,7 +3,7 @@ export interface Cartao {
     usuarioId: number;
     numero: string;
     vencimento: Date;
-    dataAdicao?: Date;
+    dataAdicao: Date;
     nomeTitular: string;
     bandeira: string;
     csv: string;

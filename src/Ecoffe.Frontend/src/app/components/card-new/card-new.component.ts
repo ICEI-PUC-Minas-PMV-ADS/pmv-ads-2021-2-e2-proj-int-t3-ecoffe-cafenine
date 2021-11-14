@@ -3,7 +3,7 @@ import { SnackbarService } from './../../services/snackbar.service';
 import { CardsService } from './../../services/cards.service';
 import { Cartao, TipoCartao } from './../../models/cartao.model';
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-card-new',
@@ -15,7 +15,7 @@ export class CardNewComponent implements OnInit {
   cardHelper: any = {};
   validateErrors: string[] = [];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private cardsService: CardsService, private snackbarService: SnackbarService, private router: Router) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private cardsService: CardsService, private snackbarService: SnackbarService, private router: Router, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -29,28 +29,29 @@ export class CardNewComponent implements OnInit {
       return;
     }
 
-    this.validate();
+    //this.validate();
 
-    if(this.validateErrors)
+    if(this.validateErrors.length > 0)
       return;
-      
+
     let card: Cartao = {
       id: 0,
       usuarioId: userId,
       numero: this.cardHelper.numero,
       vencimento: new Date(this.cardHelper.ano + "/" + this.cardHelper.mes + "/01"),
+      dataAdicao: new Date(),
       nomeTitular: this.cardHelper.nomeTitular,
       bandeira: this.getCardBrandByNumber(this.cardHelper.numero),
       csv: this.cardHelper.csv,
-      tipoCartao: this.cardHelper.tipoCartao,
+      tipoCartao: Number(this.cardHelper.tipoCartao),
       principal: this.cardHelper.principal
     }
 
-    return;
-
+    console.log(card);
 
     this.cardsService.save(card).subscribe(card => {
       this.snackbarService.showMessage("Cartão cadastrado com sucesso!");
+      this.matDialog.closeAll();
     })
   }
 
@@ -91,11 +92,11 @@ export class CardNewComponent implements OnInit {
 
     if(cardNumber.substring(0,1) == '4') return 'visa';
     if(['51','52','53','54','55'].includes(cardNumber.substring(0,2))) return 'mastercard';
-    if(['36,38'].includes(cardNumber.substring(0,2))) return 'dinersclub';
+    if(['36','38'].includes(cardNumber.substring(0,2))) return 'dinersclub';
     if(cardNumber.substring(0,2) == '65') return 'discover';
     if(cardNumber.substring(0,4) == '6011') return 'discover';
     if(cardNumber.substring(0,2) == '35') return 'jcb';
-    if(['34,37'].includes(cardNumber.substring(0,2))) return 'americanexpress';
+    if(['34','37'].includes(cardNumber.substring(0,2))) return 'americanexpress';
     return '';
   }
 }

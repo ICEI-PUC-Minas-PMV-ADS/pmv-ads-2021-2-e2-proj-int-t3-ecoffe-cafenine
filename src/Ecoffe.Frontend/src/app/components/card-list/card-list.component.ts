@@ -93,7 +93,9 @@ export class CardListComponent implements OnInit {
   }
 
   openCardNewModal(){
-    this.cardsService.openCardNewModal();
+    this.cardsService.openCardNewModal().afterClosed().subscribe(card =>{
+      this.loadCards();
+    });
   }
 
 }

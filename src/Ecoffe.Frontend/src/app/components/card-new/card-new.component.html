@@ -5,22 +5,24 @@
 <mat-card>
     <mat-card-title>Novo Cartão</mat-card-title>
     <form>
-            <mat-form-field>
+            <mat-form-field style="width: 60%;">
                 <input matInput placeholder="Número do cartão" [(ngModel)]="cardHelper.numero" name="cardHelper_Numero" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field style="width: 80%;">
                 <input matInput placeholder="Nome no cartão" [(ngModel)]="cardHelper.nomeTitular" name="cardHelper_NomeTitular" required>
             </mat-form-field>
-            <mat-form-field>
+            <br>
+            <mat-form-field style="width: 10%;">
                 <input matInput placeholder="Mês" [(ngModel)]="cardHelper.mes" name="cardHelper_Mes" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field style="width: 20%;">
                 <input matInput placeholder="Ano" [(ngModel)]="cardHelper.ano" name="cardHelper_Ano" required>
             </mat-form-field>
-            <mat-form-field>
+            <br>
+            <mat-form-field style="width: 30%;">
                 <input matInput placeholder="Código de Segurança" [(ngModel)]="cardHelper.csv" name="cardHelper_Vencimento" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field style="width: 30%;">
                 <mat-label>Tipo</mat-label>
                 <mat-select [(value)]="cardHelper.tipoCartao" required>
                     <mat-option value="0">

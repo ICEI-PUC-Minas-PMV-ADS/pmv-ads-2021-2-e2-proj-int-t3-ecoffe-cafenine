@@ -1,10 +1,10 @@
 export interface Cartao {
     id: number;
+    usuarioId: number;
     numero: string;
     vencimento: Date;
-    dataAdicao: Date;
+    dataAdicao?: Date;
     nomeTitular: string;
-    cpfTitular: string;
     bandeira: string;
     csv: string;
     tipoCartao: TipoCartao;

@@ -91,4 +91,9 @@ export class CardListComponent implements OnInit {
       this.loadCards();
     });
   }
+
+  openCardNewModal(){
+    this.cardsService.openCardNewModal();
+  }
+
 }

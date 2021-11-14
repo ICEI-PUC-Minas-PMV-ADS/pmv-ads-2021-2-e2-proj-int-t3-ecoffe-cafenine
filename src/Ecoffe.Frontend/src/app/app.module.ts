@@ -1,4 +1,3 @@
-import { CardTypePipe } from './utils/mask';
 //Extern Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +19,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 //Created Components
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -34,6 +34,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 
 //Utils
 import { HideCardNumberPipe } from './utils/mask';
+import { CardTypePipe } from './utils/mask';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
@@ -66,7 +67,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     MatCardModule,
     MatButtonModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
 
   ],
   providers: [],

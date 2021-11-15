@@ -1,9 +1,6 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Ecoffe.Backend.Enums;
 using Ecoffe.Backend.Infrastructure;
 using Ecoffe.Backend.Interfaces;
 using Ecoffe.Backend.Models;
@@ -34,7 +31,20 @@ namespace Ecoffe.Backend.Services
 
         private void Validate(Cartao cartao)
         {
+            if (cartao.Numero == null || cartao.Numero.Length > 16 || cartao.Numero.Length < 15)
+                throw new Exception("Número do cartão inválido");
 
+            if (cartao.Vencimento < DateTime.Now)
+                throw new Exception("Data de expiração inválida");
+
+            if (String.IsNullOrWhiteSpace(cartao.NomeTitular))
+                throw new Exception("Nome do titular inválido");
+
+            if (String.IsNullOrWhiteSpace(cartao.Csv))
+                throw new Exception("Código de segurança inválido");
+
+            if (string.IsNullOrWhiteSpace(cartao.Bandeira))
+                throw new Exception("Bandeira não reconhecida");
         }
 
         public async Task<Cartao> TurnCardPrincipal(int cartaoId)

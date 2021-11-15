@@ -31,7 +31,7 @@ namespace Ecoffe.Backend.Services
 
         private void Validate(Cartao cartao)
         {
-            if (cartao.Numero == null || cartao.Numero.Length > 16 || cartao.Numero.Length < 15)
+            if (cartao.Numero == null || cartao.Numero.Length > 16 || cartao.Numero.Length < 15 || long.TryParse(cartao.Numero, out long n) == false)
                 throw new Exception("Número do cartão inválido");
 
             if (cartao.Vencimento < DateTime.Now)

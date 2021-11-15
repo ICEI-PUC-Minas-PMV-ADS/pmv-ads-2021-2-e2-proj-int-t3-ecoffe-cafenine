@@ -29,7 +29,7 @@ export class CardNewComponent implements OnInit {
       return;
     }
 
-    //this.validate();
+    this.validate();
 
     if(this.validateErrors.length > 0)
       return;
@@ -47,11 +47,11 @@ export class CardNewComponent implements OnInit {
       principal: this.cardHelper.principal
     }
 
-    console.log(card);
-
-    this.cardsService.save(card).subscribe(card => {
+    this.cardsService.save(card).subscribe(card => {    
       this.snackbarService.showMessage("Cartão cadastrado com sucesso!");
       this.matDialog.closeAll();
+    }, (error) => {
+      this.validateErrors.push(JSON.stringify(error.error).replace(/"/g,''));
     })
   }
 

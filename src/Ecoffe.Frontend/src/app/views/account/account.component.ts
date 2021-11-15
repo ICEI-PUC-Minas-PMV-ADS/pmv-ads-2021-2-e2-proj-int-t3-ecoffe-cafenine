@@ -14,8 +14,6 @@ export class AccountComponent implements OnInit {
   }
 
   changeArea(type: number){
-    console.log(type);
-
     this.areaType = type;
   }
 

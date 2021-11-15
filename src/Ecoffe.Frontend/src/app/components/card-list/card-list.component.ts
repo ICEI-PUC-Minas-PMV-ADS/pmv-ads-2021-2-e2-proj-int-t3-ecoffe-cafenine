@@ -72,7 +72,7 @@ export class CardListComponent implements OnInit {
   }
 
   turnPrincipal(cardId: number){
-    this.cardsService.turnPrincipal(cardId).subscribe(card =>{
+    this.cardsService.turnPrincipal(cardId).subscribe(() =>{
       this.snackbarService.showMessage("Cartão principal alterado com sucesso!");
       this.loadCards();
     });
@@ -86,14 +86,14 @@ export class CardListComponent implements OnInit {
   }
 
   delete(cardId: number){
-    this.cardsService.delete(cardId).subscribe(card =>{
+    this.cardsService.delete(cardId).subscribe(() =>{
       this.snackbarService.showMessage("Cartão deletado com sucesso!");
       this.loadCards();
     });
   }
 
   openCardNewModal(){
-    this.cardsService.openCardNewModal().afterClosed().subscribe(card =>{
+    this.cardsService.openCardNewModal().afterClosed().subscribe(() =>{
       this.loadCards();
     });
   }

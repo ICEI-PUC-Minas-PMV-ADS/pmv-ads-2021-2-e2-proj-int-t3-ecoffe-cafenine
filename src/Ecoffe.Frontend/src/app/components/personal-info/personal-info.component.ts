@@ -40,7 +40,7 @@ export class PersonalInfoComponent implements OnInit {
     });
   }
 
-  update() : void {
+  update() {
     this.usuario.endereco = this.endereco;
 
     this.disabledInputs = true;
@@ -53,7 +53,17 @@ export class PersonalInfoComponent implements OnInit {
     })
   }
 
-  toggleDisabledInputs(): void{
+  getAdress(){
+    this.personalInfoService.getAdress(this.endereco.cep)?.subscribe(adress => {
+      this.endereco.rua = adress.logradouro;
+      this.endereco.complemento = adress.complemento;
+      this.endereco.bairro = adress.bairro;
+      this.endereco.cidade = adress.localidade;
+      this.endereco.uf = adress.uf;
+    })
+  }
+
+  toggleDisabledInputs(){
     this.disabledInputs = !this.disabledInputs;
   }
 }

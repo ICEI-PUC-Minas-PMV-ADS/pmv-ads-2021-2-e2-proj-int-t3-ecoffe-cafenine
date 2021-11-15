@@ -6,36 +6,36 @@
                 <input matInput placeholder="Nome" [disabled]="disabledInputs" [(ngModel)]="usuario.nome" [disabled]="disabledInputs" name="usuario_Nome">
             </mat-form-field>
             <mat-form-field style="width: 30%; min-width: 200px;">
-                <input matInput placeholder="CPF" [disabled]="disabledInputs" [(ngModel)]="usuario.cpf" name="usuario_CPF">
+                <input matInput placeholder="CPF" mask="000.000.000-00" [disabled]="disabledInputs" [(ngModel)]="usuario.cpf" name="usuario_CPF">
             </mat-form-field>
             <br>
             <mat-form-field style="width: 55%; min-width: 200px;">
-                <input matInput placeholder="Email" [disabled]="disabledInputs" [(ngModel)]="usuario.email" name="usuario_Email">
+                <input matInput placeholder="Email" required [disabled]="disabledInputs" [(ngModel)]="usuario.email" name="usuario_Email">
             </mat-form-field>
             <mat-form-field style="width: 30%; min-width: 200px;">
-                <input matInput placeholder="Telefone" [disabled]="disabledInputs" [(ngModel)]="usuario.telefone" name="usuario_Telefone">
+                <input matInput placeholder="Telefone" mask="00 00000 0000" [disabled]="disabledInputs" [(ngModel)]="usuario.telefone" name="usuario_Telefone">
             </mat-form-field>
         <h2>Endereço</h2>
             <mat-form-field style="width: 15%; min-width: 80px;">
-                <input matInput placeholder="CEP" [disabled]="disabledInputs" [(ngModel)]="endereco.cep" name="endereco_Cep">
+                <input matInput placeholder="CEP" mask="00000-000" required [disabled]="disabledInputs" [(ngModel)]="endereco.cep" name="endereco_Cep">
             </mat-form-field>
             <mat-form-field style="width: 55%; min-width: 200px;">
-                <input matInput placeholder="Rua" [disabled]="disabledInputs" [(ngModel)]="endereco.rua" name="endereco_Rua">
+                <input matInput placeholder="Rua" required [disabled]="disabledInputs" [(ngModel)]="endereco.rua" name="endereco_Rua">
             </mat-form-field>
             <mat-form-field style="width: 10%; min-width: 30px;">
-                <input matInput placeholder="Número" [disabled]="disabledInputs" [(ngModel)]="endereco.numero" name="endereco_Numero">
+                <input matInput placeholder="Número" mask="0*" required [disabled]="disabledInputs" [(ngModel)]="endereco.numero" name="endereco_Numero">
             </mat-form-field>
             <mat-form-field style="width: 15%; min-width: 100px;">
                 <input matInput placeholder="Complemento" [disabled]="disabledInputs" [(ngModel)]="endereco.complemento" name="endereco_Complemento">
             </mat-form-field>
             <mat-form-field style="width: 20%; min-width: 100px;">
-                <input matInput placeholder="Bairro" [disabled]="disabledInputs" [(ngModel)]="endereco.Bairro" name="endereco_Bairro">
+                <input matInput placeholder="Bairro" required [disabled]="disabledInputs" [(ngModel)]="endereco.Bairro" name="endereco_Bairro">
             </mat-form-field>
             <mat-form-field style="width: 20%; min-width: 100px;">
-                <input matInput placeholder="Cidade" [disabled]="disabledInputs" [(ngModel)]="endereco.cidade" name="endereco_Cidade">
+                <input matInput placeholder="Cidade" required [disabled]="disabledInputs" [(ngModel)]="endereco.cidade" name="endereco_Cidade">
             </mat-form-field>
             <mat-form-field style="width: 10%; min-width: 30px;">
-                <input matInput placeholder="UF" [disabled]="disabledInputs" [(ngModel)]="endereco.uf" name="endereco_Uf">
+                <input matInput placeholder="UF" mask="AA" required [disabled]="disabledInputs" [(ngModel)]="endereco.uf" name="endereco_Uf">
             </mat-form-field>
     </form>
     <button mat-raised-button *ngIf="disabledInputs == true" (click)="toggleDisabledInputs()" color="primary">

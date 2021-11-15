@@ -40,6 +40,7 @@ import { HideCardNumberPipe } from './utils/mask';
 import { CardTypePipe } from './utils/mask';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { CardNewComponent } from './components/card-new/card-new.component';
+import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { CardNewComponent } from './components/card-new/card-new.component';
     HideCardNumberPipe,
     CardTypePipe,
     ConfirmDialogComponent,
-    CardNewComponent
+    CardNewComponent,
+    PersonalInfoComponent
   ],
   imports: [
     BrowserModule,

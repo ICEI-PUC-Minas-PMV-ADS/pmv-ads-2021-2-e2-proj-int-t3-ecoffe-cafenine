@@ -1,4 +1,4 @@
-import { Usuario } from './../models/usuario.model';
+import { Usuario } from '../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AccountService {
+export class PersonalInfoService {
 
   constructor(private http: HttpClient) { }
 

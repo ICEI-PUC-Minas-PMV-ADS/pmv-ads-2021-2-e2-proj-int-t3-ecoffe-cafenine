@@ -1,4 +1,5 @@
 ﻿using Ecoffe.Backend.Infrastructure;
+using Ecoffe.Backend.Interfaces;
 using Ecoffe.Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -57,48 +58,31 @@ namespace Ecoffe.Backend.Controllers
 
         //GET: api/cartao/principal/{cartaoId}
         [HttpGet("principal/{cartaoId}")]
-        public async Task<IActionResult> TurnCardPrincipal([FromRoute] int cartaoId)
+        public async Task<IActionResult> TurnCardPrincipal([FromServices] ICartaoService cartaoService, [FromRoute] int cartaoId)
         {
-            var cartaoSelecionado = await _context.Cartao
-                .Where(p => p.Id == cartaoId)
-                .FirstOrDefaultAsync();
-
-            if (cartaoSelecionado == null)
-                return StatusCode(404, "Cartão não encontrado");
-
-            var todosCartoesSecundarios = await _context.Cartao
-                .Where(p => 
-                       p.UsuarioId == cartaoSelecionado.UsuarioId && 
-                       p.Id != cartaoSelecionado.Id)
-                .ToListAsync();
-
-            foreach (var cartaoSecundario in todosCartoesSecundarios)
-                cartaoSecundario.Principal = false;
-
-            cartaoSelecionado.Principal = true;
-
             try
             {
-                await _context.SaveChangesAsync();
+                return Ok(await cartaoService.TurnCardPrincipal(cartaoId));
             } 
             catch(Exception ex)
             {
                 return StatusCode(500, ex.Message);
-            }
-            
-
-            return Ok(cartaoSelecionado);
+            }        
         }
-
 
         //POST: api/cartao/
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Cartao cartao)
+        public async Task<IActionResult> Create([FromServices] ICartaoService cartaoService, [FromBody] Cartao cartao)
         {
-            _context.Add(cartao);
-            await _context.SaveChangesAsync();
-
-            return Ok(cartao);
+            try
+            {
+                await cartaoService.Save(cartao);
+                return Ok(cartao);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }           
         }
 
         //PUT: api/cartao/

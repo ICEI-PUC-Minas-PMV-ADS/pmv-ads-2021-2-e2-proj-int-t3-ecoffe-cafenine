@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Ecoffe.Backend.Enums;
+using Ecoffe.Backend.Interfaces;
 
 namespace Ecoffe.Backend.Models
 {

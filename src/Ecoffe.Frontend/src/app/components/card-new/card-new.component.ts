@@ -70,7 +70,7 @@ export class CardNewComponent implements OnInit {
     if(!this.cardHelper.ano || typeof(this.cardHelper.ano) != typeof(0) || this.cardHelper.ano < currentYear)
       this.validateErrors.push('Ano de expiração do cartão inválido');
 
-    if(!this.cardHelper.mes || typeof(this.cardHelper.mes) != typeof(0) || (this.cardHelper.ano == currentYear && this.cardHelper.mes < currentMonth))
+    if(!this.cardHelper.mes || typeof(this.cardHelper.mes) != typeof(0) || this.cardHelper.mes < 0 || this.cardHelper.mes > 12 || (this.cardHelper.ano == currentYear && this.cardHelper.mes < currentMonth))
       this.validateErrors.push('Mês de expiração do cartão inválido');
 
     if(!this.cardHelper.nomeTitular)

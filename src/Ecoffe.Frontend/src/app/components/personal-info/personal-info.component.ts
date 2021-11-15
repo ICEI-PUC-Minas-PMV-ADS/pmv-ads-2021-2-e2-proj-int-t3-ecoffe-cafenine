@@ -15,6 +15,8 @@ export class PersonalInfoComponent implements OnInit {
   usuario: any = {};
   endereco: any = {};
 
+  validateErrors: string[] = [];
+
   disabledInputs: boolean = true;
 
   constructor(private loginRegisterService: LoginRegisterService, private personalInfoService: PersonalInfoService, private router: Router, private snackbarService: SnackbarService) { }
@@ -41,16 +43,53 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   update() {
-    this.usuario.endereco = this.endereco;
-
     this.disabledInputs = true;
+    this.validate();
+    
+    if(this.validateErrors.length > 0){
+      this.disabledInputs = false;
+      return;
+    }
+      
+    this.usuario.endereco = this.endereco;
 
     this.personalInfoService.update(this.usuario).subscribe(() => {
       this.snackbarService.showMessage("Dados alterados com sucesso");
     }, (error) => {
       this.disabledInputs = false;
-      //this.validateErrors.push(JSON.stringify(error.error).replace(/"/g,''));
+      this.validateErrors.push(JSON.stringify(error.error).replace(/"/g,''));
     })
+  }
+
+  validate(){
+    this.validateErrors = [];
+
+    if(!this.endereco.cep && 
+       !this.endereco.numero &&
+       !this.endereco.rua &&
+       !this.endereco.cidade &&
+       !this.endereco.bairro &&
+       !this.endereco.complemento &&
+       !this.endereco.uf)
+       return;
+
+    if(!this.endereco.cep || this.endereco.cep.length != 8)
+      this.validateErrors.push("CEP inválido");
+
+    if(!this.endereco.rua)
+      this.validateErrors.push("Rua deve ser informada");   
+
+    if(!this.endereco.numero)
+      this.validateErrors.push("Número deve ser informado"); 
+
+    if(!this.endereco.bairro)
+      this.validateErrors.push("Bairro deve ser informado"); 
+
+    if(!this.endereco.cidade)
+      this.validateErrors.push("Cidade deve ser informada"); 
+
+    if(!this.endereco.uf)
+      this.validateErrors.push("UF deve ser informado"); 
   }
 
   getAdress(){

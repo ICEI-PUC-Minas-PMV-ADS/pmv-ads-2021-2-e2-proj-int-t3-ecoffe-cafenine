@@ -47,7 +47,7 @@ export class CardNewComponent implements OnInit {
       principal: this.cardHelper.principal
     }
 
-    this.cardsService.save(card).subscribe(card => {    
+    this.cardsService.save(card).subscribe(() => {    
       this.snackbarService.showMessage("Cartão cadastrado com sucesso!");
       this.matDialog.closeAll();
     }, (error) => {

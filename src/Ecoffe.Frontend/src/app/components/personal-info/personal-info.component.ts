@@ -15,6 +15,8 @@ export class PersonalInfoComponent implements OnInit {
   usuario: any = {};
   endereco: any = {};
 
+  disabledInputs: boolean = true;
+
   constructor(private loginRegisterService: LoginRegisterService, private personalInfoService: PersonalInfoService, private router: Router, private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
@@ -41,8 +43,17 @@ export class PersonalInfoComponent implements OnInit {
   update() : void {
     this.usuario.endereco = this.endereco;
 
+    this.disabledInputs = true;
+
     this.personalInfoService.update(this.usuario).subscribe(() => {
       this.snackbarService.showMessage("Dados alterados com sucesso");
+    }, (error) => {
+      this.disabledInputs = false;
+      //this.validateErrors.push(JSON.stringify(error.error).replace(/"/g,''));
     })
+  }
+
+  toggleDisabledInputs(): void{
+    this.disabledInputs = !this.disabledInputs;
   }
 }

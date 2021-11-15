@@ -36,6 +36,8 @@ namespace Ecoffe.Backend
 
             //Dependency Injection
             services.AddScoped<ICartaoService, CartaoService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IEnderecoService, EnderecoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

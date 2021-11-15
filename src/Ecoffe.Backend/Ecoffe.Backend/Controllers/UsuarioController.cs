@@ -1,5 +1,6 @@
 ﻿using Ecoffe.Backend.Helpers;
 using Ecoffe.Backend.Infrastructure;
+using Ecoffe.Backend.Interfaces;
 using Ecoffe.Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -47,38 +48,32 @@ namespace ClientApp.Controllers
 
         //POST: api/usuario/
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Usuario usuario)
+        public async Task<IActionResult> Create([FromServices] IUsuarioService usuarioService, [FromBody] Usuario usuario)
         {
             try
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-            }
-            catch(Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-            
-
-            return Ok(usuario);
-        }
-
-        //PUT: api/usuario/
-        [HttpPut()]
-        public async Task<IActionResult> Update([FromBody] Usuario usuario)
-        {
-            try
-            {
-                _context.Update(usuario);
-                await _context.SaveChangesAsync();
+                await usuarioService.Save(usuario);
+                return Ok(usuario);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
+        }
 
-
-            return Ok(usuario);
+        //PUT: api/usuario/
+        [HttpPut()]
+        public async Task<IActionResult> Update([FromServices] IUsuarioService usuarioService, [FromBody] Usuario usuario)
+        {
+            try
+            {
+                await usuarioService.Save(usuario);
+                return Ok(usuario);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         //POST: api/usuario/login

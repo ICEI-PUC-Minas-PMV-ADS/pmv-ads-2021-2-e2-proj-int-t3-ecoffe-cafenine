@@ -85,21 +85,6 @@ namespace Ecoffe.Backend.Controllers
             }           
         }
 
-        //PUT: api/cartao/
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] Cartao cartao)
-        {
-            var cartaoDb = await _context.Produto.FindAsync(cartao.Id);
-
-            if (cartaoDb == null)
-                throw new Exception("Cartão não encontrado.");
-
-            _context.Update(cartao);
-            await _context.SaveChangesAsync();
-
-            return Ok(cartao);
-        }
-
         //DELETE: api/cartao/{cartaoId}
         [HttpDelete("{cartaoId}")]
         public async Task<ActionResult> Delete([FromRoute] int cartaoId)

@@ -64,6 +64,15 @@ export class PersonalInfoComponent implements OnInit {
   validate(){
     this.validateErrors = [];
 
+    if(!this.usuario.nome)
+      this.validateErrors.push("Nome deve ser informado");  
+
+    if(!this.usuario.cpf || this.usuario.cpf.length != 11)
+      this.validateErrors.push("CPF inválido");  
+
+      if(!this.usuario.email || !this.validateEmail(this.usuario.email))
+        this.validateErrors.push("Email inválido");  
+
     if(!this.endereco.cep && 
        !this.endereco.numero &&
        !this.endereco.rua &&
@@ -90,6 +99,11 @@ export class PersonalInfoComponent implements OnInit {
 
     if(!this.endereco.uf)
       this.validateErrors.push("UF deve ser informado"); 
+  }
+
+  validateEmail(email: string) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   getAdress(){

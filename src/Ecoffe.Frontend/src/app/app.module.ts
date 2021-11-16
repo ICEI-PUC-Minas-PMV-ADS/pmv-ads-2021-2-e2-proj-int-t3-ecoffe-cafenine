@@ -39,7 +39,7 @@ import { ProductsComponent } from './views/products/products.component'
     HomeComponent,
     LoginRegisterComponent,
     AccountComponent,
-    AboutComponent
+    AboutComponent,
     ProductsComponent
   ],
   imports: [

@@ -1,18 +1,42 @@
+body{
+    background-color: rgb(241, 232, 232);
+}
+
+/* responsivo */
+
+@media screen and (max-width: 600px){
+
+}
+
 /* Primeiro Card */
 
-.Container1{
-    max-width: 1500px;
-    margin: 0 auto;
-
-    display: flex;
-    flex-wrap: wrap;
-
+mat-card{
     background-color: rgb(241, 232, 232);
+}
+
+.Container1{
+    width: 50%;
+    display: inline-block;
     border-radius: 10px;
+    background-color: rgb(241, 232, 232);
+    position: relative;
+    left: 25%;
+
 }
 
 .Container1 div{
+    float: left;
+}
+
+#DivTexto{
     margin: 50px;
+}
+
+#Parte3{
+    position: relative;
+    bottom: 200px;
+    left: 280px;
+
 }
 
 .Button{
@@ -27,7 +51,7 @@
 }
 
 .img{
-    width: 80%;
+    width: 200px;
     border-radius: 80px;
 }
 
@@ -42,6 +66,8 @@
 .verm{
     color: rgba(190, 54, 54, 0.836);
 }
+
+
 
 #quebraLinha{
     width: 40px;
@@ -65,7 +91,7 @@
 }
 
 .imagem{
-    width: 20%;
+    width: 100px;
 
     border-radius: 10px;
 }

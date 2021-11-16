@@ -2,41 +2,14 @@ body{
     background-color: rgb(241, 232, 232);
 }
 
-/* responsivo */
-
-@media screen and (max-width: 600px){
-
-}
-
 /* Primeiro Card */
+
+@media screen and (max-width: 800px) {
+    
+}
 
 mat-card{
     background-color: rgb(241, 232, 232);
-}
-
-.Container1{
-    width: 50%;
-    display: inline-block;
-    border-radius: 10px;
-    background-color: rgb(241, 232, 232);
-    position: relative;
-    left: 25%;
-
-}
-
-.Container1 div{
-    float: left;
-}
-
-#DivTexto{
-    margin: 50px;
-}
-
-#Parte3{
-    position: relative;
-    bottom: 200px;
-    left: 280px;
-
 }
 
 .Button{
@@ -57,7 +30,7 @@ mat-card{
 
 
 .img2{
-    width: 15%;
+    width: 50px;
     border-radius: 80px;
     display: block;
     padding: 5px;
@@ -67,11 +40,29 @@ mat-card{
     color: rgba(190, 54, 54, 0.836);
 }
 
-
-
 #quebraLinha{
-    width: 40px;
+    width: 150px;
 }
+#quebraLinhaTitle{
+    width: 100px;
+}
+
+.ContainerCima{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: rgb(241, 232, 232);
+    border-radius: 10px;
+}
+
+.ContainerCima div{
+    flex: 1 1 300px;
+    color: #fff;
+}
+
 /* Segundo Card */
 
 .Container{

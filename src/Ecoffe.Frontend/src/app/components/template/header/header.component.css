@@ -1,88 +1,94 @@
-
-.header{
+.header-container{
+    background-color: #FBF6FF;
+    height: 140px;
+    font-family: 'Ovo', serif;
     display: flex;
     justify-content: center;
-    background-color: #FBF6FF;
-    height: 110px;
-    font-family: 'Ovo', serif;
-
 }
 
-
-.header a {
-    text-decoration: none;
-    margin-top: 100px;
-    margin-right: 35px;
+.nav{
+  margin: 20px;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  top: 75px;
+  display: flex;
+  flex-flow: wrap;
 }
 
-.nav-header{
-    color: black;
-    position: absolute;
-    margin-top: 90px;
+.nav a {
+  text-decoration: none;
+  margin-right: 35px;
+}
+
+.nav a:last-of-type{
+  margin-right: 0px;
 }
 
 .logo{
-    position: absolute;
-    margin-bottom: 60px;
-    font-family: 'Ovo', serif;
+  min-width: 220px;
+  position: absolute;
+  top: 10px;
 }
 
-h4 {
-    color:black;
-    float: right;
-    align-items: center;
-    text-align: center;
-    margin-top: 25px;
+.logo > img {
+  float: left;
 }
 
-form {
-    background-color: white;
-    width: 25 0px;
-    height: 44px;
-    margin-top: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 1400px;
+.logo > span {
+  float: right;
+  vertical-align: middle;
+  line-height: 78px;
+}
 
+@media (max-width: 550px) {
+  .logo{
+    display: none;
   }
+
+  .nav{
+    position: unset;
+  } 
+}
+
+@media (max-width: 1050px){
+  .right-content > input{
+    display: none;
+  }
+
+  .right-content > button{
+    display: none;
+  }
+}
+
+.right-content{
+  display: flex;
+  float: right;
+  position: absolute;
+  right: 10px;
+  margin-bottom: 10px;
+}
 
   input {
-    all: unset;
     font: 16px system-ui;
     color: black;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-  }
-
-  ::placeholder {
-    color: black;
-    opacity: 0.7; 
+    border-radius: 25px;
+    border-color: unset;
+    padding: 10px 10px 10px 45px;
   }
 
   button {
     all: unset;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
-  }
-  
-  svg {
-    color: black;
-    fill: currentColor;
-    width: 24px;
-    height: 24px;
-    padding: 10px;
+    width: 32px;
+    top: 7px;
+    left: 10px;
+    position: absolute;
+    height: 32px;
   }
 
   .cart {
+    margin: 10px;
     height: 32px;
     width: 32px;
-    align-items: center;
-    display: flex;
-    margin-top: 25px;
-    margin-left: 20px;
-    
   }

@@ -4,8 +4,8 @@ body{
 
 /* Primeiro Card */
 
-@media screen and (max-width: 800px) {
-    
+.card1Oculto{
+    display: none;
 }
 
 mat-card{
@@ -28,6 +28,12 @@ mat-card{
     border-radius: 80px;
 }
 
+.img:hover{
+    border-style: double;
+    border-color: rgb(134, 134, 134);
+    filter: grayscale(1);
+    transition: 0.3s;
+}
 
 .img2{
     width: 50px;
@@ -35,7 +41,12 @@ mat-card{
     display: block;
     padding: 5px;
 }
-
+.img2:hover{
+    border-style: double;
+    border-color: rgb(134, 134, 134);
+    filter: grayscale(1);
+    transition: 0.3s;
+}
 .verm{
     color: rgba(190, 54, 54, 0.836);
 }
@@ -79,10 +90,16 @@ mat-card{
 .Container div{
     flex: 1 1 300px;
     color: #fff;
+    margin-left: 50px;
+    margin-bottom: 2px;
 }
 
 .imagem{
     width: 100px;
 
     border-radius: 10px;
+}
+.imagem:hover{
+    filter: grayscale(1);
+    transition: 0.3s;
 }

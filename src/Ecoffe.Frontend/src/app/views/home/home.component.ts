@@ -30,20 +30,18 @@ di(){
   ngOnInit(): void {
   }
   
-  troca(){
-    this.render.selectRootElement('h1').innerHTML = "teste";
-    this.render.selectRootElement('p').innerHTML = "Teste no para";
-    this.render.selectRootElement('#price').innerHTML = "Preço";
-    this.render.selectRootElement('.img').src = "../../../assets/img2.png";
-    this.render.selectRootElement('.img2').src = "../../../assets/img1.png";
+  troca(titulo: string, desc: string, price: string, url: string){
+    this.render.selectRootElement('h1').innerHTML = titulo;
+    this.render.selectRootElement('p').innerHTML = desc;
+    this.render.selectRootElement('#price').innerHTML = price;
+    this.render.selectRootElement('.img').src = url;
   }
 
-  troca2(){
-    this.render.selectRootElement('h1').innerHTML = "Titulo 2";
-    this.render.selectRootElement('p').innerHTML = "paragrafo 2 teste 2";
-    this.render.selectRootElement('#price').innerHTML = "preço 2";
-    this.render.selectRootElement('.img').src = "../../../assets/img3.png";
-    this.render.selectRootElement('#img3').src = "../../../assets/img1.png";
+  troca2(titulo: string, desc: string, price: string, url: string){
+    this.render.selectRootElement('h1').innerHTML = titulo;
+    this.render.selectRootElement('p').innerHTML = desc;
+    this.render.selectRootElement('#price').innerHTML = price;
+    this.render.selectRootElement('.img').src = url;
   }
     
 

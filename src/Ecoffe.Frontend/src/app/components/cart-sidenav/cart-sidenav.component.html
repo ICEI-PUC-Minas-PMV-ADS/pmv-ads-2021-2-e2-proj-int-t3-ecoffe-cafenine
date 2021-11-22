@@ -1,0 +1,11 @@
+<mat-sidenav-container>
+    <mat-sidenav position="end" mode="over" [(opened)]="opened">
+        
+        Sidenav
+        <button (click)="opened=!opened">fechar</button>
+    
+    </mat-sidenav>
+    <mat-sidenav-content>Main
+        <button (click)="opened=!opened">toggle</button>        
+    </mat-sidenav-content>
+</mat-sidenav-container>

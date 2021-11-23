@@ -35,7 +35,7 @@ namespace Ecoffe.Backend.Services
             var carrinhoDb = await _context.Carrinho.FindAsync(carrinhoId);
 
             var productNew = new Produto() {
-                Id_Produto = produtoId
+                Id = produtoId
             };
 
             carrinhoDb.Produtos.Add(productNew);

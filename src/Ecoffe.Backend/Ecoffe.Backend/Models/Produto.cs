@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecoffe.Backend.Models
@@ -7,17 +8,13 @@ namespace Ecoffe.Backend.Models
     public class Produto
     {
         [Key]
-        public int Id_Produto { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public string Nm_Produto { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public float Nr_Peso_Liquido { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public float Nr_Altura { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public float Nr_Largura { get; set; }
-        public string Tx_Informacao_Comercial { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public decimal Vl_Preco_Produto { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public decimal Peso { get; set; }
+        public decimal Altura { get; set; }
+        public decimal Largura { get; set; }
+        public decimal Comprimento { get; set; }
+        public decimal Valor { get; set; }
+        public List<Carrinho> Carrinhos { get; set; }
     }
 }

@@ -4,14 +4,16 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211123134739_carrinho")]
+    partial class carrinho
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,12 +26,12 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<int>("CarrinhosId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProdutosId")
+                    b.Property<int>("ProdutosId_Produto")
                         .HasColumnType("int");
 
-                    b.HasKey("CarrinhosId", "ProdutosId");
+                    b.HasKey("CarrinhosId", "ProdutosId_Produto");
 
-                    b.HasIndex("ProdutosId");
+                    b.HasIndex("ProdutosId_Produto");
 
                     b.ToTable("CarrinhoProduto");
                 });
@@ -249,33 +251,34 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Produto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Id_Produto")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Altura")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Comprimento")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Largura")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Nome")
+                    b.Property<string>("Nm_Produto")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Nr_Altura")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Nr_Largura")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Nr_Peso_Liquido")
+                        .HasColumnType("real");
 
                     b.Property<int?>("PedidoId_Pedido")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Peso")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Tx_Informacao_Comercial")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Vl_Preco_Produto")
+                        .HasColumnType("real");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id_Produto");
 
                     b.HasIndex("PedidoId_Pedido");
 
@@ -350,7 +353,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
                     b.HasOne("Ecoffe.Backend.Models.Produto", null)
                         .WithMany()
-                        .HasForeignKey("ProdutosId")
+                        .HasForeignKey("ProdutosId_Produto")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

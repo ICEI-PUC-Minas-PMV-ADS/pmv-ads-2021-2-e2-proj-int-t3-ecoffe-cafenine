@@ -4,14 +4,16 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211123135000_att_produto_1")]
+    partial class att_produto_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -254,14 +256,11 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Altura")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Altura")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("Comprimento")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Largura")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Largura")
+                        .HasColumnType("real");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -269,11 +268,14 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<int?>("PedidoId_Pedido")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Peso")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Peso")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Tx_Informacao_Comercial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Valor")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 

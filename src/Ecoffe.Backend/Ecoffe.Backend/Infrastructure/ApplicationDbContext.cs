@@ -20,5 +20,6 @@ namespace Ecoffe.Backend.Infrastructure
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Seguranca> Seguranca { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Carrinho> Carrinho { get; set; }
     }
 }

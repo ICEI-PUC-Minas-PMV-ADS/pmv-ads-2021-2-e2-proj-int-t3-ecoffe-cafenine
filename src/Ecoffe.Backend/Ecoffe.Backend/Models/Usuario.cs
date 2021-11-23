@@ -15,6 +15,8 @@ namespace Ecoffe.Backend.Models
         public string Email { get; set; }
         public int? EnderecoId { get; set; }
         public Endereco? Endereco { get; set; }
+        public int CarrinhoId { get; set; }
+        public Carrinho Carrinho { get; set; }
         public List<Cartao> Cartoes { get; set; }
         public string Telefone { get; set; }
         public bool Ativo { get; set; }

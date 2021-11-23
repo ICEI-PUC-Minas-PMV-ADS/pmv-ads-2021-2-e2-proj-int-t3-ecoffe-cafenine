@@ -18,6 +18,6 @@ namespace Ecoffe.Backend.Models
         public float Nr_Largura { get; set; }
         public string Tx_Informacao_Comercial { get; set; }
         [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public float Vl_Preco_Produto { get; set; }
+        public decimal Vl_Preco_Produto { get; set; }
     }
 }

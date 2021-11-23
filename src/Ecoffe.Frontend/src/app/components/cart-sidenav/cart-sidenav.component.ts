@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartSidenavComponent implements OnInit {
 
-  opened = false;
+  constructor(private cartService: CartService) {}
 
+  get isCartSidenavOpened(): boolean {
+    return this.cartService.isOpened;
+  }
 
-  constructor() { }
+  toggleCartSidenav(){
+    this.cartService.toggleCartSidenav();
+  }
 
   ngOnInit(): void {
   }
+
+
+
 
 }

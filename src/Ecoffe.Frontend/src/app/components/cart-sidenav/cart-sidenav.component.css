@@ -17,3 +17,15 @@ mat-sidenav-container{
     display: flex;
     float: right;
 }
+
+.closeButton{
+    all:unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    margin: 5px;
+    line-height: 14px;
+    min-width: auto;
+    cursor: pointer;
+}

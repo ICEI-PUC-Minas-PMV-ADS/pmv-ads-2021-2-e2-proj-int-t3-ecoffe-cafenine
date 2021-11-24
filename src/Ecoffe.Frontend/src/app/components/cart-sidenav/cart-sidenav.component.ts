@@ -1,3 +1,4 @@
+import { Carrinho } from './../../models/carrinho.model';
 import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-sidenav.component.css']
 })
 export class CartSidenavComponent implements OnInit {
-  cart: any;
+  cart: Carrinho = {
+    id: 0,
+    produtos: []
+  };
   userId: any;
 
   constructor(private cartService: CartService, private router: Router) {}
@@ -18,13 +22,11 @@ export class CartSidenavComponent implements OnInit {
   }
 
   toggleCartSidenav(){
+    this.loadCart();
     this.cartService.toggleCartSidenav();
   }
 
-  ngOnInit(): void {
-
-    console.log("iniciando...");
-    
+  ngOnInit(): void {    
     this.userId = localStorage.getItem("usuarioId");
 
     if(!this.userId || this.userId == ""){
@@ -32,14 +34,15 @@ export class CartSidenavComponent implements OnInit {
       return;
     }
 
+    if(this.cartService.isOpened == true)
+      this.cartService.toggleCartSidenav();
+
     this.loadCart();
   }
 
   loadCart(){
-    console.log("carregando carrinho...");
     this.cartService.getCartByUserId(this.userId).subscribe((data) => { 
       this.cart = data;
-      console.log(data);
     });
   }
 

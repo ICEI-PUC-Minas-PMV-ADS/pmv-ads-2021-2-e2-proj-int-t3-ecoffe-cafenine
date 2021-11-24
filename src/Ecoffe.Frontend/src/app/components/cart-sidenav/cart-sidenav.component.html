@@ -1,5 +1,16 @@
 <mat-sidenav-container>
     <mat-sidenav position="end" mode="over" [opened]="isCartSidenavOpened">      
-        <button class="closeButton" (click)="toggleCartSidenav()">X</button> 
+        <button class="closeButton" (click)="toggleCartSidenav()">X</button>
+        <div *ngFor="let produto of cart.produtos">
+            <p>{{produto.produtoId}}</p>
+        </div>
+
+
+
+
+
+
+
+        
     </mat-sidenav>
 </mat-sidenav-container>

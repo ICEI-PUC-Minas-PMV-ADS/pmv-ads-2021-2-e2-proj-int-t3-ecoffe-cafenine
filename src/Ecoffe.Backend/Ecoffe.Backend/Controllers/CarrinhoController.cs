@@ -47,7 +47,7 @@ namespace Ecoffe.Backend.Controllers
         {
             try
             {
-                var usuarioDb = await _context.Usuario.Where(p => p.Id == usuarioId).FirstOrDefaultAsync();
+                var usuarioDb = await _context.Usuario.Where(p => p.Id == usuarioId).Include(p => p.Carrinho).ThenInclude(x => x.Produtos).FirstOrDefaultAsync();
 
                 if (usuarioDb == null)
                     return StatusCode(404, "Não foi encontrado usuário cadastrado");

@@ -1,4 +1,5 @@
-﻿using Ecoffe.Backend.Models;
+﻿using Ecoffe.Backend.Helpers;
+using Ecoffe.Backend.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Ecoffe.Backend.Interfaces
     public interface ICarrinhoService
     {
         Task<Carrinho> New(int usuarioId);
-        Task<Carrinho> AddProductToCard(int carrinhoId, int produtoId);
+        Task<Carrinho> AddProductToCard(ProdutoCarrinho produto);
     }
 }

@@ -28,7 +28,7 @@ namespace Ecoffe.Backend.Controllers
         {
             try
             {
-                var carrinho = await _context.Carrinho.FindAsync(id);
+                var carrinho = await _context.Carrinho.Where(p => p.Id == id).Include(p => p.Produtos).FirstOrDefaultAsync();
 
                 if (carrinho == null)
                     return StatusCode(404, "Carrinho não encontrado");
@@ -67,27 +67,23 @@ namespace Ecoffe.Backend.Controllers
             }
         }
 
-        //POST: api/carrinho/
-        [HttpPost]
+        //POST: api/carrinho/addProduct
+        [HttpPost("addProduct")]
         public async Task<IActionResult> AddProductToCard([FromServices] ICarrinhoService carrinhoService, [FromBody] ProdutoCarrinho produtoCarrinho)
         {
             try
             {
-                var usuarioDb = await _context.Usuario.Where(p => p.Id == produtoCarrinho.UsuarioId).FirstOrDefaultAsync();
+                var usuarioDb = await _context.Usuario.Where(p => p.Id == produtoCarrinho.UsuarioId).Include(p => p.Carrinho).FirstOrDefaultAsync();
 
                 if (usuarioDb == null)
                     return StatusCode(404, "Não foi encontrado usuário cadastrado");
 
-                var carrinhoDb = new Carrinho();
-
                 if (usuarioDb.Carrinho == null)
-                    carrinhoDb = await carrinhoService.New(produtoCarrinho.UsuarioId);
+                    usuarioDb.Carrinho = await carrinhoService.New(produtoCarrinho.UsuarioId);
 
-                carrinhoDb = usuarioDb.Carrinho;
+                await carrinhoService.AddProductToCard(produtoCarrinho);
 
-                await carrinhoService.AddProductToCard(carrinhoDb.Id, produtoCarrinho.ProdutoId);
-
-                return Ok(carrinhoDb);
+                return Ok(usuarioDb.Carrinho);
             }
             catch (Exception ex)
             {

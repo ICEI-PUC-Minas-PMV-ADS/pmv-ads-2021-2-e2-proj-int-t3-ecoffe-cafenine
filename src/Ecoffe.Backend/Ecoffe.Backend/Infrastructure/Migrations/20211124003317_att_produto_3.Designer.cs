@@ -4,46 +4,22 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211124003317_att_produto_3")]
+    partial class att_produto_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Ecoffe.Backend.Helpers.ProdutoCarrinho", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CarrinhoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CarrinhoId");
-
-                    b.ToTable("ProdutoCarrinho");
-                });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Carrinho", b =>
                 {
@@ -268,6 +244,9 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<decimal>("Altura")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int?>("CarrinhoId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Comprimento")
                         .HasColumnType("decimal(18,2)");
 
@@ -287,6 +266,8 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CarrinhoId");
 
                     b.HasIndex("PedidoId_Pedido");
 
@@ -351,13 +332,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.ToTable("Usuario");
                 });
 
-            modelBuilder.Entity("Ecoffe.Backend.Helpers.ProdutoCarrinho", b =>
-                {
-                    b.HasOne("Ecoffe.Backend.Models.Carrinho", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("CarrinhoId");
-                });
-
             modelBuilder.Entity("Ecoffe.Backend.Models.Cartao", b =>
                 {
                     b.HasOne("Ecoffe.Backend.Models.Usuario", null)
@@ -396,6 +370,10 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Produto", b =>
                 {
+                    b.HasOne("Ecoffe.Backend.Models.Carrinho", null)
+                        .WithMany("Produtos")
+                        .HasForeignKey("CarrinhoId");
+
                     b.HasOne("Ecoffe.Backend.Models.Pedido", null)
                         .WithMany("Produtos")
                         .HasForeignKey("PedidoId_Pedido");

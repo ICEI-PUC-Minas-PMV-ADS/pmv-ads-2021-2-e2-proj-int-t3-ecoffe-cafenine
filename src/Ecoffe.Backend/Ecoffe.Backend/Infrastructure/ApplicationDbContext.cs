@@ -1,4 +1,5 @@
-﻿using Ecoffe.Backend.Models;
+﻿using Ecoffe.Backend.Helpers;
+using Ecoffe.Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecoffe.Backend.Infrastructure
@@ -21,5 +22,6 @@ namespace Ecoffe.Backend.Infrastructure
         public DbSet<Seguranca> Seguranca { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Carrinho> Carrinho { get; set; }
+        public DbSet<ProdutoCarrinho> ProdutoCarrinho { get; set; }
     }
 }

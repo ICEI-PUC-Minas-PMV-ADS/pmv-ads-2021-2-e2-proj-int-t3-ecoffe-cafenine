@@ -15,6 +15,5 @@ namespace Ecoffe.Backend.Models
         public decimal Largura { get; set; }
         public decimal Comprimento { get; set; }
         public decimal Valor { get; set; }
-        public List<Carrinho> Carrinhos { get; set; }
     }
 }

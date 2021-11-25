@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginRegisterService } from './../../services/login-register.service';
 import { Usuario, LoginUsuario } from './../../models/usuario.model';
 import { Component, OnInit } from '@angular/core';
+import { HomeComponent } from 'src/app/views/home/home.component';
 
 @Component({
   selector: 'app-login-register',
@@ -19,32 +20,34 @@ export class LoginRegisterComponent implements OnInit {
     nome: "",
     senha: "",
     telefone: "",
-  } 
+  }
 
   loginUser: LoginUsuario = {
     emailCpf: "",
     senha: ""
   }
-  
+
   constructor(private loginRegisterService: LoginRegisterService, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  login() : void {
+  login(): void {
     this.loginRegisterService.login(this.loginUser).subscribe(usuario => {
-        localStorage.setItem("usuarioId",usuario.id.toString());
-        localStorage.setItem("usuarioCpf",usuario.cpf);
-        localStorage.setItem("usuarioNome",usuario.nome);
-        localStorage.setItem("usuarioAdmin",usuario.admin ? "true" : "false");
-        localStorage.setItem("usuarioEmail",usuario.email);
+      localStorage.setItem("usuarioId", usuario.id.toString());
+      localStorage.setItem("usuarioCpf", usuario.cpf);
+      localStorage.setItem("usuarioNome", usuario.nome);
+      localStorage.setItem("usuarioAdmin", usuario.admin ? "true" : "false");
+      localStorage.setItem("usuarioEmail", usuario.email);
     })
   }
 
-  register() : void {
+  register(): void {
     this.loginRegisterService.register(this.newUser).subscribe(() => {
 
     })
   }
 
+  
 }
+

@@ -1,0 +1,114 @@
+<app-header></app-header>
+<div>
+    <div id="inicio">
+        <mat-card-content id="dados_prod">
+            <!-- aqui deve vim variavel com o diretório do produto-->
+            <a>aaaaaaaaaaaaaaaaaaa</a>
+            <!-- Aqui vai o nome do produto-->
+            <mat-card-subtitle>
+                <!-- Aqui vai a descrição do produto-->
+                <a>aaaaaaaaaaaaaaaaaaa</a>
+            </mat-card-subtitle>
+            <div id="l"></div>
+            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly
+                used to demonstrate the visual form of a document or a typeface without relying on meaningful
+                content.
+                Lorem ipsum may be used as a placeholder before final copy is available.</p>
+        </mat-card-content>
+
+        <img id="img_card" mat-card-image src="../../../assets/image150.png">
+
+        <!-- Informações de valor-->
+        <mat-card id="dados_venda">
+            <mat-card-content appearance="fill">
+                <div id="cima_card">
+
+                    <label>VALOR</label>
+                    <br><br>
+                    <mat-card-subtitle appearance="fill"> Aqui vai vir as formas de pagamento,PIX, boleto ou depósito.</mat-card-subtitle>
+                </div>
+                <div id="l">
+                    <div id="baixo_card">
+                        <mat-card-subtitle appearance="fill"></mat-card-subtitle>
+                        <label>Quantidade</label>
+                        <button mat-icon-button color="accent" id="plus"><span
+                                class="material-icons">remove</span></button>
+                        <label>1</label>
+                        <button mat-icon-button color="accent" id="plus"><span
+                                class="material-icons">add</span></button>
+                    </div>
+                </div>
+                <button mat-button id="Buy">Comprar</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div id="Meio">
+        <p id="enft">Detalhes do produto</p>
+        <mat-stepper>
+            <mat-step>
+                <ng-template matStepLabel>Descrições e Características</ng-template>
+                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly
+                    used to demonstrate the visual form of a document or a typeface without relying on meaningful
+                    content.
+                    Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                <app-table-details></app-table-details>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Avaliação e Comentários</ng-template>
+            </mat-step>
+        </mat-stepper>
+    </div>
+
+    <!--Ultimos Cards-->
+    <div id="Fim">
+        <p id="enft">QUEM VIU ESTE PRODUTO, VIU TAMBÉM.</p>
+        <mat-card id="card-one">
+            <img src="../../../assets/image154.png" mat-card-image>
+            <!-- aqui deve vim variavel com o diretório do produto-->
+            <a>aaaaaaaaaaaaaaaaaaa</a>
+            <!-- Aqui vai o nome do produto-->
+            <mat-card-subtitle>
+                <!-- Aqui vai a descrição do produto-->
+                <a>Preço: R$</a>
+            </mat-card-subtitle>
+
+            <button mat-raised-button color="primary" id="button">
+                Comprar
+            </button>
+        </mat-card>
+
+        <mat-card id="card">
+            <img src="../../../assets/image153.png" mat-card-image>
+            <!-- aqui deve vim variavel com o diretório do produto-->
+            <a>aaaaaaaaaaaaaaaaaaa</a>
+            <!-- Aqui vai o nome do produto-->
+            <mat-card-subtitle>
+                <!-- Aqui vai a descrição do produto-->
+                <a>Preço: R$</a>
+
+            </mat-card-subtitle>
+
+            <button mat-raised-button color="primary" id="button">
+                Comprar
+            </button>
+        </mat-card>
+
+        <mat-card id="card">
+            <img src="../../../assets/image152.png" mat-card-image>
+            <!-- aqui deve vim variavel com o diretório do produto-->
+            <a>aaaaaaaaaaaaaaaaaaa</a>
+            <!-- Aqui vai o nome do produto-->
+            <mat-card-subtitle>
+                <!-- Aqui vai a descrição do produto-->
+                <a>Preço: R$</a>
+            </mat-card-subtitle>
+            <button mat-raised-button color="primary" id="button">
+                Comprar
+            </button>
+        </mat-card>
+
+
+    </div>
+
+<app-footer></app-footer>

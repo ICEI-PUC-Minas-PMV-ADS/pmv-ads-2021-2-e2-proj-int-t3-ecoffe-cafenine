@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table'; 
+
 
 //Pre-made Components
 import { AppComponent } from './app.component';
@@ -41,7 +44,12 @@ import { CardTypePipe } from './utils/mask';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { CardNewComponent } from './components/card-new/card-new.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
-import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatIconModule } from '@angular/material/icon';
+import { TableDetailsComponent } from './components/table-details/table-details.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -60,7 +68,9 @@ import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.com
     ConfirmDialogComponent,
     CardNewComponent,
     PersonalInfoComponent,
-    CartSidenavComponent
+    ProductDetailsComponent,
+    TableDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -80,7 +90,13 @@ import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.com
     MatSnackBarModule,
     MatSelectModule,
     MatCheckboxModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    MatStepperModule,
+    MatTableModule,
+    LayoutModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule,
 
   ],
   providers: [],

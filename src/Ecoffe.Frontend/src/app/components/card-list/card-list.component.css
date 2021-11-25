@@ -1,0 +1,48 @@
+.mat-card{
+    margin: 1rem 2rem 0 2rem;
+}
+
+.mat-expansion-panel{
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.principalCard{
+    background-color: #f9f5f1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #594d423f;
+    font-weight: 550;
+}
+
+.principalCard > .mat-expansion-panel-header{
+    font-weight: 550
+}
+
+.descriptionExpanded{
+    float: left;
+}
+
+.buttonsExpanded{
+    display: flex;
+    float: right;
+}
+
+.buttonsExpanded > button:first-of-type{
+    margin-right: 10px;
+}
+
+.cardBrand{
+    max-height: 40px;
+    max-width: 80px;
+    margin-right: 1.2rem;
+}
+
+.cardBrandLogoContainer{
+    width: 90px;
+    text-align: center;
+}
+
+.newCardButton{
+    margin: 1rem 0 0 2rem;
+}

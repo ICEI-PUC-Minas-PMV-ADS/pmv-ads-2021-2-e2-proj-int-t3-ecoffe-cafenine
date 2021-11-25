@@ -8,6 +8,7 @@ export interface Usuario {
     senha: string;
     email: string;
     enderecoId?: number;
+    endereco?: Endereco;
     telefone: string;
     ativo: boolean;
     admin: boolean;

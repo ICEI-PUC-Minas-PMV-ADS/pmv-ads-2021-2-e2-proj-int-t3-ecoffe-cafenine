@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>Cartões</mat-card-title>
+    <mat-accordion *ngFor="let card of cards">
+        <mat-expansion-panel hideToggle [ngClass]="{'principalCard': card.principal == true}">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            <div class="cardBrandLogoContainer">
+              <img class="cardBrand" [src]="getCardBrandLogo(card.bandeira)">
+            </div>
+            {{ card.bandeira | uppercase }} - 
+            {{ card.tipoCartao | cardType }}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ card.numero | hideCardNumber}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="descriptionExpanded">
+            <p>Titular: {{ card.nomeTitular }}</p>
+            <p>Validade: {{ card.vencimento | date:"MM/yy" }}</p>
+          </div>
+          <div class="buttonsExpanded">
+            <button mat-stroked-button (click)="turnPrincipalConfirm(card.id)" color="primary" *ngIf="!card.principal">
+              Tornar principal
+            </button>
+            <button mat-flat-button (click)="deleteConfirm(card.id)" color="warn">
+              <i class="material-icons">delete</i>
+            </button>
+        </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <p *ngIf="cards.length == 0">Não há nenhum cartão cadastrado.</p>
+</mat-card>
+<button mat-flat-button color="primary" (click)="openCardNewModal()" class="newCardButton">
+  Novo cartão
+</button>

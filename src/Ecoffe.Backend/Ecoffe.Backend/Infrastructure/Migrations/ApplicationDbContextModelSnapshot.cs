@@ -19,28 +19,83 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Ecoffe.Backend.Models.Cartao", b =>
+            modelBuilder.Entity("Ecoffe.Backend.Helpers.ProdutoCarrinho", b =>
                 {
-                    b.Property<int>("Id_Catao")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Dt_Validade")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nm_Cartao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Nr_Cartao")
+                    b.Property<int?>("CarrinhoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Tx_Bandeira")
-                        .IsRequired()
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarrinhoId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("ProdutoCarrinho");
+                });
+
+            modelBuilder.Entity("Ecoffe.Backend.Models.Carrinho", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carrinho");
+                });
+
+            modelBuilder.Entity("Ecoffe.Backend.Models.Cartao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bandeira")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id_Catao");
+                    b.Property<string>("Csv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataAdicao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NomeTitular")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Numero")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Principal")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TipoCartao")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Vencimento")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Cartao");
                 });
@@ -66,24 +121,33 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Endereco", b =>
                 {
-                    b.Property<int>("Id_Endereco")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nr_Cep")
-                        .IsRequired()
+                    b.Property<string>("Bairro")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nr_Endereco")
-                        .IsRequired()
+                    b.Property<string>("CEP")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tx_Endereco")
-                        .IsRequired()
+                    b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id_Endereco");
+                    b.Property<string>("Complemento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Numero")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rua")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Endereco");
                 });
@@ -198,34 +262,33 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Produto", b =>
                 {
-                    b.Property<int>("Id_Produto")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nm_Produto")
-                        .IsRequired()
+                    b.Property<decimal>("Altura")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Comprimento")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Largura")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("Nr_Altura")
-                        .HasColumnType("real");
-
-                    b.Property<float>("Nr_Largura")
-                        .HasColumnType("real");
-
-                    b.Property<float>("Nr_Peso_Liquido")
-                        .HasColumnType("real");
 
                     b.Property<int?>("PedidoId_Pedido")
                         .HasColumnType("int");
 
-                    b.Property<string>("Tx_Informacao_Comercial")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Peso")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<float>("Vl_Preco_Produto")
-                        .HasColumnType("real");
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id_Produto");
+                    b.HasKey("Id");
 
                     b.HasIndex("PedidoId_Pedido");
 
@@ -263,6 +326,9 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<string>("CPF")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CarrinhoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -280,9 +346,35 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CarrinhoId");
+
                     b.HasIndex("EnderecoId");
 
                     b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("Ecoffe.Backend.Helpers.ProdutoCarrinho", b =>
+                {
+                    b.HasOne("Ecoffe.Backend.Models.Carrinho", null)
+                        .WithMany("Produtos")
+                        .HasForeignKey("CarrinhoId");
+
+                    b.HasOne("Ecoffe.Backend.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Produto");
+                });
+
+            modelBuilder.Entity("Ecoffe.Backend.Models.Cartao", b =>
+                {
+                    b.HasOne("Ecoffe.Backend.Models.Usuario", null)
+                        .WithMany("Cartoes")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Pedido", b =>
@@ -321,16 +413,32 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Usuario", b =>
                 {
+                    b.HasOne("Ecoffe.Backend.Models.Carrinho", "Carrinho")
+                        .WithMany()
+                        .HasForeignKey("CarrinhoId");
+
                     b.HasOne("Ecoffe.Backend.Models.Endereco", "Endereco")
                         .WithMany()
                         .HasForeignKey("EnderecoId");
 
+                    b.Navigation("Carrinho");
+
                     b.Navigation("Endereco");
+                });
+
+            modelBuilder.Entity("Ecoffe.Backend.Models.Carrinho", b =>
+                {
+                    b.Navigation("Produtos");
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Pedido", b =>
                 {
                     b.Navigation("Produtos");
+                });
+
+            modelBuilder.Entity("Ecoffe.Backend.Models.Usuario", b =>
+                {
+                    b.Navigation("Cartoes");
                 });
 #pragma warning restore 612, 618
         }

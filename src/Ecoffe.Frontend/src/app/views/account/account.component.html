@@ -1,6 +1,15 @@
 <app-header></app-header>
 
+<mat-card class="miniNav">
+    <button mat-flat-button (click)="changeArea(1)" color="basic">Informações Pessoais</button>
+    <button mat-flat-button (click)="changeArea(2)" color="basic">Histórico de Compras</button>
+    <button mat-flat-button (click)="changeArea(3)" color="basic">Formas de Pagamento</button>
+</mat-card>
 
+<app-personal-info *ngIf="areaType == 1"></app-personal-info>
 
+<app-card-list *ngIf="areaType == 3"></app-card-list>
 
 <app-footer></app-footer>
+
+<app-cart-sidenav></app-cart-sidenav>

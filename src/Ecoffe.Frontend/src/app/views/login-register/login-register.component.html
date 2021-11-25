@@ -1,49 +1,66 @@
 <app-header></app-header>
 
-<mat-card>
-    <mat-card-title>Login</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="CPF ou Email" [(ngModel)]="loginUser.emailCpf" name="loginUser_EmailCpf">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="loginUser.senha" name="loginUser_Senha">
-        </mat-form-field>
-    </form>
-    <button mat-raised-button (click)="login()" color="primary">
-        Entrar
-    </button>
-</mat-card>
-
-<br>
-
-<mat-card>
-    <mat-card-title>Registrar</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="newUser.nome" name="newUser_Nome">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input matInput placeholder="Email" [(ngModel)]="newUser.email" name="newUser_Email">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input matInput placeholder="CPF" [(ngModel)]="newUser.cpf" name="newUser_CPF">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input matInput placeholder="Telefone" [(ngModel)]="newUser.telefone" name="newUser_Telefone">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="newUser.senha" name="newUser_Senha">
-        </mat-form-field>
-    </form>
-    <button mat-raised-button (click)="register()" color="primary">
-        Registrar
-    </button>
-</mat-card>
+<body>
 
 
+    <mat-card id="entrar">
+        <mat-card-title class="titulo">ENTRAR</mat-card-title>
+        <form>
+            <mat-form-field id="campo">
+                <input matInput placeholder="CPF ou Email" [(ngModel)]="loginUser.emailCpf" name="loginUser_EmailCpf">
+            </mat-form-field>
+            <br>
+            <mat-form-field id="campo">
+                <input matInput placeholder="Senha" [(ngModel)]="loginUser.senha" name="loginUser_Senha"
+                    type="password">
+            </mat-form-field>
+        </form>
+        <a href="" id="Link"><strong>Esqueceu a senha ?</strong> </a>
+        <button mat-raised-button (click)="login()" color="primary" id="button">
+            Entrar
+        </button>
+    </mat-card>
+
+    <br>
+
+    <mat-card id="regis">
+        <mat-card-title class="titulo">REGISTRAR</mat-card-title>
+        <form>
+            <mat-form-field id="campo">
+                <input matInput placeholder="Nome" [(ngModel)]="newUser.nome" name="newUser_Nome" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field id="campo">
+                <input matInput placeholder="Email" [(ngModel)]="newUser.email" name="newUser_Email" type="email"
+                    required>
+            </mat-form-field>
+            <br>
+            <mat-form-field id="campo">
+                <input matInput placeholder="CPF" [(ngModel)]="newUser.cpf" name="newUser_CPF" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field id="campo">
+                <input matInput placeholder="Telefone" id="campo" [(ngModel)]="newUser.telefone" name="newUser_Telefone"
+                    type="tel">
+            </mat-form-field>
+            <br>
+            <mat-form-field id="campo">
+                <input matInput placeholder="Senha" [(ngModel)]="newUser.senha" name="newUser_Senha" type="password"
+                    required>
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="register()" color="primary" id="button">
+            Registrar
+        </button>
+    </mat-card>
+    <!-- Div com a imagem -->
+
+    <div class="img_footer">
+
+    </div>
+
+
+
+
+</body>
 <app-footer></app-footer>

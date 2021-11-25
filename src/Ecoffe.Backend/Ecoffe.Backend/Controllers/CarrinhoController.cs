@@ -91,5 +91,27 @@ namespace Ecoffe.Backend.Controllers
             }
         }
 
+        //GET: api/carrinho/remove/{produtoCarrinhoId}
+        [HttpGet("remove/{produtoCarrinhoId}")]
+        public async Task<IActionResult> RemoveProductFromCart([FromRoute] int produtoCarrinhoId)
+        {
+            try
+            {
+                var produtoCarrinho = await _context.ProdutoCarrinho.Where(p => p.Id == produtoCarrinhoId).FirstOrDefaultAsync();
+
+                if (produtoCarrinho == null)
+                    return StatusCode(404, "Produto do carrinho não encontrado");
+
+                _context.ProdutoCarrinho.Remove(produtoCarrinho);
+                var result = await _context.SaveChangesAsync();
+
+                return Ok(result);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
     }
 }

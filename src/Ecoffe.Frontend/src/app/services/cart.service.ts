@@ -27,4 +27,8 @@ export class CartService {
     return this.http.get<Carrinho>(this.baseUrl + "/usuario/" + userId);
   }
 
+  removeProductFromCart(productCartId: number): Observable<Carrinho>{
+    return this.http.get<Carrinho>(this.baseUrl + "/remove/" + productCartId);
+  }
+
 }

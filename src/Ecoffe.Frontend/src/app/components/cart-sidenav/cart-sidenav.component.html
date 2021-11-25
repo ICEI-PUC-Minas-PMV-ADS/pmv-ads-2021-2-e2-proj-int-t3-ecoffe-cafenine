@@ -21,7 +21,7 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                <button mat-flat-button color="warn" class="removeButton">X</button>
+                <button mat-flat-button color="warn" (click)="removeProductFromCart(produto.id)" class="removeButton">X</button>
             </div>
         </mat-card>   
     </mat-sidenav>

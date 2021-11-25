@@ -1,3 +1,4 @@
+import { SnackbarService } from './../../services/snackbar.service';
 import { Carrinho } from './../../models/carrinho.model';
 import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
@@ -15,7 +16,7 @@ export class CartSidenavComponent implements OnInit {
   };
   userId: any;
 
-  constructor(private cartService: CartService, private router: Router) {}
+  constructor(private cartService: CartService, private router: Router, private snackbarService: SnackbarService) {}
 
   get isCartSidenavOpened(): boolean {
     return this.cartService.isOpened;
@@ -45,5 +46,12 @@ export class CartSidenavComponent implements OnInit {
       this.cart = data;
     });
   }
-  
+
+  removeProductFromCart(productCartId: number){
+    this.cartService.removeProductFromCart(productCartId).subscribe((data) => {
+      this.loadCart();
+      this.snackbarService.showMessage("Produto removido com sucesso!");
+    })
+  }
+
 }

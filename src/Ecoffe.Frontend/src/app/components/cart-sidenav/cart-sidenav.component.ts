@@ -54,4 +54,8 @@ export class CartSidenavComponent implements OnInit {
     })
   }
 
+  updateProductCart(productCart: any){
+    console.log(productCart);
+  }
+
 }

@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+    <mat-sidenav position="end" mode="over" [opened]="isCartSidenavOpened">
+        <button class="closeButton" (click)="toggleCartSidenav()">X</button>
+        <p *ngIf="cart.produtos.length == 0">Não há nenhum produto adicionado ao carrinho</p>
+        <mat-card *ngFor="let produtoCarrinho of cart.produtos">
+            <mat-card-title>{{produtoCarrinho.produto.nome}}</mat-card-title>
+            <div>
+                <div class="cartProductImg">
+                    <img src="assets/cafe1.jpg">
+                </div>
+                <div style="height: 100px; text-align: end;">
+                    <p>Valor unitário: R${{produtoCarrinho.produto.valor}}</p>
+                    <p>Valor total: R${{produtoCarrinho.valorTotal}}</p>
+                </div>    
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Quantidade</mat-label>
+                    <mat-select (selectionChange)="updateProductCart(produtoCarrinho)" [(ngModel)]="produtoCarrinho.quantidade">
+                      <mat-option *ngFor="let number of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]" [value]="number">
+                        {{number}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button mat-flat-button color="warn" (click)="removeProductFromCart(produtoCarrinho.id)" class="removeButton">X</button>
+            </div>
+        </mat-card>   
+    </mat-sidenav>
+</mat-sidenav-container>

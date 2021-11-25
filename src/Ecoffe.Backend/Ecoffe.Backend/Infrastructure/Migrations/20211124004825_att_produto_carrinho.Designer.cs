@@ -4,14 +4,16 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211124004825_att_produto_carrinho")]
+    partial class att_produto_carrinho
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,8 +43,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CarrinhoId");
-
-                    b.HasIndex("ProdutoId");
 
                     b.ToTable("ProdutoCarrinho");
                 });
@@ -358,14 +358,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.HasOne("Ecoffe.Backend.Models.Carrinho", null)
                         .WithMany("Produtos")
                         .HasForeignKey("CarrinhoId");
-
-                    b.HasOne("Ecoffe.Backend.Models.Produto", "Produto")
-                        .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Cartao", b =>

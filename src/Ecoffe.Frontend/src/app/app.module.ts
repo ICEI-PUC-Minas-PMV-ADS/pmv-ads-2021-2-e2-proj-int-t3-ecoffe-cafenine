@@ -41,6 +41,7 @@ import { CardTypePipe } from './utils/mask';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { CardNewComponent } from './components/card-new/card-new.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
+import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { PersonalInfoComponent } from './components/personal-info/personal-info.
     CardTypePipe,
     ConfirmDialogComponent,
     CardNewComponent,
-    PersonalInfoComponent
+    PersonalInfoComponent,
+    CartSidenavComponent
   ],
   imports: [
     BrowserModule,

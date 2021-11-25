@@ -45,7 +45,5 @@ export class CartSidenavComponent implements OnInit {
       this.cart = data;
     });
   }
-
-
-
+  
 }

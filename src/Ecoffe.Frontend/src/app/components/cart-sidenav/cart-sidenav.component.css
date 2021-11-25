@@ -8,7 +8,7 @@ mat-sidenav, mat-sidenav-content{
 
 mat-sidenav{
     background-color: #f7f7f6;
-    width: 300px;
+    width: 400px;
     position: fixed;
 }
 
@@ -28,4 +28,41 @@ mat-sidenav-container{
     line-height: 14px;
     min-width: auto;
     cursor: pointer;
+}
+
+mat-card{
+    margin-bottom: 10px;
+}
+
+mat-card-title{
+    font-size: 1.2rem;
+}
+
+.cartProduct{
+    background-color: red;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cartProduct:first-of-type{
+    margin-top: 20px;;
+}
+
+.cartProductImg{
+    float: left;
+}
+
+.cartProductImg > img{
+    width: 80px;
+}
+
+.cartProductContent > p{
+    float: right;
+}
+
+.removeButton{
+    float: right; 
+    height: 52px; 
+    font-size: 20px;
 }

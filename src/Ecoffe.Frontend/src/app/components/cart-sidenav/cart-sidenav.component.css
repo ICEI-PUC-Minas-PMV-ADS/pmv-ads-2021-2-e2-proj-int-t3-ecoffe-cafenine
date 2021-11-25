@@ -31,22 +31,11 @@ mat-sidenav-container{
 }
 
 mat-card{
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 mat-card-title{
     font-size: 1.2rem;
-}
-
-.cartProduct{
-    background-color: red;
-    display: flex;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.cartProduct:first-of-type{
-    margin-top: 20px;;
 }
 
 .cartProductImg{
@@ -55,10 +44,6 @@ mat-card-title{
 
 .cartProductImg > img{
     width: 80px;
-}
-
-.cartProductContent > p{
-    float: right;
 }
 
 .removeButton{

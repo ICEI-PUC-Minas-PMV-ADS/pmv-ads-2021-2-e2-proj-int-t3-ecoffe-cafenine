@@ -55,8 +55,8 @@ export class CartSidenavComponent implements OnInit {
   }
 
   updateProductCart(productCart: any){
-    this.cartService.update(productCart).subscribe(() => {
-      
+    this.cartService.update(productCart).subscribe((data) => {
+      this.loadCart(); //todo mapear retorno do data
     })
   }
 

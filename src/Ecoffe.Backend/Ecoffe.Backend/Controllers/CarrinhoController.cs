@@ -113,5 +113,23 @@ namespace Ecoffe.Backend.Controllers
             }
         }
 
+        //POST: api/carrinho/updateProdutoCarrinho
+        [HttpPost("updateProdutoCarrinho")]
+        public async Task<IActionResult> UpdateProdutoCarrinho([FromBody] ProdutoCarrinho produtoCarrinho)
+        {
+            try
+            {
+                _context.ProdutoCarrinho.Update(produtoCarrinho);
+                await _context.SaveChangesAsync();
+
+                return Ok(produtoCarrinho);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
     }
 }

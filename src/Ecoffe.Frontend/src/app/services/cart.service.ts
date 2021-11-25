@@ -1,3 +1,4 @@
+import { ProdutoCarrinho } from './../helpers/produtoCarrinho.model';
 import { Carrinho } from './../models/carrinho.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -29,6 +30,10 @@ export class CartService {
 
   removeProductFromCart(productCartId: number): Observable<Carrinho>{
     return this.http.get<Carrinho>(this.baseUrl + "/remove/" + productCartId);
+  }
+
+  update(productCart: ProdutoCarrinho): Observable<ProdutoCarrinho>{
+    return this.http.post<ProdutoCarrinho>(this.baseUrl + "/updateProdutoCarrinho/",productCart);
   }
 
 }

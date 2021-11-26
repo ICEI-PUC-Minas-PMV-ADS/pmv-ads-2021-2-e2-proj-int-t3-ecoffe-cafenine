@@ -1,0 +1,30 @@
+.mat-card{
+    margin: 1rem 2rem 0 2rem;
+}
+
+.productMatCart{
+    margin: 0.75rem;
+}
+
+.productImg{
+    float: left;
+}
+
+.productImg > img{
+    height: 200px;
+    max-width: 200px;
+}
+
+.productContainer{
+    display: flex;
+}
+
+.productContent{
+    margin: 20px;
+}
+
+.totalValue{
+    margin-left: 0.75rem;
+    font-size: 20px;
+    font-weight: 500;
+}

@@ -1,48 +1,34 @@
 <app-header></app-header>
 <!-- Card 1 -->
 
-   <!--  <div class="Container1">
-        <div id="DivTexto">
-            <h4 class="verm">Titulo Produto</h4>
-            <p id="quebraLinha">Descrição do Produto blabalbalbalblablabllab Lorem ipsum dolor sit amet</p>
-            <p class="verm">R$49,90</p>
-            <button mat-flat-button class="Button">Buy Now</button>
+<mat-card>
+    <section class="ContainerCima">
+        <div>
+            <mat-card-title>
+                <h1 class="verm" id="quebraLinhaTitle">Midnigh Frappuccino</h1>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <p id="quebraLinha" style="color: black;">The Midnight mint Mocha Frappuccino features extra dark cocoa
+                    blended with Frappuccino Roast coffee.</p>
+                <p class="verm" id="price">R$49,90</p>
+                <button mat-flat-button class="Button">Buy Now</button>
+            </mat-card-subtitle>
         </div>
-        <div id="DivTexto">
-            <img src="../../../assets/cafe1.jpg" alt="Img do Produto mais vendido" class="img">
+        <div (click)="abre_mod()">
+            <img src="../../../assets/img1.png" alt="Img do Produto mais vendido" class="img">
         </div>
-        <div id="Parte3">
-            <img src="../../../assets/cafe1.jpg" alt="img do Segundo Produto mais vendido" class="img2">
-            <img src="../../../assets/cafe1.jpg" alt="img do Terceiro Produto mais vendido" class="img2">
+        <div>
+            <img id="img2" src="../../../assets/img1.png" alt="img do Segundo Produto mais vendido" class="img2"
+                (click)="troca('Midnigh Frappuccino','The Midnight mint Mocha Frappuccino features extra dark cocoa blended with Frappuccino Roast coffee.','R$49,90','../../../assets/img1.png')">
+            <img id="img3" src="../../../assets/img3.png" alt="img do Terceiro Produto mais vendido" class="img2"
+                (click)="troca2('Cookies','Deliciosos Cookies de chocolate com gotas de Chocolate Branco e pedaços de cacau','R$28,49','../../../assets/img3.png')">
         </div>
-    </div>
-        -->
+    </section>
+</mat-card>
 
-        <mat-card>
-            <section class="ContainerCima">
-                <div>
-                    <mat-card-title>
-                        <h1 class="verm" id="quebraLinhaTitle">Midnigh Frappuccino</h1>
-                    </mat-card-title>
-                    <mat-card-subtitle>
-                        <p id="quebraLinha" style="color: black;">The Midnight mint Mocha Frappuccino features extra dark cocoa blended with Frappuccino Roast coffee.</p>
-                        <p class="verm" id="price">R$49,90</p>
-                        <button mat-flat-button class="Button">Buy Now</button>
-                    </mat-card-subtitle>
-                </div>
-                <div>
-                    <img src="../../../assets/img1.png" alt="Img do Produto mais vendido" class="img">
-                </div>
-                <div>
-                    <img id="img2" src="../../../assets/img1.png" alt="img do Segundo Produto mais vendido" class="img2" (click)="troca('Midnigh Frappuccino','The Midnight mint Mocha Frappuccino features extra dark cocoa blended with Frappuccino Roast coffee.','R$49,90','../../../assets/img1.png')">
-                    <img id="img3" src="../../../assets/img3.png" alt="img do Terceiro Produto mais vendido" class="img2" (click)="troca2('Cookies','Deliciosos Cookies de chocolate com gotas de Chocolate Branco e pedaços de cacau','R$28,49','../../../assets/img3.png')">
-                </div>
-            </section>
-        </mat-card>
 
-        
 
-    <br>
+<br>
 <!-- Card 2 -->
 <mat-card>
     <section class="Container">
@@ -58,7 +44,7 @@
             <img mat-card-image src="../../../assets/img6.png" alt="img produto mais votado" class="imagem">
             <p>Titulo produto</p>
         </div>
-        
+
     </section>
 </mat-card>
 <br><br>

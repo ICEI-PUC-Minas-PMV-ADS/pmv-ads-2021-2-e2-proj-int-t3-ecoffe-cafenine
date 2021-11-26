@@ -42,6 +42,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { CardNewComponent } from './components/card-new/card-new.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.component';
+import { ProductsDetailsComponent } from './components/products-details/products-details.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.com
     ConfirmDialogComponent,
     CardNewComponent,
     PersonalInfoComponent,
-    CartSidenavComponent
+    CartSidenavComponent,
+    ProductsDetailsComponent
   ],
   imports: [
     BrowserModule,

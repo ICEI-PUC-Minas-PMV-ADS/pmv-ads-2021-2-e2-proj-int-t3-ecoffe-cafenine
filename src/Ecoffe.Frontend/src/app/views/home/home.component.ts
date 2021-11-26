@@ -1,5 +1,6 @@
-import { BooleanInput } from '@angular/cdk/coercion';
+import { ProductsService } from './../../services/products.service';
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ di(){
     setTimeout(function(){di.style.display = "none";}, 3000);
 }
 
-  constructor(private render: Renderer2) {
+  constructor(private render: Renderer2, private productsService: ProductsService) {
       this.di();
    }
 
@@ -43,8 +44,12 @@ di(){
     this.render.selectRootElement('#price').innerHTML = price;
     this.render.selectRootElement('.img').src = url;
   }
-    
 
+  abre_mod(){
+    this.productsService.openProductModal().afterClosed().subscribe(() =>{
+    });
+  }
+ 
 
 }
 

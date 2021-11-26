@@ -46,6 +46,34 @@ namespace ClientApp.Controllers
 
         }
 
+        [HttpGet("endereco/{userId}")]
+        public async Task<IActionResult> GetEnderecoByUserId([FromRoute] int userId)
+        {
+            var endereco = new Endereco();
+
+            try
+            {
+                var usuario = await _context.Usuario
+                                    .Where(p => p.Id == userId)
+                                    .Include(p => p.Endereco)
+                                    .FirstOrDefaultAsync();
+
+                if (usuario == null)
+                    return StatusCode(404, "Usuário não encontrado");
+
+                if (usuario.Endereco == null)
+                    return StatusCode(404, "Endereço não encontrado");
+
+                endereco = usuario.Endereco;
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+
+            return Ok(endereco);
+        }
+
         //POST: api/usuario/
         [HttpPost]
         public async Task<IActionResult> Create([FromServices] IUsuarioService usuarioService, [FromBody] Usuario usuario)

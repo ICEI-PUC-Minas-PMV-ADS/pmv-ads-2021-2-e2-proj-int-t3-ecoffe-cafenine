@@ -31,4 +31,25 @@
 
 <mat-card>
     <mat-card-title>Endereço</mat-card-title>
+    <mat-form-field style="width: 15%; min-width: 80px;">
+        <input matInput placeholder="CEP" (keyup)="getAdress()" mask="00000-000" [(ngModel)]="endereco.cep" name="endereco_Cep">
+    </mat-form-field>
+    <mat-form-field style="width: 55%; min-width: 200px;">
+        <input matInput placeholder="Rua" [(ngModel)]="endereco.rua" name="endereco_Rua">
+    </mat-form-field>
+    <mat-form-field style="width: 10%; min-width: 30px;">
+        <input matInput placeholder="Número" mask="0*" [(ngModel)]="endereco.numero" name="endereco_Numero">
+    </mat-form-field>
+    <mat-form-field style="width: 15%; min-width: 100px;">
+        <input matInput placeholder="Complemento" [(ngModel)]="endereco.complemento" name="endereco_Complemento">
+    </mat-form-field>
+    <mat-form-field style="width: 32%; min-width: 100px;">
+        <input matInput placeholder="Bairro" [(ngModel)]="endereco.bairro" name="endereco_Bairro">
+    </mat-form-field>
+    <mat-form-field style="width: 20%; min-width: 100px;">
+        <input matInput placeholder="Cidade" [(ngModel)]="endereco.cidade" name="endereco_Cidade">
+    </mat-form-field>
+    <mat-form-field style="width: 10%; min-width: 30px;">
+        <input matInput placeholder="UF" mask="AA" [(ngModel)]="endereco.uf" name="endereco_Uf">
+    </mat-form-field>
 </mat-card>

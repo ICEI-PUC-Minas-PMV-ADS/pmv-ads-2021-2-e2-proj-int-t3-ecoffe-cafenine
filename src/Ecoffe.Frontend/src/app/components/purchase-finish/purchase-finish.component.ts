@@ -1,3 +1,5 @@
+import { Endereco } from './../../models/endereco.model';
+import { PersonalInfoService } from './../../services/personal-info.service';
 import { SnackbarService } from './../../services/snackbar.service';
 import { CartService } from './../../services/cart.service';
 import { Router } from '@angular/router';
@@ -15,10 +17,22 @@ export class PurchaseFinishComponent implements OnInit {
     id: 0,
     produtos: []
   };
+
+  endereco: Endereco = {
+    bairro: '',
+    cep: '',
+    cidade: '',
+    complemento: '',
+    id: 0,
+    numero: '',
+    rua: '',
+    uf: ''
+  };
+
   userId: any;
   totalValue = 0;
 
-  constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService) { }
+  constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService, private personalInfoService: PersonalInfoService) { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem("usuarioId");
@@ -29,6 +43,7 @@ export class PurchaseFinishComponent implements OnInit {
     }
 
     this.loadCart();
+    this.loadAdress();
   }
 
   loadCart(){
@@ -38,11 +53,27 @@ export class PurchaseFinishComponent implements OnInit {
     });
   }
 
+  loadAdress(){
+    this.personalInfoService.getEnderecoByUserId(this.userId).subscribe((data) => {
+      this.endereco = data;
+    });
+  }
+
   getTotalValue(){
     this.totalValue = 0;
 
     this.cart.produtos.forEach(produto => {
       this.totalValue += produto.valorTotal;
+    })
+  }
+
+  getAdress(){
+    this.personalInfoService.getAdress(this.endereco.cep)?.subscribe(adress => {
+      this.endereco.rua = adress.logradouro;
+      this.endereco.complemento = adress.complemento;
+      this.endereco.bairro = adress.bairro;
+      this.endereco.cidade = adress.localidade;
+      this.endereco.uf = adress.uf;
     })
   }
 

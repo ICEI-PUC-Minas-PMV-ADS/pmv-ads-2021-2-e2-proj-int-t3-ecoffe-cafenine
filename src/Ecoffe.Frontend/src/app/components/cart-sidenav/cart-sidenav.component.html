@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav position="end" mode="over" [opened]="isCartSidenavOpened">
+    <mat-sidenav position="end" mode="over" [opened]="isCartSidenavOpened" style="padding-bottom: 100px;">
         <button class="closeButton" (click)="toggleCartSidenav()">X</button>
         <p *ngIf="cart.produtos.length == 0">Não há nenhum produto adicionado ao carrinho</p>
         <mat-card *ngFor="let produtoCarrinho of cart.produtos">
@@ -9,8 +9,8 @@
                     <img src="assets/cafe1.jpg">
                 </div>
                 <div style="height: 100px; text-align: end;">
-                    <p>Valor unitário: R${{produtoCarrinho.produto.valor}}</p>
-                    <p>Valor total: R${{produtoCarrinho.valorTotal}}</p>
+                    <p>Valor unitário: {{produtoCarrinho.produto.valor | currency:'BRL'}}</p>
+                    <p>Valor total: {{produtoCarrinho.valorTotal | currency:'BRL'}}</p>
                 </div>    
             </div>
             <div>
@@ -25,5 +25,11 @@
                 <button mat-flat-button color="warn" (click)="removeProductFromCart(produtoCarrinho.id)" class="removeButton">X</button>
             </div>
         </mat-card>   
+        <div class="cartBottom">
+            <p>Total: {{totalValue | currency:'BRL'}}</p>
+            <button mat-flat-button color="primary">
+                Finalizar compra
+            </button>
+        </div>
     </mat-sidenav>
 </mat-sidenav-container>

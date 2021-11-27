@@ -73,6 +73,9 @@ export class PurchaseFinishComponent implements OnInit {
   loadCardList(){
     this.cardsService.getCardsByUserId(this.userId).subscribe((data) => {
       this.cardList = data.filter(p => p.tipoCartao == this.formaPagamentoSelected.key);
+
+      if(this.cardList.filter(p => p.principal == true).length > 0)
+        this.cardSelected = this.cardList.filter(p => p.principal == true)[0];
     })
   }
 
@@ -105,6 +108,12 @@ export class PurchaseFinishComponent implements OnInit {
     this.cartService.update(productCart).subscribe((data) => {
       this.loadCart(); //todo mapear retorno do data
     })
+  }
+
+  openCardNewModal(){
+    this.cardsService.openCardNewModal().afterClosed().subscribe(() =>{
+      this.loadCardList();
+    });
   }
 
 }

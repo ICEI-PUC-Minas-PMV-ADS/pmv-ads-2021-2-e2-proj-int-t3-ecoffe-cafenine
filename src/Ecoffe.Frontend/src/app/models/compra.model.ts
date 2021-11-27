@@ -7,10 +7,13 @@ export interface Compra {
     usuarioId: number;
     dataCompra: Date;
     statusCompra: StatusCompra; 
-    produtos: ProdutoCompra[];
-    endereco: Endereco;
+    produtosCompraIdList: number[];
+    produtos?: ProdutoCompra[];
+    enderecoId: number;
+    endereco?: Endereco;
     formaPagamento: FormaPagamento;
-    cartao: Cartao,
+    cartaoId?: number,
+    cartao?: Cartao,
     valorBruto: number;
     parcelas: number;
     valorParcela: number;

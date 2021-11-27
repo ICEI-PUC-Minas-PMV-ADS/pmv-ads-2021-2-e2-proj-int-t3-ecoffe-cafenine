@@ -1,3 +1,4 @@
+import { PurchaseService } from './../../services/purchase.servise';
 import { Compra } from './../../models/compra.model';
 import { CardsService } from './../../services/cards.service';
 import { Cartao } from './../../models/cartao.model';
@@ -50,7 +51,7 @@ export class PurchaseFinishComponent implements OnInit {
   validateErrorsAdress: string[] = [];
 
 
-  constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService, private personalInfoService: PersonalInfoService, private cardsService: CardsService) { }
+  constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService, private personalInfoService: PersonalInfoService, private cardsService: CardsService, private purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem("usuarioId");
@@ -132,24 +133,27 @@ export class PurchaseFinishComponent implements OnInit {
       dataCompra: new Date(),
       usuarioId: this.userId,
       statusCompra: 0,
-      endereco: this.endereco,
+      enderecoId: this.endereco.id,
+      //endereco: this.endereco,
       formaPagamento: this.formaPagamentoSelected.key,
-      cartao: this.cardSelected,
+      cartaoId: this.cardSelected.id,
+      //cartao: this.cardSelected,
       parcelas: this.parcelas,
       valorBruto: this.totalValue,
       valorParcela: this.totalValue / this.parcelas,
-      produtos: this.cart.produtos
+      produtosCompraIdList: this.cart.produtos.map(p => p.id)
     }
-
-    console.log(purchase);
-
 
     this.validate(purchase);
 
     if(this.validateErrorsProducts.length > 0 || this.validateErrorsPayment.length > 0 || this.validateErrorsAdress.length > 0 )
       return;
 
+    purchase.produtos = undefined;
 
+    this.purchaseService.save(purchase).subscribe(() => {
+      //todo redirecionar para tela de detalhes da compra com mensagem de confirmação
+    })
   }
 
   validate(purchase: Compra){
@@ -162,33 +166,33 @@ export class PurchaseFinishComponent implements OnInit {
       return;
     }
 
-    if(!purchase.produtos || purchase.produtos.length == 0)
+    if(!purchase.produtosCompraIdList || purchase.produtosCompraIdList.length == 0)
       this.validateErrorsProducts.push("Não é possível realizar compra sem nenhum produto");
 
-    if(!purchase.formaPagamento)
+    if(purchase.formaPagamento == undefined || purchase.formaPagamento == null)
       this.validateErrorsPayment.push("Deve ser selecionada uma forma de pagamento");  
 
-    if((purchase.formaPagamento == FormaPagamento.Debito || purchase.formaPagamento == FormaPagamento.Credito) && (!purchase.cartao || purchase.cartao.id == 0))
+    if((purchase.formaPagamento == FormaPagamento.Debito || purchase.formaPagamento == FormaPagamento.Credito) && (!purchase.cartaoId || purchase.cartaoId == 0))
       this.validateErrorsPayment.push("Deve ser selecionado um cartão");
 
 
     //todo reutiliar validacao endereco
-    if(!purchase.endereco.cep || purchase.endereco.cep.length != 8)
+    if(!this.endereco.cep || this.endereco.cep.length != 8)
       this.validateErrorsAdress.push("CEP inválido");
 
-    if(!purchase.endereco.rua)
+    if(!this.endereco.rua)
       this.validateErrorsAdress.push("Rua deve ser informada");   
 
-    if(!purchase.endereco.numero)
+    if(!this.endereco.numero)
       this.validateErrorsAdress.push("Número deve ser informado"); 
 
-    if(!purchase.endereco.bairro)
+    if(!this.endereco.bairro)
       this.validateErrorsAdress.push("Bairro deve ser informado"); 
 
-    if(!purchase.endereco.cidade)
+    if(!this.endereco.cidade)
       this.validateErrorsAdress.push("Cidade deve ser informada"); 
 
-    if(!purchase.endereco.uf)
+    if(!this.endereco.uf)
       this.validateErrorsAdress.push("UF deve ser informado"); 
   }
 

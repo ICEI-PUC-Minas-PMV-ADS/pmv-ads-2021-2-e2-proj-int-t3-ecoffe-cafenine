@@ -1,3 +1,4 @@
+import { Cartao } from './cartao.model';
 import { Endereco } from './endereco.model';
 import { ProdutoCompra } from './../helpers/produtoCompra.model';
 
@@ -9,7 +10,10 @@ export interface Compra {
     produtos: ProdutoCompra[];
     endereco: Endereco;
     formaPagamento: FormaPagamento;
+    cartao: Cartao,
     valorBruto: number;
+    parcelas: number;
+    valorParcela: number;
 }
 
 export enum FormaPagamento {

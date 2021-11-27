@@ -1,4 +1,7 @@
 <mat-card>
+    <mat-card class="cardError" *ngIf="validateErrorsProducts.length > 0">
+        <p *ngFor="let error of validateErrorsProducts">{{ error }}</p>
+    </mat-card>
     <mat-card-title>Produtos</mat-card-title>
     <mat-card class="productMatCart" *ngFor="let produtoCarrinho of cart.produtos">
         <mat-card-title style="font-size: 20px">{{produtoCarrinho.produto.nome}}</mat-card-title>
@@ -26,6 +29,9 @@
 </mat-card>
 
 <mat-card>
+    <mat-card class="cardError" *ngIf="validateErrorsPayment.length > 0">
+        <p *ngFor="let error of validateErrorsPayment">{{ error }}</p>
+    </mat-card>
     <mat-card-title>Forma de Pagamento</mat-card-title>
     <mat-form-field appearance="fill" style="width: 15%; min-width: 180px;">
         <mat-label>Forma de pagamento</mat-label>
@@ -57,10 +63,12 @@
       <button mat-flat-button color="primary" (click)="openCardNewModal()" *ngIf="formaPagamentoSelected?.key == 0 || formaPagamentoSelected?.key == 1">
         Novo cartão
       </button>
-
 </mat-card>
 
 <mat-card>
+    <mat-card class="cardError" *ngIf="validateErrorsAdress.length > 0">
+        <p *ngFor="let error of validateErrorsAdress">{{ error }}</p>
+    </mat-card>
     <mat-card-title>Endereço</mat-card-title>
     <mat-form-field style="width: 15%; min-width: 80px;">
         <input matInput placeholder="CEP" (keyup)="getAdress()" mask="00000-000" [(ngModel)]="endereco.cep" name="endereco_Cep">
@@ -84,3 +92,7 @@
         <input matInput placeholder="UF" mask="AA" [(ngModel)]="endereco.uf" name="endereco_Uf">
     </mat-form-field>
 </mat-card>
+
+<button mat-flat-button color="primary" (click)="savePurchase()">
+    Finalizar compra
+</button>

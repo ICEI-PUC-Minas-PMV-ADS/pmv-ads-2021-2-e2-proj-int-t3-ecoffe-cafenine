@@ -6,5 +6,5 @@ export interface ProdutoCompra{
     quantidade: number,
     valorTotal: number,
     produto: Produto
-  }
+}
   

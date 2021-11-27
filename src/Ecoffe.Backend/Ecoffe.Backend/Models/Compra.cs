@@ -18,6 +18,8 @@ namespace Ecoffe.Backend.Models
         public Endereco Endereco { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public List<ProdutoCompra> Produtos { get; set; }
+        public Cartao? Cartao { get; set; }
+        public int Parcelas { get; set; }
         public decimal ValorBruto
         {
             get
@@ -50,6 +52,7 @@ namespace Ecoffe.Backend.Models
                 }
             }
         }
+        public decimal ValorParcelas { get; set; }
 
     }
 }

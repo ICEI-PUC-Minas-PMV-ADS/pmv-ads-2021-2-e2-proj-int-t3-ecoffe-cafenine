@@ -32,3 +32,8 @@
 .mat-form-field{
     margin-right: 1.5rem;
 }
+
+.cardError{
+    background-color: rgb(255, 175, 175);
+    margin: 0 0 15px 0;
+}

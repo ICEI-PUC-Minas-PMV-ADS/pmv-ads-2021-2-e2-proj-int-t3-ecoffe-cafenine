@@ -1,3 +1,4 @@
+import { Compra } from './../../models/compra.model';
 import { CardsService } from './../../services/cards.service';
 import { Cartao } from './../../models/cartao.model';
 import { FormaPagamento, FormaPagamentoLabel } from './../../models/compra.model';
@@ -41,7 +42,13 @@ export class PurchaseFinishComponent implements OnInit {
   parcelas = 1;
 
   userId: any;
+
   totalValue = 0;
+
+  validateErrorsProducts: string[] = [];
+  validateErrorsPayment: string[] = [];
+  validateErrorsAdress: string[] = [];
+
 
   constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService, private personalInfoService: PersonalInfoService, private cardsService: CardsService) { }
 
@@ -71,6 +78,8 @@ export class PurchaseFinishComponent implements OnInit {
   }
 
   loadCardList(){
+    this.cardSelected = undefined;
+
     this.cardsService.getCardsByUserId(this.userId).subscribe((data) => {
       this.cardList = data.filter(p => p.tipoCartao == this.formaPagamentoSelected.key);
 
@@ -89,6 +98,7 @@ export class PurchaseFinishComponent implements OnInit {
 
   getAdress(){
     this.personalInfoService.getAdress(this.endereco.cep)?.subscribe(adress => {
+      this.endereco.id = 0;
       this.endereco.rua = adress.logradouro;
       this.endereco.complemento = adress.complemento;
       this.endereco.bairro = adress.bairro;
@@ -114,6 +124,72 @@ export class PurchaseFinishComponent implements OnInit {
     this.cardsService.openCardNewModal().afterClosed().subscribe(() =>{
       this.loadCardList();
     });
+  }
+
+  savePurchase(){
+    let purchase: Compra = {
+      id: 0,
+      dataCompra: new Date(),
+      usuarioId: this.userId,
+      statusCompra: 0,
+      endereco: this.endereco,
+      formaPagamento: this.formaPagamentoSelected.key,
+      cartao: this.cardSelected,
+      parcelas: this.parcelas,
+      valorBruto: this.totalValue,
+      valorParcela: this.totalValue / this.parcelas,
+      produtos: this.cart.produtos
+    }
+
+    console.log(purchase);
+
+
+    this.validate(purchase);
+
+    if(this.validateErrorsProducts.length > 0 || this.validateErrorsPayment.length > 0 || this.validateErrorsAdress.length > 0 )
+      return;
+
+
+  }
+
+  validate(purchase: Compra){
+    this.validateErrorsProducts = [];
+    this.validateErrorsPayment = [];
+    this.validateErrorsAdress = [];
+
+    if(!purchase.usuarioId || purchase.usuarioId == 0){
+      this.router.navigate(["/login"]);  
+      return;
+    }
+
+    if(!purchase.produtos || purchase.produtos.length == 0)
+      this.validateErrorsProducts.push("Não é possível realizar compra sem nenhum produto");
+
+    if(!purchase.formaPagamento)
+      this.validateErrorsPayment.push("Deve ser selecionada uma forma de pagamento");  
+
+    if((purchase.formaPagamento == FormaPagamento.Debito || purchase.formaPagamento == FormaPagamento.Credito) && (!purchase.cartao || purchase.cartao.id == 0))
+      this.validateErrorsPayment.push("Deve ser selecionado um cartão");
+
+
+    //todo reutiliar validacao endereco
+    if(!purchase.endereco.cep || purchase.endereco.cep.length != 8)
+      this.validateErrorsAdress.push("CEP inválido");
+
+    if(!purchase.endereco.rua)
+      this.validateErrorsAdress.push("Rua deve ser informada");   
+
+    if(!purchase.endereco.numero)
+      this.validateErrorsAdress.push("Número deve ser informado"); 
+
+    if(!purchase.endereco.bairro)
+      this.validateErrorsAdress.push("Bairro deve ser informado"); 
+
+    if(!purchase.endereco.cidade)
+      this.validateErrorsAdress.push("Cidade deve ser informada"); 
+
+    if(!purchase.endereco.uf)
+      this.validateErrorsAdress.push("UF deve ser informado"); 
   }
 
 }

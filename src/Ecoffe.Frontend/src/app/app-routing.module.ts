@@ -8,12 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './views/about/about.component';
 
 const routes: Routes = [
-  {path: "teste", component: HomeComponent},
+  {path: "", component: HomeComponent},
   {path: "login", component: LoginRegisterComponent},
   {path: "account", component: AccountComponent},
   {path: "about", component: AboutComponent},
   {path: "products", component: ProductsComponent},
-  {path: "", component: PurchaseComponent},
+  {path: "purchase", component: PurchaseComponent},
  ];
 
 @NgModule({

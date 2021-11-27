@@ -46,7 +46,7 @@ namespace Ecoffe.Backend.Services
             if (String.IsNullOrWhiteSpace(usuario.Email))
                 throw new Exception("Email inválido");
 
-            _enderecoValidator.Validate(usuario.Endereco);
+            _enderecoValidator.Validate(usuario.Endereco, true);
         }
 
     }

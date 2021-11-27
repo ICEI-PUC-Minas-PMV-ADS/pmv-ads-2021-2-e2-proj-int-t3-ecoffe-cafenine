@@ -8,51 +8,25 @@ using System.Linq;
 
 namespace Ecoffe.Backend.Models
 {
-    [Table("Carrinho")]
+    [Table("Compra")]
     public class Compra
     {
         [Key]
         public int Id { get; set; }
+        public int UsuarioId { get; set; }
         public DateTime DataCompra {get; set;}
         public StatusCompra StatusCompra { get; set; }
-        public Endereco Endereco { get; set; }
+        public int EnderecoId { get; set; }
+        public Endereco? Endereco { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
+        [NotMapped]
+        public List<int> ProdutosCompraIdList { get; set; }
         public List<ProdutoCompra> Produtos { get; set; }
+        public int? CartaoId { get; set; }
         public Cartao? Cartao { get; set; }
         public int Parcelas { get; set; }
-        public decimal ValorBruto
-        {
-            get
-            {
-                if (Produtos.Count() > 0)
-                {
-                    decimal result = 0;
-
-                    foreach (var p in Produtos)
-                    {
-                        result += p.ValorTotal;
-                    }
-
-                    return result;
-                }
-                else return 0;
-            }
-            set
-            {
-                if (Produtos.Count() > 0)
-                {
-                    decimal result = 0;
-
-                    foreach (var p in Produtos)
-                    {
-                        result += p.ValorTotal;
-                    }
-
-                    ValorBruto = result;
-                }
-            }
-        }
-        public decimal ValorParcelas { get; set; }
+        public decimal ValorBruto { get; set; }
+        public decimal ValorParcela { get; set; }
 
     }
 }

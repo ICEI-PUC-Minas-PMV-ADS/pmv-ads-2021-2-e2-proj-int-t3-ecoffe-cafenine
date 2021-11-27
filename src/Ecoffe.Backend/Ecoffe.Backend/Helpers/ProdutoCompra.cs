@@ -12,6 +12,7 @@ namespace Ecoffe.Backend.Helpers
         public int Quantidade { get; set; }
         public int ProdutoId { get; set; }
         public Produto Produto { get; set; }
+        [NotMapped]
         public decimal ValorTotal
         {
             get
@@ -20,11 +21,6 @@ namespace Ecoffe.Backend.Helpers
                     return Produto.Valor * Quantidade;
                 else
                     return 0;
-            }
-            set
-            {
-                if (Produto != null)
-                    ValorTotal = Produto.Valor * Quantidade;
             }
         }
 

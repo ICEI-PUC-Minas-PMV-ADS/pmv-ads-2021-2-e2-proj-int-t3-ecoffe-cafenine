@@ -1,3 +1,6 @@
+import { CardsService } from './../../services/cards.service';
+import { Cartao } from './../../models/cartao.model';
+import { FormaPagamento, FormaPagamentoLabel } from './../../models/compra.model';
 import { Endereco } from './../../models/endereco.model';
 import { PersonalInfoService } from './../../services/personal-info.service';
 import { SnackbarService } from './../../services/snackbar.service';
@@ -29,10 +32,18 @@ export class PurchaseFinishComponent implements OnInit {
     uf: ''
   };
 
+  formaPagamentoLabel = FormaPagamentoLabel;
+  formaPagamentoSelected: any;
+
+  cardList: Cartao[] = [];
+  cardSelected: any;
+
+  parcelas = 1;
+
   userId: any;
   totalValue = 0;
 
-  constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService, private personalInfoService: PersonalInfoService) { }
+  constructor(private router: Router, private cartService: CartService, private snackbarService: SnackbarService, private personalInfoService: PersonalInfoService, private cardsService: CardsService) { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem("usuarioId");
@@ -57,6 +68,12 @@ export class PurchaseFinishComponent implements OnInit {
     this.personalInfoService.getEnderecoByUserId(this.userId).subscribe((data) => {
       this.endereco = data;
     });
+  }
+
+  loadCardList(){
+    this.cardsService.getCardsByUserId(this.userId).subscribe((data) => {
+      this.cardList = data.filter(p => p.tipoCartao == this.formaPagamentoSelected.key);
+    })
   }
 
   getTotalValue(){

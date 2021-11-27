@@ -27,6 +27,33 @@
 
 <mat-card>
     <mat-card-title>Forma de Pagamento</mat-card-title>
+    <mat-form-field appearance="fill" style="width: 250px;">
+        <mat-label>Forma de pagamento</mat-label>
+        <mat-select [(ngModel)]="formaPagamentoSelected" (selectionChange)="loadCardList()">
+          <mat-option *ngFor="let enum of formaPagamentoLabel | keyvalue" [value]="enum">
+            {{enum.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 600px;" *ngIf="formaPagamentoSelected?.key == 0 || formaPagamentoSelected?.key == 1">
+        <mat-label>Selecione um cartão</mat-label>
+        <mat-select [(ngModel)]="cardSelected">
+          <mat-option *ngFor="let card of cardList" [value]="card">
+            {{card.bandeira | uppercase}}, Final {{card.numero.substr(12,4)}} - Titular {{card.nomeTitular}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 200px;" *ngIf="formaPagamentoSelected?.key == 1">
+        <mat-label>Parcelas</mat-label>
+        <mat-select [(ngModel)]="parcelas">
+          <mat-option *ngFor="let number of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="number">
+            {{number}}x de {{totalValue / number | currency: 'BRL'}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
 </mat-card>
 
 <mat-card>

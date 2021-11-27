@@ -19,6 +19,13 @@ export enum FormaPagamento {
     PIX = 3
 }
 
+export const FormaPagamentoLabel = new Map<number, string>([
+    [FormaPagamento.Debito, 'Débito'],
+    [FormaPagamento.Credito, 'Crédito'],
+    [FormaPagamento.Boleto, 'Boleto'],
+    [FormaPagamento.PIX, 'PIX']
+]);
+
 export enum StatusCompra {
     WaitPayment = 0,
     ConfirmedPayment = 1,

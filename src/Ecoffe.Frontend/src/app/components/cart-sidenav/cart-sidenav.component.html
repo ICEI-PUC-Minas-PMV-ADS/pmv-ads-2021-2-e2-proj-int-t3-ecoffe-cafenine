@@ -27,7 +27,7 @@
         </mat-card>   
         <div class="cartBottom">
             <p>Total: {{totalValue | currency:'BRL'}}</p>
-            <button routerLink="/purchase" mat-flat-button color="primary">
+            <button routerLink="/purchase" mat-flat-button color="primary" [disabled]="cart.produtos.length == 0">
                 Finalizar compra
             </button>
         </div>

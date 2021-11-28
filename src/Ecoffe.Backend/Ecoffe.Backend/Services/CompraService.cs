@@ -53,10 +53,7 @@ namespace Ecoffe.Backend.Services
             usuario.Compras.Add(compra);
 
             if(compra.EnderecoId == 0)
-            {
                 compra.Endereco = _context.Endereco.Add(compra.Endereco).Entity;
-                await _context.SaveChangesAsync();
-            }
 
             var compraDb = _context.Add(compra);
             await _context.SaveChangesAsync();

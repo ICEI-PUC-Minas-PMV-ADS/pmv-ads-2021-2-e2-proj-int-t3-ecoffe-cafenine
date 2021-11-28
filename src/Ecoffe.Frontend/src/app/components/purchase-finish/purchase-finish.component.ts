@@ -134,7 +134,7 @@ export class PurchaseFinishComponent implements OnInit {
       usuarioId: this.userId,
       statusCompra: 0,
       enderecoId: this.endereco.id,
-      //endereco: this.endereco,
+      endereco: this.endereco,
       formaPagamento: this.formaPagamentoSelected.key,
       cartaoId: this.cardSelected?.id,
       //cartao: this.cardSelected,
@@ -150,6 +150,9 @@ export class PurchaseFinishComponent implements OnInit {
       return;
 
     purchase.produtos = undefined;
+    
+    if(this.endereco.id != 0)
+      purchase.endereco = undefined;
 
     this.purchaseService.save(purchase).subscribe(() => {
       //todo redirecionar para tela de detalhes da compra com mensagem de confirmação

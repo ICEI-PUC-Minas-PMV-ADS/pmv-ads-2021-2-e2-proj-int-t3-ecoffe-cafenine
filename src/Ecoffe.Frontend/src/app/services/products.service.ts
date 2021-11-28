@@ -13,7 +13,7 @@ export class ProductsService {
 
   constructor(private matDialog: MatDialog, private http: HttpClient) { }
 
-  baseUrl = "https://localhost:44365/api/Produto";
+  baseUrl = "https://localhost:44324/api/Produto";
 
   getById(id: number): Observable<Produto> {
     return this.http.get<Produto>(this.baseUrl+"/"+id);

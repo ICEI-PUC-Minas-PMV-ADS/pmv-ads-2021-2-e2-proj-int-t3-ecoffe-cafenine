@@ -16,9 +16,10 @@ namespace Ecoffe.Backend.Services
     {
         private readonly ApplicationDbContext _context;
         private readonly EnderecoValidator _enderecoValidator = new EnderecoValidator();
-
-        public CompraService(ApplicationDbContext context)
+        private readonly ICarrinhoService carrinhoService;
+        public CompraService(ApplicationDbContext context, ICarrinhoService carrinhoService)
         {
+            this.carrinhoService = carrinhoService;
             _context = context;
         }
 
@@ -59,6 +60,8 @@ namespace Ecoffe.Backend.Services
 
             var compraDb = _context.Add(compra);
             await _context.SaveChangesAsync();
+
+            await carrinhoService.ClearCart(compra.UsuarioId);
 
             return compraDb.Entity;
         }

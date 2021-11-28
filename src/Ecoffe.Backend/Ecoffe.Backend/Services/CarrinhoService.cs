@@ -59,5 +59,24 @@ namespace Ecoffe.Backend.Services
 
             return carrinhoDb;
         }
+
+        public async Task<Carrinho> ClearCart(int usuarioId)
+        {
+            var carrinhoDb = await _context.Usuario.Include(p => p.Carrinho).ThenInclude(x => x.Produtos).Where(p => p.Id == usuarioId).Select(p => p.Carrinho).FirstOrDefaultAsync();
+
+            if(carrinhoDb == null)
+                return await this.New(usuarioId);
+
+            foreach(var item in carrinhoDb.Produtos)
+            {
+                _context.ProdutoCarrinho.Remove(item);
+            }
+
+            await _context.SaveChangesAsync();
+
+            carrinhoDb.Produtos.Clear();
+
+            return carrinhoDb;
+        }
     }
 }

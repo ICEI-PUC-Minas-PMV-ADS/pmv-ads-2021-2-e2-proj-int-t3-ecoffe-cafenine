@@ -136,7 +136,7 @@ export class PurchaseFinishComponent implements OnInit {
       enderecoId: this.endereco.id,
       //endereco: this.endereco,
       formaPagamento: this.formaPagamentoSelected.key,
-      cartaoId: this.cardSelected.id,
+      cartaoId: this.cardSelected?.id,
       //cartao: this.cardSelected,
       parcelas: this.parcelas,
       valorBruto: this.totalValue,

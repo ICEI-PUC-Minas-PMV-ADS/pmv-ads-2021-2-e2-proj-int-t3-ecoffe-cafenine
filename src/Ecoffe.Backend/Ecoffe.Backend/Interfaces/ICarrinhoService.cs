@@ -11,5 +11,6 @@ namespace Ecoffe.Backend.Interfaces
     {
         Task<Carrinho> New(int usuarioId);
         Task<Carrinho> AddProductToCard(ProdutoCarrinho produto);
+        Task<Carrinho> ClearCart(int usuarioId);
     }
 }

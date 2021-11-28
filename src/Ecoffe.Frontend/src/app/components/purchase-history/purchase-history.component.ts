@@ -36,4 +36,10 @@ export class PurchaseHistoryComponent implements OnInit {
     });
   }
 
+  openPurchaseDetailsModal(){
+    this.purchaseService.openPurchaseDetailsModal().afterClosed().subscribe(() =>{
+      //
+    });
+  }
+
 }

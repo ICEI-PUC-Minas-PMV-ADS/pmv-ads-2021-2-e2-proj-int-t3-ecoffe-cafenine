@@ -41,3 +41,12 @@ export enum StatusCompra {
     Delivering = 4,
     Finished = 5
 }
+
+export const StatusCompraLabel = new Map<number, string>([
+   [StatusCompra.WaitPayment, 'Aguardando pagamento'], 
+   [StatusCompra.ConfirmedPayment, 'Pagamento confirmado'], 
+   [StatusCompra.InPackage, 'Empacotamento'], 
+   [StatusCompra.Send, 'Enviado'], 
+   [StatusCompra.Delivering, 'Em rota de entrega'], 
+   [StatusCompra.Finished, 'Finalizado']
+]);

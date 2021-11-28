@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>Detalhes da compra</mat-card-title>
+    <p>Data da compra: {{compra.dataCompra | date: 'dd/MM/yyyy'}}</p>
+    <p>Status da compra: {{statusCompraLabel.get(compra.statusCompra)}}</p>
+</mat-card>
+<mat-card>
+    <mat-card-title>Produtos</mat-card-title>
+    <mat-card class="productMatCart" *ngFor="let produtoCompra of compra.produtos">
+        <mat-card-title style="font-size: 15px">{{produtoCompra.produto.nome}}</mat-card-title>
+        <div class="productContainer">
+            <div class="productImg">
+                <img src="assets/cafe1.jpg">
+            </div>
+            <div class="productContent">
+                <span>Quantidade: {{produtoCompra.quantidade}}</span>
+                <span>Valor unitário: {{produtoCompra.produto.valor | currency:'BRL'}}</span>
+                <span>Valor total: {{produtoCompra.valorTotal | currency:'BRL'}}</span>
+            </div> 
+        </div> 
+    </mat-card>
+</mat-card>

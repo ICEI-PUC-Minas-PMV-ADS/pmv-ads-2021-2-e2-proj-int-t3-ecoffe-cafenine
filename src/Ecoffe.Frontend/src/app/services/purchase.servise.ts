@@ -17,4 +17,8 @@ export class PurchaseService {
   save(compra: Compra): Observable<Compra>{
     return this.http.post<Compra>(this.baseUrl, compra);
   }
+
+  getLatestByUserId(userId: number): Observable<Compra>{
+    return this.http.get<Compra>(this.baseUrl + "/usuario/recente/" + userId);
+  }
 }

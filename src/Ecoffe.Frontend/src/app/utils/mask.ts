@@ -1,3 +1,4 @@
+import { StatusCompraLabel } from './../models/compra.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({name: 'hideCardNumber'})

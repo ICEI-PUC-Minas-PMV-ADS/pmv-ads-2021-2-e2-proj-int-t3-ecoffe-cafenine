@@ -1,0 +1,25 @@
+.mat-card{
+    margin: 1rem 2rem 0 2rem;
+}
+
+.productMatCart{
+    margin: 0.75rem;
+}
+
+.productImg{
+    float: left;
+}
+
+.productImg > img{
+    height: 70px;
+    max-width: 70px;
+}
+
+.productContainer{
+    display: flex;
+}
+
+.productContent{
+    display: inline-grid;
+    margin-left: 10px;
+}

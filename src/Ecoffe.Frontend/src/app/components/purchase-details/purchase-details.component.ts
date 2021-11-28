@@ -30,10 +30,17 @@ export class PurchaseDetailsComponent implements OnInit {
     this.loadPurchase();
   }
 
-  loadPurchase(){
-    this.purchaseService.getLatestByUserId(this.userId).subscribe((data) => { 
-      this.compra = data;
-    });
+  loadPurchase(compraId?: any){
+    if(compraId){
+      this.purchaseService.getByPurchaseId(compraId).subscribe((data) => {
+        this.compra = data;
+      });
+    }
+    else{
+      this.purchaseService.getLatestByUserId(this.userId).subscribe((data) => { 
+        this.compra = data;
+      });
+    }
   }
 
 }

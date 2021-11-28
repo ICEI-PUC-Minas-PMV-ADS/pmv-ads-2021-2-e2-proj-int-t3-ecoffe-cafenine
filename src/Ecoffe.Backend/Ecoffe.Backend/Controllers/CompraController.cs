@@ -21,6 +21,31 @@ namespace Ecoffe.Backend.Controllers
             _context = context;
         }
 
+        //GET: api/compra/{compraId}
+        [HttpGet("{compraId}")]
+        public async Task<IActionResult> GetByPurchaseId([FromRoute] int compraId)
+        {
+            try
+            {
+                var compra = await _context.Compra.Where(p => p.Id == compraId)
+                                                  .Include(p => p.Cartao)
+                                                  .Include(p => p.Endereco)
+                                                  .Include(p => p.Produtos)
+                                                    .ThenInclude(z => z.Produto)
+                                                  .OrderByDescending(p => p.DataCompra)
+                                                  .FirstOrDefaultAsync();
+
+                if (compra == null)
+                    return StatusCode(404, "Compra não encontrada");
+
+                return Ok(compra);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         //GET: api/compra/usuario/{usuarioId}
         [HttpGet("usuario/{usuarioId}")]
         public async Task<IActionResult> GetListByUserId([FromRoute] int usuarioId)

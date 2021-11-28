@@ -33,7 +33,6 @@ export class PurchaseDetailsComponent implements OnInit {
   loadPurchase(){
     this.purchaseService.getLatestByUserId(this.userId).subscribe((data) => { 
       this.compra = data;
-      console.log(this.compra);
     });
   }
 

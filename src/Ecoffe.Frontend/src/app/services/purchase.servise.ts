@@ -30,6 +30,7 @@ export class PurchaseService {
   openPurchaseDetailsModal(){
     return this.matDialog.open(PurchaseDetailsComponent, {
       width: '90%',
+      height: '90%',
       disableClose: false
     });
   }

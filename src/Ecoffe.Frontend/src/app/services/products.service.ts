@@ -22,6 +22,7 @@ export class ProductsService {
   openProductModal() {
     return this.matDialog.open(ProductsDetailsComponent, {
       width: '600px',
+      height: '600px',
       disableClose: false
     });
   }

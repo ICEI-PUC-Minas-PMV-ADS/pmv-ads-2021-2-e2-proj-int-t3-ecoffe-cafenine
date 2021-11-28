@@ -1,4 +1,4 @@
-.CentralDiv{
+/*.CentralDiv{
     display: flex;
     flex-wrap: wrap;
 }
@@ -22,4 +22,187 @@
 
 #quebraLinha{
     width: 150px;
+}
+
+img{
+    width: 100px;
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
+#img_card {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    left: 31%;
+    top: 180px;
+    background-color: none;
+}
+
+#l {
+    margin: 15%;
+    width: 217px;
+    height: 0px;
+    left: 1143px;
+    top: 17%;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    transform: rotate(-0.26deg);
+    background-color: red;
+}
+
+img{
+    width: 150px;
+    position: absolute;
+    left: 70px;
+    bottom: 200px;
+}
+
+#dados_prod {
+    position: absolute;
+    float: left;
+    width: 350px;
+    top: 180px;
+    left: 380px;
+    height: 250px;
+    align-items: center;
+    
+}
+
+#dados_venda {
+    position: absolute;
+    float: left;
+    width: 300px;
+    top: 50px;
+    left: 46%;
+    height: 250px;
+    align-items:center;
+    align-content: center;
+    background: #FFFDFD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+#linha {
+    margin-top: 1%;
+    margin-bottom: 30%;
+    width: 150px;
+    height: 50px;
+    left: 0%;
+    top: 30%;
+    
+}
+
+#val {
+    margin: 15%;
+    width: 109px;
+    height: 41px;
+    left: 1194px;
+    top: 319px;
+    font-family: monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 41px;
+    text-align: center;
+}
+
+#Buy {
+    width: 101px;
+    height: 30px;
+    float: right;
+    margin-right: 25%;
+    color: white;
+    background: #655B6C;
+    align-content: center;
+  
+}
+
+#plus {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: #FBD584;
+}
+
+#Meio {
+    top: 75%;
+    align-items: center;
+}
+
+#Fim {
+    position: relative;
+    width: 1300px;
+    height: 550px;
+    left: 187.5px;
+    top: 1396.28px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background-color: none;
+}
+
+#card {
+    top: 3%;
+    position: relative;
+    width: 300px;
+    height: 350px;
+    left: none;
+    border-radius: 35px;
+    align-content: space-around;
+    display: inline-block;
+    background: none;
+    margin-left: 15px;
+    background-color: none;
+}
+
+#card-one {
+    top: 3%;
+    position: relative;
+    width: 300px;
+    height: 350px;
+    left: none;
+    border-radius: 35px;
+    align-content: space-around;
+    display: inline-block;
+    background-color: none;
+    margin-left: 9%;
+}
+
+#button {
+    width: 120.8px;
+    height: 38px;
+    background: #655B6C;
+    border-radius: 20px;
+    margin-left: 200px;
+}
+
+#button:hover {
+    background: #FBD584;
+}
+
+.p {
+    position: absolute;
+    width: 528px;
+    height: 30px;
+    left: 525px;
+    top: 1419px;
+    align-content: center;
+    font-family: Ovo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 30px;
+}
+
+#enft{
+    width: auto;
+    height: auto;
+    font-family: monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 41px;
+    text-align: center;
 }

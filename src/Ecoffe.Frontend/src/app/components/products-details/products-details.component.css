@@ -1,0 +1,25 @@
+.CentralDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CentralDiv div{
+    flex: 1 1 300px;
+    margin-left: 50px;
+    margin-bottom: 2px;
+}
+
+.Button{
+    background-color: rgb(46, 46, 46);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.Button:hover{
+    background-color: rgb(85, 83, 83);
+    transition: 0.4s;
+}
+
+#quebraLinha{
+    width: 150px;
+}

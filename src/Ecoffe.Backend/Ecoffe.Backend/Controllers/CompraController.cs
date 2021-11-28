@@ -51,7 +51,13 @@ namespace Ecoffe.Backend.Controllers
         {
             try
             {
-                var compra = await _context.Compra.Where(p => p.UsuarioId == usuarioId).Include(p => p.Cartao).Include(p => p.Produtos).ThenInclude(z => z.Produto).OrderByDescending(p => p.DataCompra).FirstOrDefaultAsync();
+                var compra = await _context.Compra.Where(p => p.UsuarioId == usuarioId)
+                                                  .Include(p => p.Cartao)
+                                                  .Include(p => p.Endereco)
+                                                  .Include(p => p.Produtos)
+                                                    .ThenInclude(z => z.Produto)
+                                                  .OrderByDescending(p => p.DataCompra)
+                                                  .FirstOrDefaultAsync();
 
                 if (compra == null)
                     return StatusCode(404, "Compra não encontrada para este usuário");

@@ -1,0 +1,36 @@
+import { PurchaseService } from './../../services/purchase.servise';
+import { Router } from '@angular/router';
+import { Compra } from './../../models/compra.model';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-purchase-history',
+  templateUrl: './purchase-history.component.html',
+  styleUrls: ['./purchase-history.component.css']
+})
+export class PurchaseHistoryComponent implements OnInit {
+
+  userId: any;
+  compras: Compra[] = [];
+
+  constructor(private router: Router, private purchaseService: PurchaseService) { }
+
+  ngOnInit(): void {
+    this.userId = localStorage.getItem("usuarioId");
+
+    if(!this.userId || this.userId == ""){
+      this.router.navigate(["/login"]);  
+      return;
+    }
+
+    this.loadPurchases();
+  }
+
+  loadPurchases(){
+    this.purchaseService.getListByUserId(this.userId).subscribe((data) => {
+      this.compras = data;
+      console.log(this.compras)
+    });
+  }
+
+}

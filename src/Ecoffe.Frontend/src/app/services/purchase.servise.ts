@@ -21,4 +21,8 @@ export class PurchaseService {
   getLatestByUserId(userId: number): Observable<Compra>{
     return this.http.get<Compra>(this.baseUrl + "/usuario/recente/" + userId);
   }
+
+  getListByUserId(userId: number): Observable<Compra[]>{
+  return this.http.get<Compra[]>(this.baseUrl + "/usuario/" + userId);
+  }
 }

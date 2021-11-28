@@ -44,6 +44,7 @@ import { PersonalInfoComponent } from './components/personal-info/personal-info.
 import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.component';
 import { PurchaseComponent } from './views/purchase/purchase.component';
 import { PurchaseDetailsComponent } from './components/purchase-details/purchase-details.component';
+import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PurchaseDetailsComponent } from './components/purchase-details/purchase
     PersonalInfoComponent,
     CartSidenavComponent,
     PurchaseComponent,
-    PurchaseDetailsComponent
+    PurchaseDetailsComponent,
+    PurchaseHistoryComponent
   ],
   imports: [
     BrowserModule,

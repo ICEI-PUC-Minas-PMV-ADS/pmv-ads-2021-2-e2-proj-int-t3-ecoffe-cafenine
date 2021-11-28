@@ -1,5 +1,5 @@
 import { PurchaseService } from './../../services/purchase.servise';
-import { Compra, StatusCompraLabel } from './../../models/compra.model';
+import { Compra, StatusCompraLabel, FormaPagamentoLabel } from './../../models/compra.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,6 +15,7 @@ export class PurchaseDetailsComponent implements OnInit {
   compra: Compra = {} as Compra;
 
   statusCompraLabel = StatusCompraLabel;
+  formaPagamentoLabel = FormaPagamentoLabel;
 
   constructor(private router: Router, private purchaseService: PurchaseService) { }
 

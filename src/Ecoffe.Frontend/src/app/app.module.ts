@@ -43,7 +43,6 @@ import { CardNewComponent } from './components/card-new/card-new.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.component';
 import { PurchaseComponent } from './views/purchase/purchase.component';
-import { PurchaseFinishComponent } from './components/purchase-finish/purchase-finish.component';
 import { PurchaseDetailsComponent } from './components/purchase-details/purchase-details.component';
 
 @NgModule({
@@ -65,7 +64,6 @@ import { PurchaseDetailsComponent } from './components/purchase-details/purchase
     PersonalInfoComponent,
     CartSidenavComponent,
     PurchaseComponent,
-    PurchaseFinishComponent,
     PurchaseDetailsComponent
   ],
   imports: [

@@ -1,5 +1,113 @@
 <app-header></app-header>
 
-<app-purchase-finish *ngIf="false"></app-purchase-finish>
+<mat-card style="background-color: #ADFDBC;" *ngIf="afterFinish">
+  <mat-card-title>Sucesso!</mat-card-title>
+  <p>Compra realizada com sucesso! Aguarde atualizaçõe sobre o <b>status da compra</b>.</p>
+</mat-card>
 
-<app-purchase-details></app-purchase-details>
+<app-purchase-details *ngIf="afterFinish"></app-purchase-details>
+
+<div *ngIf="!afterFinish">
+  
+<mat-card>
+    <mat-card class="cardError" *ngIf="validateErrorsProducts.length > 0">
+        <p *ngFor="let error of validateErrorsProducts">{{ error }}</p>
+    </mat-card>
+    <mat-card-title>Produtos</mat-card-title>
+    <mat-card class="productMatCart" *ngFor="let produtoCarrinho of cart.produtos">
+        <mat-card-title style="font-size: 20px">{{produtoCarrinho.produto.nome}}</mat-card-title>
+        <div class="productContainer">
+            <div class="productImg">
+                <img src="assets/cafe1.jpg">
+            </div>
+            <div class="productContent">
+                <p>Valor unitário: {{produtoCarrinho.produto.valor | currency:'BRL'}}</p>
+                <p>Valor total: {{produtoCarrinho.valorTotal | currency:'BRL'}}</p>
+                <mat-form-field appearance="fill" style="width: 120px;">
+                    <mat-label>Quantidade</mat-label>
+                    <mat-select (selectionChange)="updateProductCart(produtoCarrinho)" [(ngModel)]="produtoCarrinho.quantidade">
+                      <mat-option *ngFor="let number of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]" [value]="number">
+                        {{number}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <button mat-flat-button color="warn" (click)="removeProductFromCart(produtoCarrinho.id)" style="width: 120px;">Remover</button>
+            </div> 
+        </div> 
+    </mat-card>
+    <p class="totalValue">Total: {{totalValue | currency:'BRL'}}</p>
+</mat-card>
+
+<mat-card>
+    <mat-card class="cardError" *ngIf="validateErrorsPayment.length > 0">
+        <p *ngFor="let error of validateErrorsPayment">{{ error }}</p>
+    </mat-card>
+    <mat-card-title>Forma de Pagamento</mat-card-title>
+    <mat-form-field appearance="fill" style="width: 15%; min-width: 180px;">
+        <mat-label>Forma de pagamento</mat-label>
+        <mat-select [(ngModel)]="formaPagamentoSelected" (selectionChange)="loadCardList()">
+          <mat-option *ngFor="let enum of formaPagamentoLabel | keyvalue" [value]="enum">
+            {{enum.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 50%; min-width: 350px;" *ngIf="formaPagamentoSelected?.key == 0 || formaPagamentoSelected?.key == 1">
+        <mat-label>Selecione um cartão</mat-label>
+        <mat-select [(ngModel)]="cardSelected">
+          <mat-option *ngFor="let card of cardList" [value]="card">
+            {{card.bandeira | uppercase}}, Final {{card.numero.substr(12,4)}} - Titular {{card.nomeTitular}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 20%; min-width: 200px;" *ngIf="formaPagamentoSelected?.key == 1">
+        <mat-label>Parcelas</mat-label>
+        <mat-select [(ngModel)]="parcelas">
+          <mat-option *ngFor="let number of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="number">
+            {{number}}x de {{totalValue / number | currency: 'BRL'}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" (click)="openCardNewModal()" *ngIf="formaPagamentoSelected?.key == 0 || formaPagamentoSelected?.key == 1">
+        Novo cartão
+      </button>
+</mat-card>
+
+<mat-card>
+    <mat-card class="cardError" *ngIf="validateErrorsAdress.length > 0">
+        <p *ngFor="let error of validateErrorsAdress">{{ error }}</p>
+    </mat-card>
+    <mat-card-title>Endereço</mat-card-title>
+    <mat-form-field style="width: 15%; min-width: 80px;">
+        <input matInput placeholder="CEP" (keyup)="getAdress()" mask="00000-000" [(ngModel)]="endereco.cep" name="endereco_Cep">
+    </mat-form-field>
+    <mat-form-field style="width: 55%; min-width: 200px;">
+        <input matInput placeholder="Rua" [(ngModel)]="endereco.rua" name="endereco_Rua">
+    </mat-form-field>
+    <mat-form-field style="width: 10%; min-width: 30px;">
+        <input matInput placeholder="Número" mask="0*" [(ngModel)]="endereco.numero" name="endereco_Numero">
+    </mat-form-field>
+    <mat-form-field style="width: 15%; min-width: 100px;">
+        <input matInput placeholder="Complemento" [(ngModel)]="endereco.complemento" name="endereco_Complemento">
+    </mat-form-field>
+    <mat-form-field style="width: 32%; min-width: 100px;">
+        <input matInput placeholder="Bairro" [(ngModel)]="endereco.bairro" name="endereco_Bairro">
+    </mat-form-field>
+    <mat-form-field style="width: 20%; min-width: 100px;">
+        <input matInput placeholder="Cidade" [(ngModel)]="endereco.cidade" name="endereco_Cidade">
+    </mat-form-field>
+    <mat-form-field style="width: 10%; min-width: 30px;">
+        <input matInput placeholder="UF" mask="AA" [(ngModel)]="endereco.uf" name="endereco_Uf">
+    </mat-form-field>
+</mat-card>
+
+<button mat-flat-button color="primary" (click)="savePurchase()" style="margin: 1rem 0 0 2rem">
+    Finalizar compra
+</button>
+
+</div>
+
+<app-footer></app-footer>

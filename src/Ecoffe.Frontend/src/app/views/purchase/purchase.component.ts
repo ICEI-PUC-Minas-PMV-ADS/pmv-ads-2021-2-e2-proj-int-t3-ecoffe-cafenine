@@ -136,9 +136,9 @@ export class PurchaseComponent implements OnInit {
       dataCompra: new Date(),
       usuarioId: this.userId,
       statusCompra: 0,
-      enderecoId: this.endereco.id,
+      enderecoId: this.endereco?.id,
       endereco: this.endereco,
-      formaPagamento: this.formaPagamentoSelected.key,
+      formaPagamento: this.formaPagamentoSelected?.key,
       cartaoId: this.cardSelected?.id,
       //cartao: this.cardSelected,
       parcelas: this.parcelas,
@@ -171,11 +171,12 @@ export class PurchaseComponent implements OnInit {
       this.router.navigate(["/login"]);  
       return;
     }
+  
 
     if(!purchase.produtosCompraIdList || purchase.produtosCompraIdList.length == 0)
       this.validateErrorsProducts.push("Não é possível realizar compra sem nenhum produto");
 
-    if(purchase.formaPagamento == undefined || purchase.formaPagamento == null)
+    if(!purchase.formaPagamento)
       this.validateErrorsPayment.push("Deve ser selecionada uma forma de pagamento");  
 
     if((purchase.formaPagamento == FormaPagamento.Debito || purchase.formaPagamento == FormaPagamento.Credito) && (!purchase.cartaoId || purchase.cartaoId == 0))

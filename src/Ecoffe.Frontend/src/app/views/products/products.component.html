@@ -44,26 +44,16 @@
 </nav>
 
 <div id="produtos">
-    <div id="produto1">
-        <h5>Café Moído</h5>
-        <img src="././assets/cafe1.jpg">
-        <p>Café em Grãos para ser moído</p>
-    </div>
-    <div id="produto2">
-        <h5>Caputino</h5>
-        <img src="././assets/cafe2.jpeg">
-        <p>Caputino para se deliciar</p>
-    </div>
-    <div id="produto3">
-        <h5>Café em Cachaça</h5>
-        <img src="././assets/cafe3.jpg">
-        <p>Deliciosa cahaça de café</p>
-    </div>
-    <div>
-        <h5>Café com canela</h5>
-        <img src="././assets/cafe4.jpeg">
-        <p>Saboroso café com Canela</p>
-    </div>
+    <mat-card>
+        <p>Identificação: {{product.id}}</p>
+        <h1>{{product.nome}}</h1>
+        <p>R${{product.valor}}</p>
+    </mat-card>
+    <mat-card>
+        <p>Identificação: {{product.id}}</p>
+        <h1>{{product.nome}}</h1>
+        <p>R${{product.valor}}</p>
+    </mat-card>
 </div>
 
 <app-footer></app-footer>

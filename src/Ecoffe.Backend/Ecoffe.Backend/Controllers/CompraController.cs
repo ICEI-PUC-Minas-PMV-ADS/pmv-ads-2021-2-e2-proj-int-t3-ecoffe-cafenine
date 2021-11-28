@@ -32,7 +32,7 @@ namespace Ecoffe.Backend.Controllers
                 if (usuario == null)
                     return StatusCode(404, "Usuário não encontrado");
 
-                var compras = usuario.Compras;
+                var compras = usuario.Compras.OrderByDescending(p => p.DataCompra);
 
                 if (compras == null)
                     return StatusCode(404, "Nenhuma compra encontrada");

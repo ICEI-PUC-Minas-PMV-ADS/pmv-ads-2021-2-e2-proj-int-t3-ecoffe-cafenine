@@ -1,6 +1,6 @@
 import { PurchaseService } from './../../services/purchase.servise';
 import { Router } from '@angular/router';
-import { Compra } from './../../models/compra.model';
+import { Compra, StatusCompraLabel, FormaPagamentoLabel } from './../../models/compra.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,6 +12,9 @@ export class PurchaseHistoryComponent implements OnInit {
 
   userId: any;
   compras: Compra[] = [];
+
+  formaPagamentoLabel = FormaPagamentoLabel;
+  statusCompraLabel = StatusCompraLabel;
 
   constructor(private router: Router, private purchaseService: PurchaseService) { }
 

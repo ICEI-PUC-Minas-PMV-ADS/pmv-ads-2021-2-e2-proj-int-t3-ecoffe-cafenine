@@ -42,6 +42,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { CardNewComponent } from './components/card-new/card-new.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import { CartSidenavComponent } from './components/cart-sidenav/cart-sidenav.component';
+import { ProductsDetailsComponent } from './components/products-details/products-details.component';
 import { PurchaseComponent } from './views/purchase/purchase.component';
 import { PurchaseDetailsComponent } from './components/purchase-details/purchase-details.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
@@ -63,6 +64,7 @@ import { PurchaseHistoryComponent } from './components/purchase-history/purchase
     ConfirmDialogComponent,
     CardNewComponent,
     PersonalInfoComponent,
+    ProductsDetailsComponent,
     CartSidenavComponent,
     PurchaseComponent,
     PurchaseDetailsComponent,

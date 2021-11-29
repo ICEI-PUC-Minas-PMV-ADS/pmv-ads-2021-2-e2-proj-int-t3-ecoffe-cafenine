@@ -1,81 +1,46 @@
 
-
-
-.texto-intro{
-    padding-top: 50px;
-    padding-right:10px;
-    color: white;
-    padding-left: 30px;
-    font-size: 20px;
+.cardabout {
+    height: 80%;
+    width: 100%;
+    border-radius: 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/assets/cardabout);
+    background-color: #242424;
     
-
-}
-.texto-final{
-    padding-right:10px;
-    color: white;
-    padding-left: 30px;
+    
 }
 
-
-.contentSobre{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 10% 0;
-    background-color: #2e2d2d;
-    height: 70%;
-}
-
-.areaContato{
-    width: 40%;
-    float: right;
-    display: block;
-}
-
-.areaContato form input{
-    width: 100%;
-    height: 30px;
-    margin: 5px;
-}
-
-.areaContato form input[type="submit"]{
+h1 {
+    font-size: 50px;
     text-align: center;
-    color: #f9f9f9;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    padding:10px;
-    cursor: pointer;
-    width: 150px;
-    height: 40px;
-    background-color: #b6b6b6;
-    box-shadow:0 5px 0  #808080;
+    font-weight: 400;
+    padding: 100px;
 }
 
-.areaContato form input[type="submit"]:hover{
-    background-color: rgb(126, 126, 126);
-    box-shadow:0 5px 0 #383838;
+.wrapper{
+    text-align: center;
+    background-color: #242424;
+    font-family: 'Ovo', serif;
+    color: #e3dbdb;
 }
 
-.areaContato form textarea{
-    width: 100%;
-    height: 120px;
-    margin: 5px;
-
+.content{
+    display: inline-block;
+    width: 70%;
+    max-width: 1000px;
+    font-size: 25px;
+    line-height: normal;
 }
 
-.areaSobre{
-    width: 60%;
-    float: left;
-    position: relative;
+a{
+    color: #fad585;
 }
 
-
-
-
-@media (max-width:800px){
-    .areaContato{width: 100%;}
-    .areaSobre{width: 100%;}
-    .subAreaIntegrantes{ position: inherit;}
+.contact{
+    width: 350px;
+    max-width: 90%;
+    position: absolute;
+    margin: 50px;
 }

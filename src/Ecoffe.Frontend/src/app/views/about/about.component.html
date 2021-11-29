@@ -1,33 +1,52 @@
 <app-header></app-header>
-<app-footer></app-footer>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <title>Web Hardware</title>
-</head>
-<body>
-    <div class="linha"></div>
-    <div class="contentSobre">
-        <div class="white, texto-intro">
-            <h1 class="white">Olá, caro Usuário.</h1>
-            <p class="texto-intro">Este projeto foi desenvolvido como uma atividade avaliativa para a conclusão do 2º Semestre do curso de Análise e Desenvolvimento de Sistemas, pela PUC-Minas. Dentre as várias especificações que podem ser encontradas na <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine" target="_blank">documentação do site</a>, A arqueitetura desta aplicação foi desenvolvida no frontend utilizando Angular e backend com Asp.NET, comunicando com o banco de dados na nuvem do Microsoft Azure usando Entity Framework.</p>
+        
+        <div class="wrapper">
+            <h1>CAFÉNINE</h1>   
+            <div class="content">
+                <p style="margin-bottom: 70px;"> 
+                    "Para nós, a CAFÉNINE é muito mais que uma empresa, é o ponto de encontro do melhor que queremos para o nosso dia."
+                </p>
+                <p>
+                    CAFÉNINE é um ECOMMERCE de CAFÉS fundada no Brasil por um grupo de estudantes da PUC-Minas. Cresceu pelo mundo e já recebeu inúmeras visitas online. Em sua concepção, o "grupo" quis deixar claro a vocação da marca de querer ser parte da vida dos clientes. Por isso os espaços da marca tinham que juntar aconchego, beleza e  modernidade. Sempre com um cardápio moldado que respeitasse o gosto dos clientes locais, para que sempre tivessem vontade de ir na loja.
+                </p>
+                <p>
+                    Este projeto foi desenvolvido como uma atividade avaliativa para a conclusão do 2º Semestre do curso de Análise e Desenvolvimento de Sistemas, pela PUC-Minas. Dentre as várias especificações que podem ser encontradas na <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-ecoffe-cafenine" target="_blank" style="text-decoration: none;">documentação do site</a>, A arqueitetura desta aplicação foi desenvolvida no frontend utilizando Angular e  backend com Asp.NET, comunicando com o  banco de dados na nuvem do Microsoft Azure usando Entity Framework.
+                </p>
+            </div>
         </div>
-        <div class="areaContato">
+    
+        <mat-card class="contact">
+            <mat-card-title>Entre em contato</mat-card-title>
+            <mat-card style="background-color: rgb(255, 175, 175); margin-bottom: 10px;" *ngIf="errors.length > 0">
+                <p *ngFor="let error of errors">{{error}}</p>
+            </mat-card>
             <form>
-                <h1 class="white, texto-final">Entre em contato</h1>
-                <input id="nomeEmail" type="text" placeholder="Nome" required>
-                <input id="telefoneEmail" placeholder="Telefone" required maxlength="11">
-                <input id="emailEmail" type="email" placeholder="Email" required>
-                <textarea id="corpoEmail" placeholder="Deixe sua opinião"></textarea>
-                <input type="submit" onclick="EnviarEmail();" value="Enviar">  
-              </form>
-        </div>
+                <mat-form-field style="width: 350px; max-width: 90%;">
+                    <input matInput placeholder="Nome" required [(ngModel)]="email.nome" name="email_Nome">
+                </mat-form-field>
+                <mat-form-field style="width: 350px; max-width: 90%;">
+                    <input matInput placeholder="Telefone" [(ngModel)]="email.telefone" name="email_Telefone" mask="00 00000 0000">
+                </mat-form-field>
+                <mat-form-field style="width: 350px; max-width: 90%;">
+                    <input matInput placeholder="Email" required [(ngModel)]="email.email" name="email_Email">
+                </mat-form-field>
+                <mat-form-field style="width: 350px; max-width: 90%;">
+                    <mat-label>Deixe sua opnião</mat-label>
+                    <textarea matInput
+                                cdkTextareaAutosize
+                                #autosize="cdkTextareaAutosize"
+                                  required [(ngModel)]="email.corpo" name="email_Corpo"></textarea>
+                </mat-form-field>
+            </form>
+            <button mat-raised-button (click)="enviarEmail()" color="primary">
+                Enviar email
+            </button>
+        </mat-card>
 
-    </div>
-</body>
-</html>
+        <div class="cardabout">
+
+        </div>
+        
 
 <app-cart-sidenav></app-cart-sidenav>
+<app-footer></app-footer>

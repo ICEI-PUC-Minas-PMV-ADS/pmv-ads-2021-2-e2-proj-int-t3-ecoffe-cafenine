@@ -15,6 +15,7 @@ export class CartSidenavComponent implements OnInit {
     produtos: []
   };
   userId: any;
+  totalValue = 0;
 
   constructor(private cartService: CartService, private router: Router, private snackbarService: SnackbarService) {}
 
@@ -41,9 +42,18 @@ export class CartSidenavComponent implements OnInit {
     this.loadCart();
   }
 
+  getTotalValue(){
+    this.totalValue = 0;
+
+    this.cart.produtos.forEach(produto => {
+      this.totalValue += produto.valorTotal;
+    })
+  }
+
   loadCart(){
     this.cartService.getCartByUserId(this.userId).subscribe((data) => { 
       this.cart = data;
+      this.getTotalValue();
     });
   }
 

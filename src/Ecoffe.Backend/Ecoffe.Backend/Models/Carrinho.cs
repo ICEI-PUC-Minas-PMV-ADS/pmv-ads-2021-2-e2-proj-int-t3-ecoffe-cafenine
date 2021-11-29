@@ -12,14 +12,6 @@ namespace Ecoffe.Backend.Models
         [Key]
         public int Id { get; set; }
         public List<ProdutoCarrinho> Produtos { get; set; }
-        //[NotMapped]
-        //public decimal ValorTotal
-        //{
-        //    get
-        //    {
-        //        return Produtos.Sum(p => p.Vl_Preco_Produto);
-        //    }
-        //}
 
     }
 }

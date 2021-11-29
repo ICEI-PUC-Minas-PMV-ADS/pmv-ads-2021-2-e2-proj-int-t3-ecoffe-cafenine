@@ -9,6 +9,9 @@ namespace Ecoffe.Backend.SharedValidators
         {
             if (canBeNull == true)
             {
+                if (endereco == null)
+                    return;
+
                 if (String.IsNullOrWhiteSpace(endereco.CEP) &&
                 String.IsNullOrWhiteSpace(endereco.Rua) &&
                 String.IsNullOrWhiteSpace(endereco.Numero) &&

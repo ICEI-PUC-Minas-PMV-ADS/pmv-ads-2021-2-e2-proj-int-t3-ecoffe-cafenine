@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { SnackbarService } from './../../services/snackbar.service';
 import { HttpClient } from '@angular/common/http';
 import { LoginRegisterService } from './../../services/login-register.service';
 import { Usuario, LoginUsuario } from './../../models/usuario.model';
@@ -26,7 +28,7 @@ export class LoginRegisterComponent implements OnInit {
     senha: ""
   }
   
-  constructor(private loginRegisterService: LoginRegisterService, private http: HttpClient) { }
+  constructor(private loginRegisterService: LoginRegisterService, private http: HttpClient, private snackbarService: SnackbarService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -38,12 +40,23 @@ export class LoginRegisterComponent implements OnInit {
         localStorage.setItem("usuarioNome",usuario.nome);
         localStorage.setItem("usuarioAdmin",usuario.admin ? "true" : "false");
         localStorage.setItem("usuarioEmail",usuario.email);
+
+        this.snackbarService.showMessage("Login realizado com sucesso");
+
+        this.router.navigate(["/"]);  
     })
   }
 
   register() : void {
-    this.loginRegisterService.register(this.newUser).subscribe(() => {
+    this.loginRegisterService.register(this.newUser).subscribe((data) => {
+      this.snackbarService.showMessage("Cadastro realizado com sucesso");
 
+      this.loginUser = {
+        emailCpf: data.cpf,
+        senha: data.senha
+      }
+
+      this.login();
     })
   }
 

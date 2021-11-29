@@ -19,9 +19,13 @@ export class ProductsService {
     return this.http.get<Produto>(this.baseUrl+"/"+id);
   }
 
-  getById2(id: number): Observable<Produto>{
-    return this.http.get<Produto>(this.baseUrl);
+  list(){
+    return this.http.get<Produto[]>(this.baseUrl);
   }
+
+ /* getById2(id: number): Observable<Produto>{
+    return this.http.get<Produto>(this.baseUrl);
+  } */
 
   openProductModal() {
     return this.matDialog.open(ProductsDetailsComponent, {

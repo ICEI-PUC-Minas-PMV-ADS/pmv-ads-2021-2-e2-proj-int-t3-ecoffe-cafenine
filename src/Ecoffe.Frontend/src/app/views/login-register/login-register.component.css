@@ -46,8 +46,25 @@ button{
     background-color: #0B4161;
 }
 
+.messageError{
+    color: rgb(255, 89, 89);
+    width: 70%;
+    word-wrap: break-word;
+    float: left;
+}
+
+@media (max-width: 450px) {
+    .messageError{
+        width: 100%;
+    }
+
+    button{
+        margin-top: 10px;
+    }
+}
+
 .wrapper > .mat-card:first-of-type{
-    bottom: 172px;
+    bottom: 229px;
 }
 
 @media (max-width: 923px) {

@@ -12,7 +12,10 @@
                     <input matInput placeholder="Senha" [(ngModel)]="loginUser.senha" name="loginUser_Senha" type="password" required>
                 </mat-form-field>
             </form>
-            <button mat-raised-button (click)="login()" color="primary">
+            <div class="messageError">
+                <p *ngIf="errorLogin">{{errorLogin}}</p>
+            </div>
+            <button mat-raised-button (keydown.enter)="login()" (click)="login()" color="primary">
                 Entrar
             </button>
         </mat-card>
@@ -26,15 +29,21 @@
                     <input matInput placeholder="Email" [(ngModel)]="newUser.email" name="newUser_Email" type="email" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="CPF" [(ngModel)]="newUser.cpf" name="newUser_CPF" required>
+                    <input matInput placeholder="CPF" mask="000.000.000-00" [(ngModel)]="newUser.cpf" name="newUser_CPF" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Telefone" [(ngModel)]="newUser.telefone" name="newUser_Telefone" required>
+                    <input matInput placeholder="Telefone" mask="00 00000 0000" [(ngModel)]="newUser.telefone" name="newUser_Telefone" required>
                 </mat-form-field>
                 <mat-form-field>
                     <input matInput placeholder="Senha" [(ngModel)]="newUser.senha" name="newUser_Senha" type="password" required>
                 </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Confirmar Senha" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required>
+                </mat-form-field>
             </form>
+            <div class="messageError">
+                <p *ngIf="errorRegister">{{errorRegister}}</p>
+            </div>
             <button mat-raised-button (click)="register()" color="primary">
                 Registrar
             </button>

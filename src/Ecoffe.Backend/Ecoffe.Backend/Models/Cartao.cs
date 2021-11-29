@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Ecoffe.Backend.Enums;
+using Ecoffe.Backend.Interfaces;
 
 namespace Ecoffe.Backend.Models
 {
@@ -8,14 +10,15 @@ namespace Ecoffe.Backend.Models
     public class Cartao
     {
         [Key]
-        public int Id_Catao { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public int Nr_Cartao { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public DateTime Dt_Validade { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public string Nm_Cartao { get; set; }
-        [Required(ErrorMessage = "Este campo é obrigatorio")]
-        public string Tx_Bandeira { get; set; }
+        public int Id { get; set; }
+        public int UsuarioId { get; set; }
+        public string Numero { get; set; }
+        public DateTime Vencimento { get; set; }
+        public DateTime DataAdicao { get; set; }
+        public string NomeTitular { get; set; }
+        public string Bandeira { get; set; }
+        public string Csv { get; set; }
+        public TipoCartao TipoCartao { get; set; }
+        public bool Principal { get; set; }
     }
 }

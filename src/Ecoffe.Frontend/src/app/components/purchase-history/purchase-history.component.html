@@ -1,0 +1,6 @@
+<mat-card>
+    <mat-card-title>Compras</mat-card-title>
+    <mat-card class="purchase" *ngFor="let compra of compras" (click)="openPurchaseDetailsModal(compra.id)">
+        <b>{{statusCompraLabel.get(compra.statusCompra)}}</b> - {{compra.dataCompra | date: 'dd/MM/yyyy'}} - {{compra.valorBruto | currency:'BRL'}} - {{formaPagamentoLabel.get(compra.formaPagamento)}}
+    </mat-card>
+</mat-card>

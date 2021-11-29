@@ -1,0 +1,70 @@
+mat-sidenav-container{
+    height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+}
+
+mat-sidenav{
+    background-color: #f7f7f6;
+    width: 400px;
+    position: fixed;
+}
+
+mat-sidenav-container{   
+    background-color: transparent;
+    display: flex;
+    float: right;
+}
+
+.closeButton{
+    all:unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    margin: 5px;
+    line-height: 14px;
+    min-width: auto;
+    cursor: pointer;
+}
+
+mat-card{
+    margin-top: 10px;
+}
+
+mat-card-title{
+    font-size: 1.2rem;
+}
+
+.cartProductImg{
+    float: left;
+}
+
+.cartProductImg > img{
+    width: 80px;
+}
+
+.removeButton{
+    float: right; 
+    height: 52px; 
+    font-size: 20px;
+}
+
+.cartBottom{
+     height: 40px; 
+    width: 80%; 
+    position: absolute; 
+    bottom: 0;
+    padding: 30px;
+}
+
+.cartBottom > button{
+    float: right;
+}
+
+.cartBottom > p{
+    float: left;
+    font-size: 1rem;
+}

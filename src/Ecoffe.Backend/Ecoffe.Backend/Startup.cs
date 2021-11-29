@@ -1,4 +1,6 @@
 using Ecoffe.Backend.Infrastructure;
+using Ecoffe.Backend.Interfaces;
+using Ecoffe.Backend.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +33,12 @@ namespace Ecoffe.Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ecoffe.Backend", Version = "v1" });
             });
+
+            //Dependency Injection
+            services.AddScoped<ICartaoService, CartaoService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<ICarrinhoService, CarrinhoService>();
+            services.AddScoped<ICompraService, CompraService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

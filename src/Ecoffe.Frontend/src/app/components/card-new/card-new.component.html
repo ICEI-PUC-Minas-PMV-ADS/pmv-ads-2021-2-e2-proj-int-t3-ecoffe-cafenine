@@ -1,0 +1,41 @@
+<mat-card *ngIf="validateErrors.length > 0" style="background-color: rgb(255, 175, 175);">
+    <p *ngFor="let error of validateErrors">{{ error }}</p>
+</mat-card>
+<br>
+<mat-card>
+    <mat-card-title>Novo Cartão</mat-card-title>
+    <form>
+            <mat-form-field style="width: 60%; min-width: 180px;">
+                <input matInput placeholder="Número do cartão" mask="0000.0000.0000.0000" [(ngModel)]="cardHelper.numero" name="cardHelper_Numero" required>
+            </mat-form-field>
+            <mat-form-field style="width: 80%; min-width: 180px;">
+                <input matInput placeholder="Nome no cartão" [(ngModel)]="cardHelper.nomeTitular" name="cardHelper_NomeTitular" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width: 10%; min-width: 50px">
+                <input matInput placeholder="Mês" mask="00" [(ngModel)]="cardHelper.mes" name="cardHelper_Mes" required>
+            </mat-form-field>
+            <mat-form-field style="width: 20%; min-width: 70px;">
+                <input matInput placeholder="Ano" mask="0000" [(ngModel)]="cardHelper.ano" name="cardHelper_Ano" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width: 30%; min-width: 155px;">
+                <input matInput placeholder="Código de Segurança" mask="AAAA" [(ngModel)]="cardHelper.csv" name="cardHelper_Vencimento" required>
+            </mat-form-field>
+            <mat-form-field style="width: 30%; min-width: 120px;">
+                <mat-label>Tipo</mat-label>
+                <mat-select [(value)]="cardHelper.tipoCartao" required>
+                    <mat-option value="0">
+                      Débito
+                    </mat-option>
+                    <mat-option value="1">
+                      Crédito
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-checkbox [(ngModel)]="cardHelper.principal" name="cardHelper_Principal">Principal</mat-checkbox>
+    </form>
+    <button mat-raised-button (click)="save()" color="primary">
+        Salvar
+    </button>
+</mat-card>

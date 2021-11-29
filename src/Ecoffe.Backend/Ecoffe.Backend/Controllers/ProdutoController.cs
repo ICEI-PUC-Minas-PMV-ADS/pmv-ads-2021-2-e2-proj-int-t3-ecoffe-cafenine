@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace Ecoffe.Backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProdutoController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -30,16 +32,22 @@ namespace Ecoffe.Backend.Controllers
 
         //GET: api/produto/{id}
         [HttpGet("{id}")]
-        public async Task<Produto> GetById([FromRoute] int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var produto = await _context.Produto.FindAsync(id);
+            try
+            {
+                var produto = await _context.Produto.Where(p => p.Id == id).FirstOrDefaultAsync();
 
-            if (produto == null)
-                throw new Exception("Produto não encontrado.");
+                if (produto == null)
+                    return StatusCode(404, "Produto não encontrado");
 
-            return produto;
+                return Ok(produto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
-
         //POST: api/produto/
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Produto produto)
@@ -54,7 +62,7 @@ namespace Ecoffe.Backend.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Produto produto)
         {
-            var produtoDb = await _context.Produto.FindAsync(produto.Id_Produto);
+            var produtoDb = await _context.Produto.FindAsync(produto.Id);
 
             if (produtoDb == null)
                 throw new Exception("Produto não encontrado.");

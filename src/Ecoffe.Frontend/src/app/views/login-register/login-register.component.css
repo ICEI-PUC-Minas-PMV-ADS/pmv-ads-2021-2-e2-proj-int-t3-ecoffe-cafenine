@@ -1,0 +1,70 @@
+
+
+#entrar {
+    position: absolute;
+    width: 380px;
+    height: 480px;
+    left: 390px;
+    top: 180px;
+    align-items: center;
+    background-color: #EEE6E7;
+}
+
+#regis {
+    position: absolute;
+    width: 380px;
+    height: 480px;
+    left: 51%;
+    top: 180px;
+    background-color: #EEE6E7;
+}
+
+body {
+    background-color: #0B4161;
+    font-family: 'Ovo', serif;
+
+}
+
+#button{
+    width: 100px;
+    height: 45px;
+    margin-left: 75%;
+    font-family: 'Ovo', serif;
+}
+
+#campo{
+    width: 380px;
+    font-family: 'Ovo', serif;
+    background-color: none;
+    padding: 5px;
+
+    
+    
+
+}
+
+.titulo {
+    align-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Ovo', serif;
+}
+
+.img_footer {
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+    margin-top:500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../../assets/Rectangle239.png);
+    background-color: #0B4161;
+}
+
+#Link{
+    text-decoration: none;
+    color: black;
+    font-family: 'Ovo', serif;
+    top: 200px;
+}

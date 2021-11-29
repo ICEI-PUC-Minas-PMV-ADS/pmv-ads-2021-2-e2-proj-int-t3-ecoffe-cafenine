@@ -1,0 +1,105 @@
+body{
+    background-color: rgb(241, 232, 232);
+}
+
+/* Primeiro Card */
+
+.card1Oculto{
+    display: none;
+}
+
+mat-card{
+    background-color: rgb(241, 232, 232);
+}
+
+.Button{
+    background-color: rgb(46, 46, 46);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.Button:hover{
+    background-color: rgb(85, 83, 83);
+    transition: 0.4s;
+}
+
+.img{
+    width: 200px;
+    border-radius: 80px;
+}
+
+.img:hover{
+    border-style: double;
+    border-color: rgb(134, 134, 134);
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+
+.img2{
+    width: 50px;
+    border-radius: 80px;
+    display: block;
+    padding: 5px;
+}
+.img2:hover{
+    border-style: double;
+    border-color: rgb(134, 134, 134);
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+.verm{
+    color: rgba(190, 54, 54, 0.836);
+}
+
+#quebraLinha{
+    width: 150px;
+}
+#quebraLinhaTitle{
+    width: 100px;
+}
+
+.ContainerCima{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: rgb(241, 232, 232);
+    border-radius: 10px;
+}
+
+.ContainerCima div{
+    flex: 1 1 300px;
+    color: #fff;
+}
+
+/* Segundo Card */
+
+.Container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: rgb(46, 46, 46);
+    border-radius: 10px;
+}
+
+.Container div{
+    flex: 1 1 300px;
+    color: #fff;
+    margin-left: 50px;
+    margin-bottom: 2px;
+}
+
+.imagem{
+    width: 100px;
+
+    border-radius: 10px;
+}
+.imagem:hover{
+    filter: grayscale(1);
+    transition: 0.3s;
+}

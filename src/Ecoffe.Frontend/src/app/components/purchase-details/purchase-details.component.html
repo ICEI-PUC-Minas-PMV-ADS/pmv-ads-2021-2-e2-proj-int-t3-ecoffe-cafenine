@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>Detalhes da compra</mat-card-title>
+    <p>Data da compra: {{compra.dataCompra | date: 'dd/MM/yyyy'}}</p>
+    <p>Status da compra: <b>{{statusCompraLabel.get(compra.statusCompra)}}</b></p>
+    <p>Forma de pagamento: {{formaPagamentoLabel.get(compra.formaPagamento)}} </p>
+    <p *ngIf="compra.formaPagamento == 0 || compra.formaPagamento == 1">Cartão utilizado: {{compra.cartao?.bandeira | uppercase}}, Final {{compra.cartao?.numero?.substr(12,4)}} - Titular {{compra.cartao?.nomeTitular}}</p>
+    <p *ngIf="compra.enderecoId">Endereço: {{compra.endereco?.rua}}, {{compra.endereco?.numero}}, {{compra.endereco?.bairro}}, {{compra.endereco?.cidade}} - {{compra.endereco?.uf}}. CEP {{compra.endereco?.cep! | mask: '00000-000'}}</p>
+</mat-card>
+<mat-card>
+    <mat-card-title>Produtos</mat-card-title>
+    <mat-card class="productMatCart" *ngFor="let produtoCompra of compra.produtos">
+        <mat-card-title style="font-size: 15px">{{produtoCompra.produto.nome}}</mat-card-title>
+        <div class="productContainer">
+            <div class="productImg">
+                <img src="assets/cafe1.jpg">
+            </div>
+            <div class="productContent">
+                <span>Quantidade: {{produtoCompra.quantidade}}</span>
+                <span>Valor unitário: {{produtoCompra.produto.valor | currency:'BRL'}}</span>
+                <span>Valor total: {{produtoCompra.valorTotal | currency:'BRL'}}</span>
+            </div> 
+        </div> 
+    </mat-card>
+    <p class="totalValue">Valor: {{compra.valorBruto | currency: 'BRL'}}</p>
+</mat-card>

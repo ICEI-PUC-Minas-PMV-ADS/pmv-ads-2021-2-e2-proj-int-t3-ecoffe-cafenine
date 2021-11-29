@@ -19,12 +19,12 @@
     
         <div class="areaContato">
             <form>
-                <h1>Entre em contato</h1>
-                <input id="nomeEmail" type="text" placeholder="  Nome :" required>
-                <input id="telefoneEmail" placeholder="  Telefone :" required maxlength="11">
-                <input id="emailEmail" type="email" placeholder="  Email :" required>
-                <textarea id="corpoEmail" placeholder="  Deixe sua opinião :"></textarea>
-                <input type="submit" onclick="EnviarEmail();" value="  Enviar">
+                <h1>Entre em contato</h1> 
+                <input [(ngModel)]="email.nome"  type="text" placeholder="  Nome :" required>
+                <input [(ngModel)]="email.telefone"  placeholder="  Telefone :" required maxlength="11">
+                <input [(ngModel)]="email.email"  type="email" placeholder="  Email :" required>
+                <textarea [(ngModel)]="email.corpo"   placeholder="  Deixe sua opinião :"></textarea>
+                <input (click)="EnviarEmail();" value="  Enviar">
               </form>
         </div>
         <div class="cardabout">

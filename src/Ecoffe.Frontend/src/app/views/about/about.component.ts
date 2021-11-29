@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Email } from 'src/app/helpers/email.Model';
 
 @Component({
   selector: 'app-about',
@@ -7,33 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  email: Email = {} as Email;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+  EnviarEmail(){    
+    
+    //Validação caso algum campo esteja vazio
+    if(this.email.nome && this.email.telefone && this.email.email){
+        let texto = "Olá, meu nome é " + this.email.nome + ", telefone " + this.email.telefone + ", e-mail de contato " + this.email.email + ". Entro em contato pelo seguinte motivo: "+ this.email.corpo;
+    
+    
 
-}
 
-function EnviarEmail() {    
-  let nomeEmail = document.getElementById("nomeEmail");
-  let telefoneEmail = document.getElementById("telefoneEmail");
-  let emailEmail = document.getElementById("emailEmail");
-
-  //Validação caso algum campo esteja vazio
-  if(nomeEmail && telefoneEmail && emailEmail){
-      let corpoEmail = "Olá, meu nome é " + nomeEmail + ", telefone " + telefoneEmail + ", e-mail de contato " + emailEmail + ". Entro em contato pelo seguinte motivo: ";
-      corpoEmail += document.getElementById("corpoEmail");
-  
-      //Abre o client de email do usuário, já com campos preenchidos
-      window.open('mailto:contato@webhardware.com?subject='+ nomeEmail +' - Contato via Site&body=' + corpoEmail);
-      alert('Obrigado sr(a) ' + nomeEmail + ', seu feedback é muito importante para a gente!');
-     }
+        //Abre o client de email do usuário, já com campos preenchidos
+        window.open('mailto:contato@webhardware.com?subject='+ this.email.nome +' - Contato via Site&body=' + texto);
+        alert('Obrigado sr(a) ' + this.email.nome + ', seu feedback é muito importante para a gente!');
+      }
+  }
 }
 
 
-function limpa(){
-  (<HTMLInputElement>document.getElementById('nomeEmail')).value="";
-  (<HTMLInputElement>document.getElementById('telefoneEmail')).value="";
-  (<HTMLInputElement>document.getElementById('corpoEmail')).value="";
-  (<HTMLInputElement>document.getElementById('emailEmail')).value="";
-}
+
+
+

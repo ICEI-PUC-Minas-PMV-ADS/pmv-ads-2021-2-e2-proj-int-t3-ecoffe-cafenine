@@ -1,4 +1,4 @@
-import { PurchaseService } from '../../services/purchase.servise';
+import { PurchaseService } from '../../services/purchase.service';
 import { Compra } from '../../models/compra.model';
 import { CardsService } from '../../services/cards.service';
 import { Cartao } from '../../models/cartao.model';

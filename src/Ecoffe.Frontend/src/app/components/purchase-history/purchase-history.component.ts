@@ -1,4 +1,4 @@
-import { PurchaseService } from './../../services/purchase.servise';
+import { PurchaseService } from '../../services/purchase.service';
 import { Router } from '@angular/router';
 import { Compra, StatusCompraLabel, FormaPagamentoLabel } from './../../models/compra.model';
 import { Component, OnInit } from '@angular/core';

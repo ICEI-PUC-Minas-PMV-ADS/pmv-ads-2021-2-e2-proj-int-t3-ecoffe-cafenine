@@ -30,31 +30,10 @@ function EnviarEmail() {
      }
 }
 
-var posicaoSliderIntegrante = 0;
 
-function MudarIntegrante() {
-  //Lista de objetos com várias propriedades
-  let integrantes = [
-      {foto: '../img/integrantes/felipe.png', nome: 'Felipe Bohm', linkedin: 'https://www.linkedin.com/in/felipe-bohm-mitre-268b171a2/', github: 'https://github.com/lipebohmmitre'},
-      {foto: '../img/integrantes/gabriel.png', nome: 'Gabriel Ilídio', linkedin: 'https://www.linkedin.com/in/gabriel-il%C3%ADdio-8aa54b86/', github: 'https://github.com/gilidio8'},
-      {foto: '../img/integrantes/iann.png', nome: 'Iago Iann', linkedin: '', github: 'https://github.com/IagoIann'},
-      {foto: '../img/integrantes/joao.png', nome: 'João Sena', linkedin: 'https://www.linkedin.com/in/jo%C3%A3o-sena-57489b11b/', github: 'https://github.com/joaosena19'},
-      {foto: '../img/integrantes/victor.png', nome: 'Victor Lopes', linkedin: 'https://www.linkedin.com/in/victor-santos-a6b3491a2/', github: 'https://github.com/VictorLopes1010'},
-      {foto: '../img/integrantes/yuri.png', nome: 'Yuri Witter', linkedin: 'https://www.linkedin.com/in/yuri-witer-12aba9181/', github: 'https://github.com/YuriWiter-dev'},
-  ];
-    
-    
-    //document.getElementById('integranteNome').innerHTML = integrantes[posicaoSliderIntegrante].nome;
-    //document.getElementById('integranteLinkLinkedin').setAttribute("href", integrantes[posicaoSliderIntegrante].linkedin);
-    //document.getElementById('integranteLinkGithub').setAttribute("href", integrantes[posicaoSliderIntegrante].github);
-    
-  posicaoSliderIntegrante++;
-
-  //Quando chega no último integrante ele reincia a posição
-  if(posicaoSliderIntegrante == integrantes.length)
-      posicaoSliderIntegrante = 0;
-
-  setTimeout('MudarIntegrante()',3500);
-
-  
+function limpa(){
+  (<HTMLInputElement>document.getElementById('nomeEmail')).value="";
+  (<HTMLInputElement>document.getElementById('telefoneEmail')).value="";
+  (<HTMLInputElement>document.getElementById('corpoEmail')).value="";
+  (<HTMLInputElement>document.getElementById('emailEmail')).value="";
 }

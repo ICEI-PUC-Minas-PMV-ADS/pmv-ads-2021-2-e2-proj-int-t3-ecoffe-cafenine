@@ -1,15 +1,68 @@
+<!--
 <div class="CentralDiv">
-<div id="DivEsq">
-    <p>Identificação: {{product.id}}</p>
+    <div id="DivEsq">
+        <p>Identificação: {{product.id}}</p>
+    </div>
+
+    <div id="DivCent">
+        <h1 id="quebraLinha">{{product.nome}}</h1>
+    </div>
+
+    <div>
+        <img src="../../../assets/img1.png" alt="Img Produto">
+    </div>
+
+    <div id="DivDir">
+        <p>R${{product.valor}}</p>
+        <div id="linha">
+            <button mat-icon-button color="accent" id="plus" (click)="resetCounter()"><span
+                    class="material-icons">remove</span></button>
+            <label>1</label>
+            <button mat-icon-button color="accent" id="plus" (click)="incrementClick()"><span
+                    class="material-icons">add</span></button>
+        </div>
+        <button mat-flat-button class="Button">Comprar</button>
+    </div>
+
 </div>
-<div id="DivCent">
-    <h1 id="quebraLinha">{{product.nome}}</h1>
-</div>
+-->
+
 <div>
-    <img src="#" alt="Img Produto">
-</div>
-<div id="DivDir">
-    <p>R${{product.valor}}</p>
-    <button mat-flat-button class="Button">Comprar</button>
-</div>
+    <div id="inicio">
+        
+        <mat-card-content id="dados_prod">
+            <img src="../../../assets/img1.png" alt="Img do Produto">
+        </mat-card-content>
+
+        <!-- Informações de valor-->
+        <mat-card id="dados_venda">
+            <mat-card-content appearance="fill">
+               <!-- <i class="material-icons">sell</i> -->
+                <h1>{{product.nome}}</h1>
+                <label id="val">R${{product.valor}}</label>
+                <div id="l">
+                    <mat-card-subtitle appearance="fill"></mat-card-subtitle>
+                    <label>Quantidade</label>
+                    <div id="linha">
+                        <button mat-icon-button color="accent" id="plus" (click)="resetCounter()"><span
+                                class="material-icons">remove</span></button>
+                        <label id="qtd">1</label>
+                        <button mat-icon-button color="accent" id="plus" (click)="incrementClick()"><span
+                                class="material-icons">add</span></button>
+                    </div>
+                </div>
+                <button mat-button id="Buy">Comprar</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div id="Meio">
+       
+    </div>
+
+<!--Ultimos Cards-->
+
+
+
+
 </div>

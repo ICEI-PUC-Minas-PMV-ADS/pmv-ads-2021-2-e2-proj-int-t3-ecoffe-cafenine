@@ -7,3 +7,8 @@ export interface Produto {
     comprimento: number;
     valor: number;
 }
+
+export enum Categoria {
+    consumo = 0,
+    utilitario = 1
+  }

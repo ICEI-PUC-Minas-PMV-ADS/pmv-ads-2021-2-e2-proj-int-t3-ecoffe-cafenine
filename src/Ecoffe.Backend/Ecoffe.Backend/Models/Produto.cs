@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Ecoffe.Backend.Enums;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,5 +16,6 @@ namespace Ecoffe.Backend.Models
         public decimal Largura { get; set; }
         public decimal Comprimento { get; set; }
         public decimal Valor { get; set; }
+        public Categoria Categoria { get; set; }
     }
 }

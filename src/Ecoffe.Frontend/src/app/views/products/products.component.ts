@@ -22,6 +22,12 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  getByProduto(productId: number){
+    this.productService.getById2(productId).subscribe((result)=>{
+      this.product = result;
+    })
+  }
+
   getById2(productId: number){
     this.productService.getById(productId).subscribe((result) =>{
       this.product2 = result;
@@ -62,7 +68,7 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.buscaProduto(8,15,9,10,11);
+   this.buscaProduto(8,15,9,10,11);
     this.cleanLoad();
   }
 

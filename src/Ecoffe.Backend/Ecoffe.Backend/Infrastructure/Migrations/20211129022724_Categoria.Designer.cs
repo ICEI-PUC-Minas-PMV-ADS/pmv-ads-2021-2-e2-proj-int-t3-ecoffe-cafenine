@@ -4,14 +4,16 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211129022724_Categoria")]
+    partial class Categoria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,34 +47,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.HasIndex("ProdutoId");
 
                     b.ToTable("ProdutoCarrinho");
-                });
-
-            modelBuilder.Entity("Ecoffe.Backend.Helpers.ProdutoCompra", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CompraId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompraId");
-
-                    b.HasIndex("ProdutoId");
-
-                    b.ToTable("ProdutoCompra");
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Carrinho", b =>
@@ -126,51 +100,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Cartao");
-                });
-
-            modelBuilder.Entity("Ecoffe.Backend.Models.Compra", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CartaoId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataCompra")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("EnderecoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FormaPagamento")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Parcelas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StatusCompra")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ValorBruto")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("ValorParcela")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CartaoId");
-
-                    b.HasIndex("EnderecoId");
-
-                    b.HasIndex("UsuarioId");
-
-                    b.ToTable("Compra");
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Cupom", b =>
@@ -444,21 +373,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Navigation("Produto");
                 });
 
-            modelBuilder.Entity("Ecoffe.Backend.Helpers.ProdutoCompra", b =>
-                {
-                    b.HasOne("Ecoffe.Backend.Models.Compra", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("CompraId");
-
-                    b.HasOne("Ecoffe.Backend.Models.Produto", "Produto")
-                        .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Produto");
-                });
-
             modelBuilder.Entity("Ecoffe.Backend.Models.Cartao", b =>
                 {
                     b.HasOne("Ecoffe.Backend.Models.Usuario", null)
@@ -466,29 +380,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Ecoffe.Backend.Models.Compra", b =>
-                {
-                    b.HasOne("Ecoffe.Backend.Models.Cartao", "Cartao")
-                        .WithMany()
-                        .HasForeignKey("CartaoId");
-
-                    b.HasOne("Ecoffe.Backend.Models.Endereco", "Endereco")
-                        .WithMany()
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Ecoffe.Backend.Models.Usuario", null)
-                        .WithMany("Compras")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cartao");
-
-                    b.Navigation("Endereco");
                 });
 
             modelBuilder.Entity("Ecoffe.Backend.Models.Pedido", b =>
@@ -545,11 +436,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Navigation("Produtos");
                 });
 
-            modelBuilder.Entity("Ecoffe.Backend.Models.Compra", b =>
-                {
-                    b.Navigation("Produtos");
-                });
-
             modelBuilder.Entity("Ecoffe.Backend.Models.Pedido", b =>
                 {
                     b.Navigation("Produtos");
@@ -558,8 +444,6 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
             modelBuilder.Entity("Ecoffe.Backend.Models.Usuario", b =>
                 {
                     b.Navigation("Cartoes");
-
-                    b.Navigation("Compras");
                 });
 #pragma warning restore 612, 618
         }

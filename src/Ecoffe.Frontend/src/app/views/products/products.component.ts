@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ProductsService } from './../../services/products.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   product4: any;
   product5: any;
 
-  constructor(private productService:ProductsService) { }
+  constructor(private productService:ProductsService, private render: Renderer2) { }
 
   getById(productId: number){
     this.productService.getById(productId).subscribe((result) =>{
@@ -54,8 +54,16 @@ export class ProductsComponent implements OnInit {
     this.getById5(id5);
   }
 
+  cleanLoad(){
+    setTimeout(()=>{
+      this.render.selectRootElement('.C-Loader').style.display = "none";
+    }, 3000);
+    
+  }
+
   ngOnInit(): void {
     this.buscaProduto(8,15,9,10,11);
+    this.cleanLoad();
   }
 
 }

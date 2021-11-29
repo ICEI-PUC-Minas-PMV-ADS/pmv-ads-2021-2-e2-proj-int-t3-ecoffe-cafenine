@@ -48,3 +48,18 @@ img{
     width: 150px;
     padding: 10px;
 }
+
+.C-Loader{
+    animation: is-roating 2s infinite;
+    border: 6px solid #e5e5e5;
+    border-top-color: #51d4db;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+@keyframes is-roating {
+    to{
+        transform: rotate(1turn);
+    }
+}

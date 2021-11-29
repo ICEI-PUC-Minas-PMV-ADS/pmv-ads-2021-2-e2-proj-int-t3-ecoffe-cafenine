@@ -31,11 +31,15 @@ export class PurchaseService {
   return this.http.get<Compra[]>(this.baseUrl + "/usuario/" + userId);
   }
 
-  openPurchaseDetailsModal(){
-    return this.matDialog.open(PurchaseDetailsComponent, {
+  openPurchaseDetailsModal(compraId: number){
+    let purchaseDetailModal = this.matDialog.open(PurchaseDetailsComponent, {
       width: '90%',
       height: '90%',
       disableClose: false
     });
+
+    purchaseDetailModal.componentInstance.compraId = compraId;
+
+    return purchaseDetailModal;
   }
 }

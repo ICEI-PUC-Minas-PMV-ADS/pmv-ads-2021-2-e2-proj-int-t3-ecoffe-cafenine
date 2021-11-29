@@ -12,6 +12,8 @@ export class PurchaseDetailsComponent implements OnInit {
 
   userId: any;
 
+  compraId: any;
+
   compra: Compra = {} as Compra;
 
   statusCompraLabel = StatusCompraLabel;
@@ -27,7 +29,10 @@ export class PurchaseDetailsComponent implements OnInit {
       return;
     }
 
-    this.loadPurchase();
+    if(this.compraId)
+      this.loadPurchase(this.compraId);
+    else
+      this.loadPurchase();
   }
 
   loadPurchase(compraId?: any){

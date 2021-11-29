@@ -32,13 +32,12 @@ export class PurchaseHistoryComponent implements OnInit {
   loadPurchases(){
     this.purchaseService.getListByUserId(this.userId).subscribe((data) => {
       this.compras = data;
-      console.log(this.compras)
     });
   }
 
-  openPurchaseDetailsModal(){
-    this.purchaseService.openPurchaseDetailsModal().afterClosed().subscribe(() =>{
-      //
+  openPurchaseDetailsModal(compraId: any){
+    this.purchaseService.openPurchaseDetailsModal(compraId).afterClosed().subscribe(() =>{
+      
     });
   }
 

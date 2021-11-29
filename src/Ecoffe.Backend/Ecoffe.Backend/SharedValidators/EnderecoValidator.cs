@@ -5,16 +5,19 @@ namespace Ecoffe.Backend.SharedValidators
 {
     public class EnderecoValidator
     {
-        public void Validate(Endereco endereco)
+        public void Validate(Endereco endereco, bool canBeNull)
         {
-            if (String.IsNullOrWhiteSpace(endereco.CEP) &&
+            if (canBeNull == true)
+            {
+                if (String.IsNullOrWhiteSpace(endereco.CEP) &&
                 String.IsNullOrWhiteSpace(endereco.Rua) &&
                 String.IsNullOrWhiteSpace(endereco.Numero) &&
                 String.IsNullOrWhiteSpace(endereco.Bairro) &&
                 String.IsNullOrWhiteSpace(endereco.Cidade) &&
                 String.IsNullOrWhiteSpace(endereco.UF))
-                return;
-
+                    return;
+            }
+            
             if (String.IsNullOrWhiteSpace(endereco.CEP) || endereco.CEP.Length != 8)
                 throw new Exception("CEP inválido");
 

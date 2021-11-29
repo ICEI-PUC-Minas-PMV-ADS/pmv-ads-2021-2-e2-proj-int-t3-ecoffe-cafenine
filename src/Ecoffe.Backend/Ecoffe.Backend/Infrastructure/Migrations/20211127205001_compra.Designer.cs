@@ -4,14 +4,16 @@ using Ecoffe.Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ecoffe.Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211127205001_compra")]
+    partial class compra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,6 +67,9 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -141,7 +146,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<DateTime>("DataCompra")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EnderecoId")
+                    b.Property<int?>("EnderecoId")
                         .HasColumnType("int");
 
                     b.Property<int>("FormaPagamento")
@@ -159,7 +164,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
                     b.Property<decimal>("ValorBruto")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("ValorParcela")
+                    b.Property<decimal>("ValorParcelas")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -473,9 +478,7 @@ namespace Ecoffe.Backend.Infrastructure.Migrations
 
                     b.HasOne("Ecoffe.Backend.Models.Endereco", "Endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EnderecoId");
 
                     b.HasOne("Ecoffe.Backend.Models.Usuario", null)
                         .WithMany("Compras")

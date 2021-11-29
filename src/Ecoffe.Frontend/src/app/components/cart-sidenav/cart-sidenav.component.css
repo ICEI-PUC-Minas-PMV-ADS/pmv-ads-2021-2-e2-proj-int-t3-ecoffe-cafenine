@@ -51,3 +51,20 @@ mat-card-title{
     height: 52px; 
     font-size: 20px;
 }
+
+.cartBottom{
+     height: 40px; 
+    width: 80%; 
+    position: absolute; 
+    bottom: 0;
+    padding: 30px;
+}
+
+.cartBottom > button{
+    float: right;
+}
+
+.cartBottom > p{
+    float: left;
+    font-size: 1rem;
+}

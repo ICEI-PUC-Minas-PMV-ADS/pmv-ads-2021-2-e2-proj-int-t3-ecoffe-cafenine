@@ -38,6 +38,7 @@ namespace Ecoffe.Backend
             services.AddScoped<ICartaoService, CartaoService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<ICarrinhoService, CarrinhoService>();
+            services.AddScoped<ICompraService, CompraService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav position="end" mode="over" [opened]="isCartSidenavOpened" style="padding-bottom: 100px;">
+    <mat-sidenav position="end" mode="over" [opened]="isCartSidenavOpened" (openedChange)="loadCart()" style="padding-bottom: 100px;">
         <button class="closeButton" (click)="toggleCartSidenav()">X</button>
         <p *ngIf="cart.produtos.length == 0">Não há nenhum produto adicionado ao carrinho</p>
         <mat-card *ngFor="let produtoCarrinho of cart.produtos">

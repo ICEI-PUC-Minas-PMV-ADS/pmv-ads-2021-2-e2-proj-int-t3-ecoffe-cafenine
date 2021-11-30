@@ -7,8 +7,8 @@
                 <a routerLink="" class="black">INICIO</a>
                 <a routerLink="/products" class="black ">PRODUTOS</a>
                 <a routerLink="/about" class="black ">SOBRE</a>
-                <a routerLink="/login" class="black ">ENTRAR</a>
-                <a routerLink="/account" class="black ">MINHA CONTA</a>
+                <a routerLink="/login" class="black " *ngIf="!isLogged">ENTRAR</a>
+                <a routerLink="/account" class="black " *ngIf="isLogged">MINHA CONTA</a>
         </div>
         <div class="right-content">
             <input type="search" placeholder="Pesquise um produto...">

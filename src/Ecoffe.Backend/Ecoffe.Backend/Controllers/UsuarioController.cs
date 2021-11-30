@@ -108,14 +108,17 @@ namespace ClientApp.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginUsuario loginUsuario)
         {
-            var usuario = await _context.Usuario.FirstOrDefaultAsync(p =>
-                                                (p.Email == loginUsuario.EmailCpf || p.CPF == loginUsuario.EmailCpf) &&
-                                                 p.Senha == loginUsuario.Senha);
+            var usuarios = await _context.Usuario.Where(p => (p.Email == loginUsuario.EmailCpf || p.CPF == loginUsuario.EmailCpf)).ToListAsync();
 
-            if (usuario == null)
-                return StatusCode(404, "Usuário não encontrado.");
+            var usuarioAutenticado = usuarios.Where(p => p.Senha == loginUsuario.Senha).FirstOrDefault();
 
-            return Ok(usuario);
+            if (usuarios.Count == 0)
+                return StatusCode(404, "Usuário não encontrado");
+
+            if (usuarioAutenticado == null)
+                return StatusCode(500, "Senha incorreta");
+
+            return Ok(usuarioAutenticado);
         }
     }
 }

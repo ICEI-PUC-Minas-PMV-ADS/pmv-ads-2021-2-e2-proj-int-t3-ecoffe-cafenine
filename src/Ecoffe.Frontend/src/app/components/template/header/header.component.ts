@@ -8,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isLogged: any;
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+     let userId = localStorage.getItem("usuarioId");
+     
+    if(!userId || userId == "")
+      this.isLogged = false;
+    else
+      this.isLogged = true;
   }
 
   toggleCartSidenav(){

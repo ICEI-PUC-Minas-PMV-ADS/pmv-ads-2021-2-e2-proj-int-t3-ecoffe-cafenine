@@ -1,3 +1,4 @@
+import { SnackbarService } from './../../services/snackbar.service';
 import { Component, OnInit } from '@angular/core';
 import { Email } from 'src/app/helpers/email.Model';
 
@@ -8,26 +9,42 @@ import { Email } from 'src/app/helpers/email.Model';
 })
 export class AboutComponent implements OnInit {
 
+  errors: string[] = [];
+
   email: Email = {} as Email;
 
-  constructor() { }
+  constructor(private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
   }
-  EnviarEmail(){    
-    
-    //Validação caso algum campo esteja vazio
-    if(this.email.nome && this.email.telefone && this.email.email){
-        let texto = "Olá, meu nome é " + this.email.nome + ", telefone " + this.email.telefone + ", e-mail de contato " + this.email.email + ". Entro em contato pelo seguinte motivo: "+ this.email.corpo;
-    
-    
 
+  enviarEmail(){    
+    this.errors = [];
 
-        //Abre o client de email do usuário, já com campos preenchidos
-        window.open('mailto:contato@webhardware.com?subject='+ this.email.nome +' - Contato via Site&body=' + texto);
-        alert('Obrigado sr(a) ' + this.email.nome + ', seu feedback é muito importante para a gente!');
-      }
+    if(!this.email.nome || this.email.nome == '')
+      this.errors.push("Nome deve ser preenchido");
+    
+    if(!this.email.email || !this.validateEmail(this.email.email))
+      this.errors.push("Email inválido");
+
+    if(!this.email.corpo || this.email.corpo == '')
+      this.errors.push("Mensagem inválida");
+
+    if(this.errors.length > 0)
+      return;
+
+      let texto = "Olá, meu nome é " + this.email.nome + ", telefone " + this.email.telefone + ", e-mail de contato " + this.email.email + ". Entro em contato pelo seguinte motivo: "+ this.email.corpo;
+
+      this.snackbarService.showMessage("Obrigado pelo contato!");
+
+      window.open('mailto:contato@cafenine.com?subject='+ this.email.nome +' - Contato via Site&body=' + texto);
+}
+
+  validateEmail(email: string) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
+  
 }
 
 

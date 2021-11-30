@@ -28,7 +28,10 @@ namespace Ecoffe.Backend.Services
                 usuarioDb = _context.Update(usuario).Entity;
 
             if (usuario.Id == 0)
+            {
+                usuario.Endereco = new Endereco();
                 usuarioDb = _context.Add(usuario).Entity;
+            }
 
             await _context.SaveChangesAsync();
 

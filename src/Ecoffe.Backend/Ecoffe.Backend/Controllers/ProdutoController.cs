@@ -23,11 +23,19 @@ namespace Ecoffe.Backend.Controllers
 
         //GET: api/produto
         [HttpGet]
-        public async Task<IEnumerable<Produto>> Get()
+        public async Task<IActionResult> Get()
         {
-            var listaProdutos = await _context.Produto.ToListAsync();
+            try
+            {
+                var listaProdutos = await _context.Produto.ToListAsync();
 
-            return listaProdutos;
+                return Ok(listaProdutos);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+
         }
 
         //GET: api/produto/{id}

@@ -1,69 +1,17 @@
 <app-header></app-header>
 
+<mat-card class="products">
+    <mat-card class="product" *ngFor="let product of products">
+        <div class="wrapperImg">
+            <img src="assets/cafe1.jpg">
+        </div>
+        <p>{{product.nome}}</p>
+        <p style="float: left;">{{product.valor | currency: 'BRL'}}</p>
+        <button mat-raised-button color="primary" (click)="addProductToCart(product);" style="float: right;">
+            Comprar
+        </button>
+    </mat-card>
+</mat-card>
 
-<nav id="menu-esq">
-    <h3 style="text-align: center;">Filtrar Produtos</h3>
-    <ul>
-        <h4>Por Método</h4>
-        <li>Café com grãos (129)</li>
-        <li>Café moído (52)</li>
-        <li>Cápsula de Café (78)</li>
-        <li>Drip Coffee (11)</li>
-        <li>Sachê de Cafê (3)</li>
-        <li>Infusores (6)</li>
-        <li>Sóluveis (2)</li>
-        <li>Cold Vrew (2)</li>
-    </ul>
-
-    <ul>
-        <h4>Intensidade</h4>
-        <li>Café Suave (12)</li>
-        <li>Café Médio (23)</li>
-        <li>Café Intenso (17)</li>
-    </ul>
-
-    <ul>
-        <h4>Tipo</h4>
-        <li>Café Aromatizado (9)</li>
-        <li>Café Certificado (54)</li>
-        <li>Café Descafeinado (8)</li>
-        <li>Café Organico (10)</li>
-        <li>Café Premiado (22)</li>
-        <li>Microlote (22)</li>
-    </ul>
-    <hr>
-    <ul>
-        <h4>Marca</h4>
-        <li><input type="checkbox">.BR (10)</li>
-        <li><input type="checkbox">3 Corações (4)</li>
-        <li><input type="checkbox">4 Beans Coffee Co. (1)</li>
-        <li><input type="checkbox">Astro (9)</li>
-        <li><input type="checkbox">Baggio (16)</li>
-        <li><input type="checkbox">Barista (2)</li>
-    </ul>
-</nav>
-
-<div id="produtos">
-    <div id="produto1">
-        <h5>Café Moído</h5>
-        <img src="././assets/cafe1.jpg">
-        <p>Café em Grãos para ser moído</p>
-    </div>
-    <div id="produto2">
-        <h5>Caputino</h5>
-        <img src="././assets/cafe2.jpeg">
-        <p>Caputino para se deliciar</p>
-    </div>
-    <div id="produto3">
-        <h5>Café em Cachaça</h5>
-        <img src="././assets/cafe3.jpg">
-        <p>Deliciosa cahaça de café</p>
-    </div>
-    <div>
-        <h5>Café com canela</h5>
-        <img src="././assets/cafe4.jpeg">
-        <p>Saboroso café com Canela</p>
-    </div>
-</div>
-
+<app-cart-sidenav></app-cart-sidenav>
 <app-footer></app-footer>

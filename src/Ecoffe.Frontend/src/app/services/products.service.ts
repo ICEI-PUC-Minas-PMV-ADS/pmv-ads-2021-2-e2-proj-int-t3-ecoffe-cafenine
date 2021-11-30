@@ -1,3 +1,5 @@
+import { Carrinho } from './../models/carrinho.model';
+import { ProdutoCarrinho } from './../helpers/produtoCarrinho.model';
 import { HttpClient } from '@angular/common/http';
 import { Produto } from './../models/produto.model';
 import { Injectable } from '@angular/core';
@@ -13,10 +15,18 @@ export class ProductsService {
 
   constructor(private matDialog: MatDialog, private http: HttpClient) { }
 
-  baseUrl = "https://localhost:44324/api/Produto";
+  baseUrl = "https://localhost:44362/api/Produto";
 
   getById(id: number): Observable<Produto> {
     return this.http.get<Produto>(this.baseUrl+"/"+id);
+  }
+
+  getAll(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.baseUrl);
+  }
+
+  addProductToCart(productCart: ProdutoCarrinho): Observable<Carrinho>{
+    return this.http.post<Carrinho>("https://localhost:44362/api/carrinho/addProduct", productCart);
   }
 
   openProductModal() {

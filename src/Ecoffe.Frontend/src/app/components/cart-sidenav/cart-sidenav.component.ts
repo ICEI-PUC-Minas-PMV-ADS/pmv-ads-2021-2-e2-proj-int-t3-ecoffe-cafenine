@@ -31,11 +31,6 @@ export class CartSidenavComponent implements OnInit {
   ngOnInit(): void {    
     this.userId = localStorage.getItem("usuarioId");
 
-    if(!this.userId || this.userId == ""){
-      this.router.navigate(["/login"]);  
-      return;
-    }
-
     if(this.cartService.isOpened == true)
       this.cartService.toggleCartSidenav();
 

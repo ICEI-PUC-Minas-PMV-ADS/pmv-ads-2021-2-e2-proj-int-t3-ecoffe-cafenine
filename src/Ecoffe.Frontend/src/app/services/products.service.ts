@@ -19,9 +19,18 @@ export class ProductsService {
     return this.http.get<Produto>(this.baseUrl+"/"+id);
   }
 
+  list(){
+    return this.http.get<Produto[]>(this.baseUrl);
+  }
+
+ /* getById2(id: number): Observable<Produto>{
+    return this.http.get<Produto>(this.baseUrl);
+  } */
+
   openProductModal() {
     return this.matDialog.open(ProductsDetailsComponent, {
       width: '600px',
+      height: '600px',
       disableClose: false
     });
   }

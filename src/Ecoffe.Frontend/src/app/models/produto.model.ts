@@ -6,4 +6,5 @@ export interface Produto {
     largura: number;
     comprimento: number;
     valor: number;
+    imgUrl: string;
 }

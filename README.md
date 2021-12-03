@@ -31,7 +31,7 @@ De forma geral, o objetivo desse projeto é criar uma aplicação e-Commerce vol
 <li><a href="docs/5-Diagrama de Classes.md"> Diagrama de Classes</a></li>
 <li><a href="docs/6-Wireframes Interativos.md"> Wireframes Interativos</a></li>
 <li><a href="docs/7-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
-<li><a href="docs/8-Wireframes Interativos.md"> Plano de Testes de Usabilidade</a></li>
+<li><a href="docs/8-Plano de Testes de Usabilidade.md"> Plano de Testes de Usabilidade</a></li>
 <li><a href="docs/9-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
 <li><a href="docs/10-Registro de Testes de Usabilidade.md"> Registro de Testes de Usabilidade</a></li>
 </ol>

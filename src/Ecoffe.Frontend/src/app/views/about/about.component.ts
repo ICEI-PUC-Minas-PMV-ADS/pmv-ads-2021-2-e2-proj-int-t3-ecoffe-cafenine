@@ -1,6 +1,10 @@
 import { SnackbarService } from './../../services/snackbar.service';
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Email } from 'src/app/helpers/email.Model';
+=======
+import { Email } from 'src/app/helpers/email.model';
+>>>>>>> joao
 
 @Component({
   selector: 'app-about',

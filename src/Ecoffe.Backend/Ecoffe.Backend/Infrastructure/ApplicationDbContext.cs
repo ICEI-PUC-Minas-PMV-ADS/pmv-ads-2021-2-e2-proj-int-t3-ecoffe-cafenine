@@ -13,7 +13,6 @@ namespace Ecoffe.Backend.Infrastructure
         public DbSet<Cartao> Cartao { get; set; }
         public DbSet<Cupom> Cupom { get; set; }
         public DbSet<Endereco> Endereco { get; set; }
-        public DbSet<Frete> Frete { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Carrinho> Carrinho { get; set; }

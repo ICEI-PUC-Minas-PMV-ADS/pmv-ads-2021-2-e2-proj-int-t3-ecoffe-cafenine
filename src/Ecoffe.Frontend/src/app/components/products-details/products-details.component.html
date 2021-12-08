@@ -1,3 +1,4 @@
+<!--
 <div class="CentralDiv">
 <div id="DivEsq">
     <p>Identificação: {{product.id}}</p>
@@ -12,4 +13,23 @@
     <p>R${{product.valor}}</p>
     <button mat-flat-button class="Button">Comprar</button>
 </div>
+</div>
+-->
+<div class="align">
+<mat-card class="products">
+   <!-- <mat-card mat-card class="product"> -->
+        <div class="wrapperImg">
+            <img src="assets/cafe1.jpg">
+        </div>
+        <mat-card-title>
+            <h2>{{product.nome}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
+           <p style="float: left;">{{product.valor | currency: 'BRL'}}</p> 
+        </mat-card-subtitle>
+        <button mat-raised-button color="primary" style="float: right;">
+            Comprar
+        </button>
+   <!-- </mat-card> -->
+</mat-card>
 </div>

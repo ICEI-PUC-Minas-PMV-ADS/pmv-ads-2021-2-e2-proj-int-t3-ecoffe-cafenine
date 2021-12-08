@@ -1,5 +1,6 @@
 import { ProductsService } from './../../services/products.service';
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ProductsDetailsComponent } from 'src/app/components/products-details/products-details.component';
 
 
 @Component({

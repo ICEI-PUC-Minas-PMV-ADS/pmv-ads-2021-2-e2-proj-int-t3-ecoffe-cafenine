@@ -21,8 +21,29 @@ export class ProductsDetailsComponent implements OnInit {
     });
   }
 
+  getById2(productId: number){
+    this.productService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  getById3(productId: number){
+    this.productService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  getById4(productId: number){
+    this.productService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
   ngOnInit(): void {
     this.getById(8);
+    this.getById2(15);
+    this.getById3(14);
+    this.getById4(13);
   }
   
 

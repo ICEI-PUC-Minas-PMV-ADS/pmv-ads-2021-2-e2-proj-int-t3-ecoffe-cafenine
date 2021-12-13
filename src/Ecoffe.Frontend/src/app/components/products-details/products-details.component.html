@@ -19,7 +19,7 @@
 <mat-card class="products">
    <!-- <mat-card mat-card class="product"> -->
         <div class="wrapperImg">
-            <img src="assets/cafe1.jpg">
+            <img [src]="product.imgUrl">
         </div>
         <mat-card-title>
             <h2>{{product.nome}}</h2>
@@ -27,9 +27,7 @@
         <mat-card-subtitle>
            <p style="float: left;">{{product.valor | currency: 'BRL'}}</p> 
         </mat-card-subtitle>
-        <button mat-raised-button color="primary" style="float: right;">
-            Comprar
-        </button>
+        
    <!-- </mat-card> -->
 </mat-card>
 </div>

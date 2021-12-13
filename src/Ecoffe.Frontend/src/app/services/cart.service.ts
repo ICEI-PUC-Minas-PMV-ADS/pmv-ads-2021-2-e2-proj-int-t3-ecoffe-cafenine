@@ -12,7 +12,7 @@ export class CartService {
 
   isOpenedChange: Subject <boolean> = new Subject<boolean>();
 
-  baseUrl = "https://localhost:44362/api/Carrinho";
+  baseUrl = "https://localhost:44324/api/Carrinho";
 
   constructor(private http: HttpClient) { 
       this.isOpenedChange.subscribe((value) => {

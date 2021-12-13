@@ -1,3 +1,4 @@
+import { Produto } from './../../models/produto.model';
 import { ProductsService } from './../../services/products.service';
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ProductsDetailsComponent } from 'src/app/components/products-details/products-details.component';
@@ -9,6 +10,8 @@ import { ProductsDetailsComponent } from 'src/app/components/products-details/pr
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  product: any;
 
 di(){
     let di = document.createElement('div')
@@ -29,21 +32,62 @@ di(){
       this.di();
    }
 
+
   ngOnInit(): void {
+    this.getById(8);
+    this.getById2(12);
+    this.getById3(14);
+    this.getById4(13);
+    this.getById5(9);
+    this.getById6(10);
   }
   
-  troca(titulo: string, desc: string, price: string, url: string){
-    this.render.selectRootElement('h1').innerHTML = titulo;
-    this.render.selectRootElement('p').innerHTML = desc;
-    this.render.selectRootElement('#price').innerHTML = price;
-    this.render.selectRootElement('.img').src = url;
+  public getById(productId: number){
+    this.productsService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    });
   }
 
-  troca2(titulo: string, desc: string, price: string, url: string){
-    this.render.selectRootElement('h1').innerHTML = titulo;
-    this.render.selectRootElement('p').innerHTML = desc;
-    this.render.selectRootElement('#price').innerHTML = price;
-    this.render.selectRootElement('.img').src = url;
+  getById2(productId: number){
+    this.productsService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  getById3(productId: number){
+    this.productsService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  getById4(productId: number){
+    this.productsService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  getById5(productId: number){
+    this.productsService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  getById6(productId: number){
+    this.productsService.getById(productId).subscribe((result) =>{
+      this.product = result;
+    })
+  }
+
+  troca(){
+    this.render.selectRootElement('h1').innerHTML = 'Alguns de nossos Produtos:';
+    this.render.selectRootElement('p').innerHTML = 'Nossos deliciosos produtos sortidos, conheça mais na aba Produtos.';
+    this.render.selectRootElement('.img').src = '../../../assets/img1.png';
+  }
+
+  troca2(){
+    this.render.selectRootElement('h1').innerHTML = 'Alguns de nossos Produtos:';
+    this.render.selectRootElement('p').innerHTML = 'Conheça nossos produtos aparecendo de forma sortida, para se ter um gostinho do nosso café.';
+    this.render.selectRootElement('.img').src = '../../../assets/cafeDesnho.png';
   }
 
   abre_mod(){

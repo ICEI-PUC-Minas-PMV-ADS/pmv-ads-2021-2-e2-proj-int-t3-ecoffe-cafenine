@@ -4,3 +4,4 @@ export interface Carrinho {
     id: number,
     produtos: ProdutoCarrinho[]
 }
+

@@ -12,7 +12,7 @@ export class CardsService {
 
   constructor(private http: HttpClient, private matDialog: MatDialog) { }
 
-  baseUrl = "https://localhost:44362/api/Cartao";
+  baseUrl = "https://localhost:44324/api/Cartao";
 
   save(card: Cartao): Observable<Cartao>{
     return this.http.post<Cartao>(this.baseUrl, card);

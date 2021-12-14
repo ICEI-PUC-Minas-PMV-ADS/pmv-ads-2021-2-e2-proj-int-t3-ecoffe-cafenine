@@ -5,23 +5,21 @@
     <section class="ContainerCima">
         <div>
             <mat-card-title>
-                <h1 class="verm" id="quebraLinhaTitle">Midnigh Frappuccino</h1>
+                <h1 class="verm" id="quebraLinhaTitle">Alguns de nossos produtos:</h1>
             </mat-card-title>
             <mat-card-subtitle>
-                <p id="quebraLinha" style="color: black;">The Midnight mint Mocha Frappuccino features extra dark cocoa
-                    blended with Frappuccino Roast coffee.</p>
-                <p class="verm" id="price">R$49,90</p>
-                <button mat-flat-button class="Button">Buy Now</button>
+                <p id="quebraLinha" style="color: black;">Conheça nossos produtos aparecendo de forma sortida, para se ter um gostinho do nosso café.</p>
+                
             </mat-card-subtitle>
         </div>
         <div (click)="abre_mod()">
-            <img src="../../../assets/img1.png" alt="Img do Produto mais vendido" class="img">
+           <img src="../../../assets/img1.png" alt="Img do Produto mais vendido" class="img">
         </div>
         <div>
             <img id="img2" src="../../../assets/img1.png" alt="img do Segundo Produto mais vendido" class="img2"
-                (click)="troca('Midnigh Frappuccino','The Midnight mint Mocha Frappuccino features extra dark cocoa blended with Frappuccino Roast coffee.','R$49,90','../../../assets/img1.png')">
-            <img id="img3" src="../../../assets/img3.png" alt="img do Terceiro Produto mais vendido" class="img2"
-                (click)="troca2('Cookies','Deliciosos Cookies de chocolate com gotas de Chocolate Branco e pedaços de cacau','R$28,49','../../../assets/img3.png')">
+                (click)="troca()">
+            <img id="img3" src="../../../assets/cafeDesnho.png" alt="img do Terceiro Produto mais vendido" class="img2"
+                (click)="troca2()">
         </div>
     </section>
 </mat-card>
@@ -33,16 +31,15 @@
 <mat-card>
     <section class="Container">
         <div>
-            <img mat-card-image src="../../../assets/img4.png" alt="img produto mais votado" class="imagem">
-            <p>Titulo produto</p>
+           <img mat-card-image (click)="abre_mod()" src="../../../assets/cafeDesnho2.png" alt="img produto mais votado" class="imagem">
         </div>
         <div>
-            <img mat-card-image src="../../../assets/img5.png" alt="img produto mais votado" class="imagem">
-            <p>Titulo produto</p>
+            <img mat-card-image (click)="abre_mod()" src="../../../assets/cafeDesnho3.png" alt="img produto mais votado" class="imagem">
+            <p></p>
         </div>
         <div>
-            <img mat-card-image src="../../../assets/img6.png" alt="img produto mais votado" class="imagem">
-            <p>Titulo produto</p>
+            <img mat-card-image (click)="abre_mod()" src="../../../assets/cafeDesnho4.png" alt="img produto mais votado" class="imagem">
+            <p></p>
         </div>
 
     </section>

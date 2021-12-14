@@ -18,7 +18,7 @@
         <mat-card-title style="font-size: 20px">{{produtoCarrinho.produto.nome}}</mat-card-title>
         <div class="productContainer">
             <div class="productImg">
-                <img src="assets/cafe1.jpg">
+                <img [src]="produtoCarrinho.produto.imgUrl">
             </div>
             <div class="productContent">
                 <p>Valor unitário: {{produtoCarrinho.produto.valor | currency:'BRL'}}</p>

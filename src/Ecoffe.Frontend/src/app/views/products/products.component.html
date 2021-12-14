@@ -3,7 +3,7 @@
 <mat-card class="products">
     <mat-card class="product" *ngFor="let product of products">
         <div class="wrapperImg">
-            <img src="assets/cafe1.jpg">
+            <img [src]="product.imgUrl">
         </div>
         <p>{{product.nome}}</p>
         <p style="float: left;">{{product.valor | currency: 'BRL'}}</p>

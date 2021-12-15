@@ -1,0 +1,33 @@
+@import "../home/home.component.scss";
+.products{
+    display: inline-flex;
+    flex-flow: wrap;
+}
+
+.product{
+    height: 290px;
+    width: 320px;
+    margin: 10px;
+    font-size: 18px;
+
+}
+
+.wrapperImg{
+    text-align: center;
+}
+
+.wrapperImg > img{
+    height: 100px;
+    width: auto;
+}
+button{
+    margin: 5px;
+}
+
+#botao-novo{
+   // width: 150px;
+    height: 50px;
+  //  position:flex; 
+    left:70%;
+   // transform: translate(0, 50%);
+}

@@ -1,0 +1,55 @@
+
+<mat-card id= "produto">
+    <mat-card-title> Produto </mat-card-title>
+    <form>
+            <mat-form-field style="width: 60%; min-width: 180px;">
+                <input matInput placeholder="Nome do Produto" [(ngModel)]="productHelper.nome" name="productHelper_Nome" required>
+            </mat-form-field>
+            <mat-form-field style="width: 80%; min-width: 180px;">
+                <input matInput placeholder="Peso do Produto" [(ngModel)]="productHelper.peso" name="productHelper_Peso" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width: 10%; min-width: 100px">
+                <input matInput placeholder="Altura do Produto" [(ngModel)]="productHelper.altura" name="productHelper_Altura" required>
+            </mat-form-field>
+            <mat-form-field style="width: 20%; min-width: 100px;">
+                <input matInput placeholder="Comprimento do Produto"  [(ngModel)]="productHelper.comprimento" name="productHelper_Comprimento" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width: 30%; min-width: 155px;">
+                <input matInput placeholder="Largura do Produto"  [(ngModel)]="productHelper.largura" name="productHelper_Largura" required>
+            </mat-form-field>
+            <mat-form-field style="width: 30%; min-width: 155px;">
+                <input matInput placeholder="Valor do Produto"  [(ngModel)]="productHelper.valor" name="productHelper_Valor" required>
+            </mat-form-field>
+            <mat-form-field style="width: 30%; min-width: 155px;">
+                <input matInput placeholder="Link da Imagem"  [(ngModel)]="productHelper.imgUrl" name="productHelper_ImgUrl" required>
+            </mat-form-field>
+          
+    </form>
+    <button mat-raised-button (click)="saveProd()" color="primary">
+        Salvar
+    </button>
+</mat-card>
+
+<mat-card id= "usuario">
+    <mat-card-title> Usuario </mat-card-title>
+    <form>
+            <mat-form-field style="width: 60%; min-width: 180px;">
+                <input matInput placeholder="Nome do Usuario" [(ngModel)]="userHelper.nome" name="userHelper_Nome" required>
+            </mat-form-field>
+            <mat-form-field style="width: 80%; min-width: 180px;">
+                <input matInput placeholder="E-mail do Usuario" [(ngModel)]="userHelper.email" name="userHelper_Email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width: 10%; min-width: 100px">
+                <input matInput placeholder="Telefone do Usuario" [(ngModel)]="userHelper.telefone" name="userHelper_telefone" required>
+            </mat-form-field>
+            <mat-checkbox [(ngModel)]="userHelper.ativo" name="userHelper_Ativo">Ativo</mat-checkbox>
+            <br>
+            <mat-checkbox [(ngModel)]="userHelper.admin" name="userHelper_Admin">Admin</mat-checkbox>
+    </form>
+    <button mat-raised-button (click)="saveUser()" color="primary">
+        Salvar
+    </button>
+</mat-card>

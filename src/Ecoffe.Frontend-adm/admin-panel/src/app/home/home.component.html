@@ -1,0 +1,19 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Usuario</div>
+  <div class="page__content position-relative">
+    <mat-card class="users"> 
+      <mat-card class="user" *ngFor="let user of users">
+        <p>{{user.nome}}</p>
+        <p style="float: left;">{{user.email}}</p>
+        <br>
+        <br>
+        <button mat-flat-button color="primary" (click)="openUserNewModal(user.id,1)">
+          Alterar
+        </button>
+        <button mat-flat-button (click)="deleteConfirm(user.id)" color="warn">
+          <i class="material-icons">delete</i>
+        </button>
+      </mat-card>
+    </mat-card>
+  </div>
+</div>

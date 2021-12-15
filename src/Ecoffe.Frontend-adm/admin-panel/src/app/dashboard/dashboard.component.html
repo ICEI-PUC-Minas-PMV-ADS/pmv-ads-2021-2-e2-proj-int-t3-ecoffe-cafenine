@@ -1,0 +1,24 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Produto
+    <button id= "botao-novo"  mat-flat-button color="primary"(click)="openProductNewModal(0,2)">
+      Adicionar Novo
+    </button> 
+  </div>
+  <div class="page__content position-relative">
+    <mat-card class="products"> 
+      <mat-card class="product" *ngFor="let product of products">
+        <div class="wrapperImg">
+            <img [src]="product.imgUrl">
+        </div>
+        <p>{{product.nome}}</p>
+        <p style="float: left;">{{product.valor | currency: 'BRL'}}</p>
+        <button mat-flat-button color="primary" (click)="openProductNewModal(product.id,2)">
+          Alterar
+        </button>
+        <button mat-flat-button (click)="deleteConfirm(product.id)" color="warn">
+          <i class="material-icons">delete</i>
+        </button>
+      </mat-card>
+    </mat-card>
+  </div>
+</div>

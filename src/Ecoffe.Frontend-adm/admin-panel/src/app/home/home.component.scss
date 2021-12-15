@@ -1,0 +1,40 @@
+.page {
+  color: white;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box {
+    min-height: 120px;
+    background: #745c5e;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.users{
+  display: inline-flex;
+  flex-flow: wrap;
+}
+
+.user{
+  height: 290px;
+  width: 320px;
+  margin: 10px;
+  font-size: 18px;
+
+}
+
+button{
+  margin: 5px;
+}

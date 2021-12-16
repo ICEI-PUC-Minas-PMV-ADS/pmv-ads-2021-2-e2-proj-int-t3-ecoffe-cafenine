@@ -12,7 +12,7 @@ export class CartService {
 
   isOpenedChange: Subject <boolean> = new Subject<boolean>();
 
-  baseUrl = "https://localhost:44324/api/Carrinho";
+  baseUrl = "https://ecoofeeback.azurewebsites.net/api/Carrinho";
 
   constructor(private http: HttpClient) { 
       this.isOpenedChange.subscribe((value) => {

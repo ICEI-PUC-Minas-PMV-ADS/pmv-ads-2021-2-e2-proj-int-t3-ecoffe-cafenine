@@ -15,7 +15,7 @@ export class ProductsService {
 
   constructor(private matDialog: MatDialog, private http: HttpClient) { }
 
-  baseUrl = "https://localhost:44324/api/Produto";
+  baseUrl = "https://ecoofeeback.azurewebsites.net/api/Produto";
 
   getById(id: number): Observable<Produto> {
     return this.http.get<Produto>(this.baseUrl+"/"+id);
@@ -26,7 +26,7 @@ export class ProductsService {
   }
 
   addProductToCart(productCart: ProdutoCarrinho): Observable<Carrinho>{
-    return this.http.post<Carrinho>("https://localhost:44324/api/carrinho/addProduct", productCart);
+    return this.http.post<Carrinho>("https://ecoofeeback.azurewebsites.net/api/carrinho/addProduct", productCart);
   }
 
   openProductModal() {

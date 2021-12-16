@@ -10,7 +10,7 @@ export class LoginRegisterService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "https://localhost:44362/api/Usuario";
+  baseUrl = "https://ecoofeeback.azurewebsites.net/api/Usuario";
 
   getUserById(id: string): Observable<Usuario>{
     return this.http.get<Usuario>(this.baseUrl + "/" + id);

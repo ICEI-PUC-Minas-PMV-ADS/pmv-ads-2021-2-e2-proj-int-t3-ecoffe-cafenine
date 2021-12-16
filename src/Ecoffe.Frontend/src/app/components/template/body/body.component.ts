@@ -20,7 +20,7 @@ export class BodyComponent implements OnInit {
 
   carregarProdutos(){
     console.log("Inicio do Método");
-    httpClient.get<any>('https://localhost:44382/produto/GetAll').subscribe(data => {
+    httpClient.get<any>('https://ecoofeeback.azurewebsites.net/api/produto/GetAll').subscribe(data => {
       console.log(data);
     })
     console.log(this.produtos);

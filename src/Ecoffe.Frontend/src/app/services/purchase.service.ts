@@ -13,7 +13,7 @@ export class PurchaseService {
 
   constructor(private http: HttpClient, private matDialog: MatDialog) { }
 
-  baseUrl = "https://localhost:44362/api/Compra";
+  baseUrl = "https://ecoofeeback.azurewebsites.net/api/Compra";
 
   save(compra: Compra): Observable<Compra>{
     return this.http.post<Compra>(this.baseUrl, compra);

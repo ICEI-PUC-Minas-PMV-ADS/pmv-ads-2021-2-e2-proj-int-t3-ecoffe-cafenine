@@ -12,7 +12,7 @@ export class PersonalInfoService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "https://localhost:44362/api/Usuario";
+  baseUrl = "https://ecoofeeback.azurewebsites.net/api/Usuario";
 
   update(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(this.baseUrl, usuario);

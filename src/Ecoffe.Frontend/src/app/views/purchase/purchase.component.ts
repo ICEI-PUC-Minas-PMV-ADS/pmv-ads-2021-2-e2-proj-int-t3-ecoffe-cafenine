@@ -176,7 +176,7 @@ export class PurchaseComponent implements OnInit {
     if(!purchase.produtosCompraIdList || purchase.produtosCompraIdList.length == 0)
       this.validateErrorsProducts.push("Não é possível realizar compra sem nenhum produto");
 
-    if(!purchase.formaPagamento)
+    if(purchase.formaPagamento == null || purchase.formaPagamento == undefined)
       this.validateErrorsPayment.push("Deve ser selecionada uma forma de pagamento");  
 
     if((purchase.formaPagamento == FormaPagamento.Debito || purchase.formaPagamento == FormaPagamento.Credito) && (!purchase.cartaoId || purchase.cartaoId == 0))
